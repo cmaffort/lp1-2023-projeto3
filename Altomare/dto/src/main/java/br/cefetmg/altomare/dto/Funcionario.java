@@ -10,20 +10,20 @@ package br.cefetmg.altomare.dto;
  */
 public class Funcionario extends Usuario{
 
-    private Double salario;
+    private double salario;
     private String setor;
     private String dataAdmissao;
-    private Double cargaHoraria; //em minutos
+    private double cargaHoraria; //em minutos
     
-     Funcionario(Double salario, String setor, String dataAdmissao, Double cargaHoraria){
-        super(Long cpf, Long rg, String nome, String dataNascimento, String email, String senha, Long telefone, String sexo, String estadoCivil, String passaporte, String endereço);
+     public Funcionario(double salario, String setor, String dataAdmissao, double cargaHoraria,long cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
+        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, passaporte, endereco);
         this.salario = salario;
         this.cargaHoraria = cargaHoraria;
         this.setor = setor;
         this.dataAdmissao = dataAdmissao;
     }
 
-    public Double getSalario() {
+    public double getSalario() {
         return salario;
     }
 
@@ -47,7 +47,7 @@ public class Funcionario extends Usuario{
         this.dataAdmissao = dataAdmissao;
     }
 
-    public Double getCargaHoraria() {
+    public double getCargaHoraria() {
         return cargaHoraria;
     }
 
