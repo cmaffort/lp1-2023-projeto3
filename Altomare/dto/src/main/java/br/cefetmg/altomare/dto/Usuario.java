@@ -9,7 +9,7 @@ package br.cefetmg.altomare.dto;
  * @author Aluno
  */
 public class Usuario {
-   private long cpf;
+   private String cpf;
    private long rg;
    private String nome;
    private String dataNascimento;
@@ -22,7 +22,7 @@ public class Usuario {
    private String endereco;
    
    
-   public Usuario(long cpf, long rg, String nome, String dataNascimento,String email, String senha,long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
+   public Usuario(String cpf, long rg, String nome, String dataNascimento,String email, String senha,long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
       this.cpf = cpf;
       this.rg = rg;
       this.nome = nome;
@@ -37,19 +37,19 @@ public class Usuario {
     
     }
    
-   public Long getCpf() {
+   public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Long cpf){
+    public void setCpf(String cpf){
         this.cpf = cpf;
     }
     
-     public Long getRg() {
+     public long getRg() {
         return rg;
     }
 
-    public void setRg(Long rg){
+    public void setRg(long rg){
         this.rg = rg;
     }
     
