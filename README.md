@@ -36,3 +36,9 @@ Realizar merge entre a branch que se está trabalhando e a branch main:
 git checkout main
 git merge nome-da-branch-a-ser-unida
 ```
+
+# Alguns vídeos que podem ajudar na instalação e configuração do TomCat no NetBeans:
+
+[Instalação do TomCat](https://www.youtube.com/watch?v=ETftDtT5Bc8)
+
+[Configuração do Tomcat](https://www.youtube.com/watch?v=KnkKZ2zDfIM)
