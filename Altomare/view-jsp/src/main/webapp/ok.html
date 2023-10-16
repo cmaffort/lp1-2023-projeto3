@@ -5,7 +5,8 @@
     <head>
         <title>Cadastro Funcionário</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estilos.css">
+       <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
+        <link rel="stylesheet"  href="estilos.css">
         <link rel="icon" href="imagens/leme.png" type="image/webp">
     </head>
     <body>
@@ -18,8 +19,8 @@
         <div id="barraDeTarefas">
             <p>.....</p>
         </div>
-        <h1>Inserir Funcionário</h1>
-        <form name="formInsereFuncionario" method="post">
+         <h1 id="titulo">Inserir Funcionário</h1>
+        <form name="formInsereFuncionario" id="cadastroFunc" method="post">
                 <input type='hidden' name='table' value='funcionario'>
                 <input type='hidden' name='acao' value='gravar'>
                 <table>
@@ -36,7 +37,7 @@
                             Setor:
                         </td>
                         <td>
-                            <select name="setor">
+                            <select name="setor" required>
                                 <option value="">Escolher</option>
                                 <option value="gerencia">Gerencia</option>
                                 <option value="limpeza">Limpeza</option>
@@ -53,7 +54,7 @@
                             Sexo:
                         </td>
                         <td>
-                            <select name="sexo">
+                            <select name="sexo" required>
                                 <option value="">Escolher</option>
                                 <option value="masculino">Maculino</option>
                                 <option value="feminino">Feminino</option>
@@ -66,7 +67,7 @@
                             Estado Civil:
                         </td>
                         <td>
-                            <select name="estadoCivil">
+                            <select name="estadoCivil" required>
                                 <option value="">Escolher</option>
                                 <option value="casado">Casado</option>
                                 <option value="solteiro">Solteiro</option>
@@ -80,7 +81,7 @@
                             Turno:
                         </td>
                         <td>
-                            <select name="turno">
+                            <select name="turno" required>
                                 <option value="">Escolher</option>
                                 <option value="manha">Manhã</option>
                                 <option value="tarde">Tarde</option>
@@ -93,7 +94,7 @@
                             Data de Admissão:                               
                         </td> 
                         <td>
-                            <input type="date" name="dataAdmissao" value=""> 
+                            <input type="date" name="dataAdmissao" value="" required> 
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +102,7 @@
                             Carga Horária:
                         </td>
                         <td>
-                           <input type="time" name="cargaHoraria">
+                           <input type="time" name="cargaHoraria" required>
                         </td>
                     </tr>
                     <tr>
@@ -109,7 +110,7 @@
                             CPF:
                         </td>
                         <td>
-                            <input type='text' name='cpf'  data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx">
+                            <input type='text' name='cpf'  data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx" required>
                         </td>
                     </tr>
                     <tr>
@@ -117,7 +118,7 @@
                            RG:
                         </td>
                         <td>
-                            <input type='text' name='rg'  data-ls-module="charCounter" maxlength="13" >
+                            <input type='text' name='rg'  data-ls-module="charCounter" maxlength="13" required>
                         </td>
                     </tr>
                     <tr>
@@ -125,7 +126,7 @@
                             Data de Nascimento:
                         </td>
                         <td>
-                            <input type='date' name='dataNascimento' value=''>
+                            <input type='date' name='dataNascimento' value='' required>
                         </td>
                     </tr>
                     <tr>
@@ -133,7 +134,7 @@
                             Email:
                         </td>
                         <td>
-                            <input type='email' name='email' value=''>
+                            <input type='email' name='email' value='' required>
                         </td>
                     </tr>
                     <tr>
@@ -141,7 +142,7 @@
                             Telefone:
                         </td>
                         <td>
-                            <input type='tel' name='telefone'  placeholder="ex: (xx) xxxxx-xxxx">
+                            <input type='tel' name='telefone'  placeholder="ex: (xx) xxxxx-xxxx"required>
                         </td>
                     </tr>
                     <tr>
