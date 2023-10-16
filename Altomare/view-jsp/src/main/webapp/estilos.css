@@ -5,6 +5,36 @@ html, body{
     margin: 0;
 }
 
+#foto{
+    border: 1px solid black;
+    margin-top: 3%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    background-color: white;
+}
+
+main{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content:  center;
+}
+
+#nome-telefone{
+
+    background-color: blue;
+}
+
+#setor-admissao{
+
+    background-color: red;
+}
+
+#foto-botao{
+   
+    background-color: green;
+}
+
 #headerUsuario{
     background-color: rgb(5, 50, 112);
     margin-bottom: -2%;
@@ -85,8 +115,7 @@ html, body{
 #cadastroFunc{
     background-color: rgb(217, 217, 217);
     border-radius: 5%;
-    margin-left: 20%;
-    margin-right: 20%;
+
 }
 
 #titulo{
