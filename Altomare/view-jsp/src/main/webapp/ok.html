@@ -97,7 +97,8 @@
                 <div id="traco"></div>
                     <div id='nome-telefone'>
                            <p>
-                               Nome: <input type='text' name='nome' placeholder="digite o nome completo" required>
+                               Nome:
+                               <input type='text' id="nome"  name='nome' placeholder="digite o nome completo" onChange="handleFile(this.files)" required>
                           </p>
                           <p>
                             Data de Nascimento: <input type='date' name='dataNascimento' value='' required>

@@ -15,7 +15,7 @@ bot.addEventListener('click', ()=> {
     arq.click();
 });
 
-arq.addEventListener('change', (event) => {
+arq.addEventListener('change', function handleFile(files){
        if(arq.files.length <= 0){
            return;
        }
@@ -23,10 +23,11 @@ arq.addEventListener('change', (event) => {
        let reader = new FileReader();
         
         reader.onload = () => {
-            name.src = reader.result;
+            let name = event.target.result;
+            document.querySelector('#nome').value = name;
         };
         
-        reader.readAsDataURL(arq.files[0]);
+        reader.readAsText(arq.files[0]);
    });
 
 

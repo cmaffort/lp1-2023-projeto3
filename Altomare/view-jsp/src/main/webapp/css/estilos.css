@@ -5,6 +5,9 @@ html, body{
     margin: 0;
 }
 
+#nome{
+    background-color: white;
+}
 
 #imgPhoto{
     margin-top: 30%;
