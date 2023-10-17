@@ -7,6 +7,28 @@
 
 let photo = document.getElementById('imgPhoto');
 let file = document.getElementById('foto');
+let arq = document.getElementById('arq');
+let nome = document.getElementById('nome');
+let bot = document.getElementById('bot');
+
+bot.addEventListener('click', ()=> {
+    arq.click();
+});
+
+arq.addEventListener('change', (event) => {
+       if(arq.files.length <= 0){
+           return;
+       }
+    
+       let reader = new FileReader();
+        
+        reader.onload = () => {
+            name.src = reader.result;
+        };
+        
+        reader.readAsDataURL(arq.files[0]);
+   });
+
 
 photo.addEventListener('click', ()=> {
     file.click();

@@ -6,19 +6,52 @@
         <title>Cadastro Funcionário</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
-        <link rel="stylesheet"  href="estilos.css">
+        <link rel="stylesheet"  href="css/estilos.css">
+        <link rel="stylesheet" href="css/estilos-header.css">
         <link rel="icon" href="imagens/leme.png" type="image/webp">
     </head>
     <body>
-         <header id="headerUsuario">
-             <h1 id="altoMareUsuarios">Alto Mare </h1>
-            <h2 id="embarcacoesUsuarios">Embarcações</h2>
-            <img id="lemeUsuarios" src="imagens/leme.png" alt="alt"/>
-           <div id="linha"></div>
-        </header>
-        <div id="barraDeTarefas">
-            <p>.....</p>
+         <header id="header-main">
+        <div id="header-upper">
+            <img src="imagens\leme.png" id="leme">
+            <div>
+                <h1>AltoMare </h1>
+                <h2>EMBARCAÇÕES</h2>
+            </div>
+            <div>
+                <img src="imagens\user-icon.png" id="user-icon">
+                <p>USER</p>
+            </div>
         </div>
+        <div id="linha"></div>
+        <div id="burger"><p>☰</p></div>
+        <ul>
+            <li>
+                <img src="">
+                <p>Reserva</p>
+            </li>
+            <li>
+                <img src="">
+                <p>Alimentação</p> 
+            </li>
+            <li>
+                <img src="">
+                <p>Atividades</p>             
+            </li>
+            <li>
+                <img src="">
+                <p>Segurança</p>
+            </li>
+            <li>
+                <img src="">
+                <p>Saúde</p>
+            </li>
+            <li>
+                <img src="">
+                <p>Despesas</p>
+            </li>
+        </ul>
+    </header>
          <h1 id="titulo">Inserir Funcionário</h1>
         <form name="formInsereFuncionario" id="cadastroFunc" method="post">
             <main>
@@ -55,6 +88,10 @@
                           <p>
                             <input type="date" name="dataAdmissao" value="" required> 
                           </p>
+                           <p>
+                               <button id="bot">Enviar Arquivo</button>
+                               <input type="file"  id="arq" name="arquivo" accept="text/*">
+                           </p>
                   
                   </div>
                 <div id="traco"></div>
@@ -106,9 +143,10 @@
                                    </div>
                                </div>
                               <input type="file" id="foto" name="foto" accept="image/*" required>
-                          <p><input type='submit' value="ADICIONAR" id='enviar'> 
+                              <p><input type='submit' value="ADICIONAR" id='enviar'></p>
                          </div>
             </main>
-            <script src="script.js"></script>
+            <script src="js/script.js"></script>
+            <script src="js/js-header.js"></script>
         </form>
     </body>

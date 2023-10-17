@@ -5,8 +5,9 @@ html, body{
     margin: 0;
 }
 
+
 #imgPhoto{
-    margin-top: 20%;
+    margin-top: 30%;
     max-width: 150px;
     height: 150px;
     background-color: #eee;
@@ -19,12 +20,13 @@ html, body{
   background-color: rgb(180, 180, 180);
   border: 5px solid #eee;
 }
+
 #traco{
     border: 2px solid rgb(114,146,189);
 }
 
 input[type='file']{
-    display: none;
+     display: none;
 }
 
 #foto{
@@ -52,6 +54,7 @@ main{
    font-size: 70%;
    background-color: rgb(5, 50, 112);
    color: white;
+   margin-top: 20%;
 }
 
 
@@ -95,32 +98,12 @@ main{
    margin-top: -7%;
 }
 
-#altoMareUsuarios{
-    margin-top: 1%;
-    font-size: 4em;
-    color: white;
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    font-style: italic; 
-}
-
 .campos{
   height: 25px;
   font-size: 60%;
 }
 
-#embarcacoesUsuarios{
-   font-size: 150%;
-   color: white;
-   padding-top: 3%;
-   margin-top: -7%;
-}
 
-#lemeUsuarios{
-    width: 8%;
-    float: left;
-    margin-top: -9%;
-    margin-left: 10%;
-}
 
 #altoMare{
     padding-bottom: -30%;
@@ -142,8 +125,6 @@ main{
     background-color: rgb(114, 146, 189);
     padding-top: 1%;
 }
-
-
 
 .max-width{
     max-width: 500px;
