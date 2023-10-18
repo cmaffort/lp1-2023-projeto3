@@ -5,9 +5,6 @@ html, body{
     margin: 0;
 }
 
-#nome{
-    background-color: white;
-}
 
 #imgPhoto{
     margin-top: 30%;
@@ -48,12 +45,23 @@ main{
 }
 
 
+#bot{
+     padding-bottom: 5%;
+   border-radius: 10%;
+   padding-top: 5%;
+   width: 50%;
+   font-size: 70%;
+   background-color: rgb(5, 50, 112);
+   color: white;
+   margin-top: 20%;
+}
+
 
 #enviar{
    padding-bottom: 5%;
    border-radius: 10%;
    padding-top: 5%;
-   width: 50%;
+   width: 70%;
    font-size: 70%;
    background-color: rgb(5, 50, 112);
    color: white;
