@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Dancing+Script&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Pathway+Gothic+One&display=swap');
+#header-main h1 {
+   font-size: 6vw;
+   color: white;
+   font-family: 'Dancing Script', cursive; font-style: italic;
+   font-style: italic;
+   margin-top: .5vw;
+   margin-bottom: 0;
+}
+
+#header-main h2 {
+    font-size: 2.3vw;
+    color: white;
+    margin: 0;
+}
+
+#header-main img {
+    margin-top: 1vw;
+}
+
+#leme {
+    width: 12vw;
+    height: 12vw;
+}
+
+#user-icon {
+    width: 9vw;
+    height: 9vw;
+}
+
+#linha {
+    background-color: rgb(114, 146, 189);
+    width: 100%;
+    height: .07vw;
+}
+
+#header-main {
+    background-color: rgb(5, 50, 112);
+    text-align: center; 
+    padding-bottom: .3vw;
+    position: relative;
+    z-index: 3;
+}
+
+#header-upper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#header-upper p {
+    color: white;
+    font-size: 1.1vw;
+}
+
+#header-main ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    z-index: 5;
+}
+
+#header-main ul > li {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.918);
+}
+
+#header-main ul > li p{
+    font-size: 1.1vw;
+    margin: 0;
+}
+
+#burger {
+    display: none;
+}
+
+@media screen and (orientation: portrait)  {
+
+    #burger {
+        display: block;
+        margin: 0;
+    }
+
+    #burger p {
+        font-size: 3vw;
+        margin: 0;
+        color: white;
+    }
+
+    #header-main ul {
+        list-style: none;
+        position: absolute;
+        display: none;
+        top: -9vw;
+        width: 100%;
+        padding: 0;
+        transition: all ease 2s;
+    }
+
+    .menu-fechado {
+        top: -20vw;
+    }
+
+    .menu-aberto {
+        top: 17vw;
+    }
+
+    #header-main ul > li {
+        display: block;
+        width: 100%;
+        height: 4vw;
+        text-align: center;
+        background-color: rgb(5, 50, 112);
+        border: none;
+    }
