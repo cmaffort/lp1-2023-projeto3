@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cadastro Funcionário</title>
+        <title>Cadastro Passageiro</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="estilos.css">
@@ -20,7 +20,7 @@
             </div>
             <div>
                 <img src="imagens\user-icon.png" id="user-icon">
-                <p>USER</p>
+                <p>GERENTE</p>
             </div>
         </div>
         <div id="linha"></div>
@@ -53,40 +53,27 @@
         </ul>
     </header>
          <h1 id="titulo">Cadastrar Passageiro</h1>
-        <form name="formInsereFuncionario" id="cadastroFunc" method="post">
+         <form name="CadastroPassageiro"  action="CadastroPassageiroDB" id="cadastroFunc" method="post">
             <main>
          <div id='setor-admissao'>
           
                        <p>
-                            Setor:
+                            PARTIDA / CHEGADA:
                        </p>
-                       <p>    <select name="setor" required >
-                                <option value="">Escolher</option>
-                                <option value="gerencia">Gerencia</option>
-                                <option value="limpeza">Limpeza</option>
-                                <option value="segurança">Segurança</option>
-                                <option value="saude">Saúde</option>
-                                <option value="inspecao">Inspeção</option>
-                                <option value="entrega">Entrega</option>
-                                <option value="restaurante">Restaurante</option>
-                            </select>
-                             </p>
+                       <p>
+                           <input type='text' id="parChe"  name='parChe' placeholder="PARTIDA / CHEGADA" required>
+                       </p>
                             <p>
-                            Turno:
+                            DURAÇÃO:
                             </p>
                             <p>
-                            <select name="turno" required>
-                                <option value="">Escolher</option>
-                                <option value="manha">Manhã</option>
-                                <option value="tarde">Tarde</option>
-                                <option value="noite">Noite</option>
-                            </select>
-                             </p>
+                                <input type='text' id="duracao"  name='duracao' placeholder="Duração da viagem" required>
+                            </p>
                           <p>
-                            Data de Admissão: 
+                            DATAS: 
                           </p>
                           <p>
-                            <input type="date" name="dataAdmissao" value="" required> 
+                            <input type="text" name="datas" id="datas" value="" placeholder="Datas da viagem" required> 
                           </p>
                            <p>
                                <button id="bot">Enviar Arquivo</button>
@@ -101,39 +88,29 @@
                                <input type='text' id="nome"  name='nome' placeholder="digite o nome completo" onChange="handleFile(this.files)" required>
                           </p>
                           <p>
-                            Data de Nascimento: <input type='date' name='dataNascimento' value='' required>
+                            Data de Nascimento: <input type='text' id="dataNascimento" name='dataNascimento' value='' required>
                           </p>
                           <p>
-                            Sexo:
-                            <select name="sexo" required>
-                                <option value="">Escolher</option>
-                                <option value="masculino">Maculino</option>
-                                <option value="feminino">Feminino</option>
-                                <option value="naoInformado">Prefiro não informar</option>
-                            </select>
+                            Sexo: <input type='text' name='sexo' id="sexo" value='' required>
                           </p>
                             <p>
-                             CPF: <input type='text' name='cpf'  data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx" required>
+                             CPF: <input type='text' name='cpf' id="cpf" data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx" required>
                             </p>
                             <p>
-                             RG: <input type='text' name='rg'  data-ls-module="charCounter" maxlength="13" required>
+                             RG: <input type='text' name='rg' id="rg" data-ls-module="charCounter" maxlength="13" required>
                            </p>
                     
                             <p>
-                            Estado Civil:
-                            <select name="estadoCivil" required>
-                                <option value="">Escolher</option>
-                                <option value="casado">Casado</option>
-                                <option value="solteiro">Solteiro</option>
-                                <option value="divorciado">Divorciado</option>
-                                <option value="viuvo">Viúvo</option>
-                            </select>
+                            Estado Civil: <input type='text' name='civil' id="civil" value='' required>
                              </p>
                               <p>
-                            Email: <input type='email' name='email' value='' required>
+                            Email: <input type='email' name='email' id="email" value='' required>
                           </p>
                             <p>
-                            Telefone: <input type='tel' name='telefone'  placeholder="ex: (xx) xxxxx-xxxx" required>
+                            Telefone: <input type='tel' name='telefone' id="telefone" placeholder="ex: (xx) xxxxx-xxxx" required>
+                          </p>
+                          <p>
+                              Dados Médicos: <input type='text' name='medico' id="medico" placeholder="Dados médicos" required>
                           </p>
                           </div>
                          <div id="traco"></div>
@@ -143,6 +120,10 @@
                                        <img id="imgPhoto" src="imagens/camera.png" alt="selecione uma imagem"/>
                                    </div>
                                </div>
+                               <p><input type='text' name='classe' id="classe" placeholder="Classe" value='' required></p>
+                               <p><input type='text' name='classe' id="suite" placeholder="Tipo de Suíte" value='' required></p>
+                               <p><input type='text' name='classe' id="tamanho" placeholder="Tamanho do Quarto" value='' required></p>
+                               <p><input type='text' name='classe' id="capacidade" placeholder="Capacidade do Qaurto" value='' required></p>
                               <input type="file" id="foto" name="foto" accept="image/*" required>
                               <p><input type='submit' value="ADICIONAR" id='enviar'></p>
                          </div>
