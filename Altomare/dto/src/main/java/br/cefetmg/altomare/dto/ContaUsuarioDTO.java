@@ -1,4 +1,5 @@
 package br.cefetmg.altomare.dto;
+import java.util.*;
 
 public class ContaUsuarioDTO {
     ContaMonetariaDTO contaMonetaria;
@@ -11,10 +12,10 @@ public class ContaUsuarioDTO {
         this.estaAberta = false; //fechada na criação da conta, aberta no momento do embarque
     }
     
-    boolean adicionarGasto(String produto, double valor) { //futuramente classe Produto
+    boolean adicionarGasto(String despesa, double valor, Date data) { //futuramente classe Produto
         if (getStatusConta()) {
             contaMonetaria.debitarValor(valor);
-            historicoGastos.adicionaGasto(produto, valor);
+            historicoGastos.adicionaGasto(despesa, valor, data);
             return true;
         }
         return false;

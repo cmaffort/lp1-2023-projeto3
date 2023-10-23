@@ -8,10 +8,12 @@ public class ContaMonetariaDTO {
     }
    
     void debitarValor(double quantia) {
+        this.valor+= quantia;
+        /*
         try {
             this.valor+= quantia;
         }
-        /*catch (exceção) {
+        catch (exceção) {
             //processamento
         }*/
     }
