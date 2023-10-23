@@ -61,3 +61,25 @@ file.addEventListener('change', (event) => {
         reader.readAsDataURL(file.files[0]);
    });
 
+
+
+
+function addCard(){
+let cardEl = document.createElement('div');
+let coluna1 =  document.querySelector('#coluna1');
+let imagemUser = document.createElement('img');
+let pName = document.creatElement('p');
+let pSetor = document.creatElement('p');
+let pTurno = document.creatElement('p');
+let pCodigo = document.creatElement('p');
+let coluna2 = document.querySelector('#coluna2');
+let coluna3 = document.querySelector('#coluna3');
+let botaoChamar = document.createElement('button');
+
+
+
+}
+
+
+
+
