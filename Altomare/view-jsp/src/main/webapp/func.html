@@ -8,6 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="css/estilos-header.css">
+        <link rel="stylesheet"  href="css/estilos.css">
         <link rel="icon" href="imagens/leme.png" type="image/webp">
         <title>Escalar Funcionários</title>
     </head>
@@ -20,7 +21,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <h2>EMBARCAÇÕES</h2>
             </div>
             <div>
-                <img src="imagens\user-icon.png" id="user-icon">
+                <img src="imagens\user-icon.png" alt="" id="user-icon">
                 <p>USER</p>
             </div>
         </div>
@@ -28,35 +29,54 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <img src="">
-                <p>Reserva</p>
+                <img src="" alt="">
+                <p>Funcionários</p>
             </li>
             <li>
-                <img src="">
-                <p>Alimentação</p> 
+                <img src="" alt="">
+                <p>Passageiros</p> 
             </li>
             <li>
-                <img src="">
-                <p>Atividades</p>             
+                <img src="" alt="">
+                <p>Pacotes</p>             
             </li>
             <li>
-                <img src="">
-                <p>Segurança</p>
+                <img src="" alt="">
+                <p>Cronogramas</p>
             </li>
-            <li>
-                <img src="">
-                <p>Saúde</p>
-            </li>
-            <li>
-                <img src="">
-                <p>Despesas</p>
-            </li>
+         
         </ul>
     </header>
       
-        <h1 >Escalar Funcionários</h1>
+        <h1 id="tituloEscala">Escalar: <input type="search" ></h1>
+        
+        <div id="diva">
+               <div id="coluna1"> 
+                   <div id="card">
+                        <div id="foto-codigo">
+                            <img src="imagens\user-icon.png" alt="" id="userFunc">
+                            <p id="nameFunc">NOME</p>
+                           <p id="codigo">Código</p>                         
+                       </div>
+                       <div id="turno-botao">
+                           <p id="turno">TURNO</p>
+                            <p id="set">SETOR</p>
+                            <input type="button" id="chamar" value="Chamar">
+                       </div>  
+                   </div>
+                </div>
+               <div id="coluna2"> 
+                   
+               </div>
+               <div id="coluna3"> 
+                   
+               </div>
+            
+         </div>
+        
   
             
-        
+    <script src="js/script.js"></script>
+    <script src="js/js-header.js"></script>
     </body>
 </html>
