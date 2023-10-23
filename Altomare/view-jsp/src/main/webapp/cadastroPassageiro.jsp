@@ -27,16 +27,16 @@
             <p>.....</p>
         </div>
          <h1 id="titulo">Cadastrar Passageiro</h1>
-        <form name="formInsereFuncionario" id="cadastroFunc" method="post">
+         <form name="Cadastropassageiro" id="cadastroFunc" method="post" action="inserirPassageiro">
             <main>
                     
             <div id='setor-admissao'>
                 <p>PARTIDA/CHEGADA</p>
-                <p> <input type='text' name='nome' placeholder="digite o nome completo" required></p>
+                <p> <input type='text' name='partidaChegada' placeholder="digite o nome completo" required></p>
                 <p>DURAÇÃO</p>
-                <p><input type='text' name='nome' placeholder="digite o nome completo" required></p>
+                <p><input type='text' name='duracao' placeholder="digite o nome completo" required></p>
                 <p>DATAS</p>
-                <p><input type='text' name='nome' placeholder="digite o nome completo" required></p>
+                <p><input type='text' name='datas' placeholder="digite o nome completo" required></p>
                   
             </div>
             <div id="barra1"></div>
