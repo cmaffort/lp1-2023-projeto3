@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
     <head>
-        <title>AltoMare</title>
+        <title>Header</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet" href="css/estilos-header.css">
@@ -21,31 +21,25 @@
             </div>
         </div>
         <div id="linha"></div>
-        <div id="burger"><p>☰</p></div>
+        <div id="burger"><p>▼</p></div>
         <ul>
             <li>
-                <img src="">
-                <p>Reserva</p>
+                Reserva
             </li>
             <li>
-                <img src="">
-                <p>Alimentação</p> 
+                Alimentação 
             </li>
             <li>
-                <img src="">
-                <p>Atividades</p>             
+                Atividades         
             </li>
             <li>
-                <img src="">
-                <p>Segurança</p>
+                Segurança
             </li>
             <li>
-                <img src="">
-                <p>Saúde</p>
+                Saúde
             </li>
             <li>
-                <img src="">
-                <p>Despesas</p>
+                Despesas
             </li>
         </ul>
     </header>
