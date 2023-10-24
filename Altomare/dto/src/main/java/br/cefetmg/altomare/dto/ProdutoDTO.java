@@ -1,15 +1,8 @@
-    /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package br.cefetmg.altomare.dto;
 
 import java.util.List;
 
-/**
- *
- * @author User
- */
 public class ProdutoDTO {
 
     private static void remove(String tipo) {
@@ -38,15 +31,9 @@ public class ProdutoDTO {
         return this.Produto;
     }
     
-!!!!!!!!
-    public void setTipo(tipo) {
-        if (!Produto.contains(tipo)) {
-            this.Produto.add(tipo);
-        }
-    }
-
-    public void removerTipo(String tipo) {
-        Produto.remove(tipo);
+    public void setTipo(String tipo) {
+            this.tipo = tipo;
+ 
     }
 
     public String getNome() {

@@ -8,7 +8,7 @@ package br.cefetmg.altomare.dto;
  *
  * @author Aluno
  */
-public class Funcionario extends Usuario{
+public class FuncionarioDTO extends UsuarioDTO{
 
     private double salario;
     private String setor;
@@ -17,7 +17,7 @@ public class Funcionario extends Usuario{
     private String turno;
     private String id;//primeiros 3 e os dois ultimos numeros do cpf
     
-     public Funcionario(String turno, double salario, String setor, String dataAdmissao, double cargaHoraria,String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
+     public FuncionarioDTO(String turno, double salario, String setor, String dataAdmissao, double cargaHoraria,String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
         super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, passaporte, endereco);
         this.salario = salario;
         this.cargaHoraria = cargaHoraria;

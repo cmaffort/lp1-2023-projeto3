@@ -8,7 +8,7 @@ package br.cefetmg.altomare.dto;
  *
  * @author Aluno
  */
-public class Usuario {
+public class UsuarioDTO {
    private String cpf;
    private long rg;
    private String nome;
@@ -22,7 +22,7 @@ public class Usuario {
    private String endereco;
    
    
-   public Usuario(String cpf, long rg, String nome, String dataNascimento,String email, String senha,long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
+   public UsuarioDTO(String cpf, long rg, String nome, String dataNascimento,String email, String senha,long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
       this.cpf = cpf;
       this.rg = rg;
       this.nome = nome;
