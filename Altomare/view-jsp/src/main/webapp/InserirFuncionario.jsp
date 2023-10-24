@@ -1,9 +1,11 @@
 
 
+
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cadastro Funcionário</title>
+        <title>Cadastro FuncionÃ¡rio</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="css/estilos.css">
@@ -16,7 +18,7 @@
             <img src="imagens\leme.png" id="leme">
             <div>
                 <h1>AltoMare </h1>
-                <h2>EMBARCAÇÕES</h2>
+                <h2>EMBARCAÃ‡Ã•ES</h2>
             </div>
             <div>
                 <img src="imagens\user-icon.png" id="user-icon">
@@ -24,7 +26,7 @@
             </div>
         </div>
         <div id="linha"></div>
-        <div id="burger"><p>?</p></div>
+        <div id="burger"><p>â˜°</p></div>
         <ul>
             <li>
                 <img src="">
@@ -32,7 +34,7 @@
             </li>
             <li>
                 <img src="">
-                <p>Alimentação</p> 
+                <p>AlimentaÃ§Ã£o</p> 
             </li>
             <li>
                 <img src="">
@@ -40,11 +42,11 @@
             </li>
             <li>
                 <img src="">
-                <p>Segurança</p>
+                <p>SeguranÃ§a</p>
             </li>
             <li>
                 <img src="">
-                <p>Saúde</p>
+                <p>SaÃºde</p>
             </li>
             <li>
                 <img src="">
@@ -52,7 +54,7 @@
             </li>
         </ul>
     </header>
-         <h1 id="titulo">Inserir Funcionário</h1>
+         <h1 id="titulo">Inserir FuncionÃ¡rio</h1>
         <form name="formInsereFuncionario" id="cadastroFunc" method="post">
             <main>
          <div id='setor-admissao'>
@@ -60,13 +62,13 @@
                        <p>
                             Setor:
                        </p>
-                       <p>    <select name="setor" required >
+                       <p>    <select name="setor" required id="setor">
                                 <option value="">Escolher</option>
                                 <option value="gerencia">Gerencia</option>
                                 <option value="limpeza">Limpeza</option>
-                                <option value="segurança">Segurança</option>
-                                <option value="saude">Saúde</option>
-                                <option value="inspecao">Inspeção</option>
+                                <option value="seguranÃ§a">SeguranÃ§a</option>
+                                <option value="saude">SaÃºde</option>
+                                <option value="inspecao">InspeÃ§Ã£o</option>
                                 <option value="entrega">Entrega</option>
                                 <option value="restaurante">Restaurante</option>
                             </select>
@@ -75,60 +77,65 @@
                             Turno:
                             </p>
                             <p>
-                            <select name="turno" required>
+                            <select name="turno" required id="turno">
                                 <option value="">Escolher</option>
-                                <option value="manha">Manhã</option>
+                                <option value="manha">ManhÃ£</option>
                                 <option value="tarde">Tarde</option>
                                 <option value="noite">Noite</option>
                             </select>
                              </p>
                           <p>
-                            Data de Admissão: 
+                            Data de AdmissÃ£o: 
                           </p>
                           <p>
-                            <input type="date" name="dataAdmissao" value="" required> 
+                            <input type="date" id="dataAdmissao" name="dataAdmissao" value="" required> 
                           </p>
+                           <p>
+                               <button id="bot">ENVIAR ARQUIVO</button>
+                               <input type="file"  id="arq" name="arquivo" accept="text/*">
+                           </p>
                   
                   </div>
                 <div id="traco"></div>
                     <div id='nome-telefone'>
                            <p>
-                               Nome: <input type='text' name='nome' placeholder="digite o nome completo" required>
+                               Nome:
+                               <input type='text' id="nome"  name='nome' placeholder="digite o nome completo" onChange="handleFile(this.files)" required>
                           </p>
                           <p>
-                            Data de Nascimento: <input type='date' name='dataNascimento' value='' required>
+                            Data de Nascimento: <input id="dataNascimento" type='date' name='dataNascimento' value='' required>
                           </p>
                           <p>
                             Sexo:
-                            <select name="sexo" required>
+                            <select name="sexo" id="sexo" required>
                                 <option value="">Escolher</option>
                                 <option value="masculino">Maculino</option>
                                 <option value="feminino">Feminino</option>
-                                <option value="naoInformado">Prefiro não informar</option>
+                              
                             </select>
                           </p>
                             <p>
-                             CPF: <input type='text' name='cpf'  data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx" required>
+                             CPF: <input type='text' id="cpf" name='cpf'  data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx" required>
                             </p>
                             <p>
-                             RG: <input type='text' name='rg'  data-ls-module="charCounter" maxlength="13" required>
+                             RG: <input type='text' id="rg" name='rg'  data-ls-module="charCounter" maxlength="13" required>
                            </p>
                     
                             <p>
                             Estado Civil:
-                            <select name="estadoCivil" required>
+                            <select name="estadoCivil" id="civil" required>
                                 <option value="">Escolher</option>
                                 <option value="casado">Casado</option>
                                 <option value="solteiro">Solteiro</option>
                                 <option value="divorciado">Divorciado</option>
-                                <option value="viuvo">Viúvo</option>
+                                <option value="viuvo">ViÃºvo</option>
                             </select>
                              </p>
                               <p>
-                            Email: <input type='email' name='email' value='' required>
+                            Email: <input type='email' id="email" name='email' value='' required>
                           </p>
                             <p>
-                            Telefone: <input type='tel' name='telefone'  placeholder="ex: (xx) xxxxx-xxxx" required>
+                            Telefone: <input type='tel' id="telefone" name='telefone'  placeholder="ex: (xx) xxxxx-xxxx" required>
                           </p>
                           </div>
                          <div id="traco"></div>
@@ -139,8 +146,7 @@
                                    </div>
                                </div>
                               <input type="file" id="foto" name="foto" accept="image/*" required>
-                              <p><input type='submit' value="ADICIONAR" id='enviar'></p>
-                              <p><input type="file" value="Enviar Arquivo .txt" id="arquivoTxt"></p>
+                              <p><input type='submit' value="ADICIONAR FUNCIONÃRIO" id='enviar'></p>
                          </div>
             </main>
             <script src="js/script.js"></script>
