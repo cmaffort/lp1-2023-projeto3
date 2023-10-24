@@ -10,6 +10,6 @@ public interface IFuncionarioDAO {
      boolean atualizar(Funcionario funcionario) throws Exception;
      boolean deletar(Funcionario funcionario) throws Exception;
      ArrayList<Funcionario> listar() throws Exception;
-     Funcionario consultarPorId(long id) throws Exception;
+     Funcionario consultarPorId(String id) throws Exception;
      Funcionario consultarUsuarioSenha(String cpf, String senha) throws Exception;
 }
