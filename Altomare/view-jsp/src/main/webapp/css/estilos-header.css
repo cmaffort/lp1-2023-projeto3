@@ -1,7 +1,3 @@
-html, body {
-    min-height: 100%;
-    margin: 0;
-}
 
 #header-main h1 {
    font-size: 6vw;
@@ -119,7 +115,9 @@ html, body {
         border: none;
     }
 
+
     #header-main ul > li p {
         font-size: 2vw;
     }
 }
+

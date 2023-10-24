@@ -5,12 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet" href="css/estilos-header.css">
-        <link rel="icon" href="imgs/leme.png" type="image/webp">
+        <link rel="icon" href="imagens/leme.png" type="image/webp">
     </head>
-    
+
     <header id="header-main">
         <div id="header-upper">
-            <img src="imgs\leme.png" id="leme">
+            <img src="imagens\leme.png" id="leme">
             <div>
                 <h1>AltoMare </h1>
                 <h2>EMBARCAÇÕES</h2>
@@ -25,30 +25,19 @@
         <ul>
             <li>
                 <img src="">
-                <p>Reserva</p>
+                <input type="button" class="button" name="ordem" value="Cadastro" onclick="abreModal('cadasProduto')">
             </li>
             <li>
                 <img src="">
-                <p>Alimentação</p> 
+                <input type="button" class="button" name="ordem" value="Edição" onclick="abreModal('alterProduto')"> 
             </li>
             <li>
                 <img src="">
-                <p>Atividades</p>             
+                <input type="button" class="button" name="ordem" value="Listagem" onclick="abreModal('listProduto')">
+
             </li>
-            <li>
-                <img src="">
-                <p>Segurança</p>
-            </li>
-            <li>
-                <img src="">
-                <p>Saúde</p>
-            </li>
-            <li>
-                <img src="">
-                <p>Despesas</p>
-            </li>
-        </ul>
+
     </header>
 
-    <script src="js/js-header.js"></script>
+    <script src="js/jsheader.js"></script>
 </html>
