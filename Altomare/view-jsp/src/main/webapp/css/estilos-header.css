@@ -114,3 +114,10 @@
         background-color: rgb(5, 50, 112);
         border: none;
     }
+
+
+    #header-main ul > li p {
+        font-size: 2vw;
+    }
+}
+
