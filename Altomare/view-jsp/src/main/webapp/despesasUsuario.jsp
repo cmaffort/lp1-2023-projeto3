@@ -11,15 +11,43 @@
        
         <div id="container">
             <div id="filtros">
-                Filtros
+                <nav>
+                  Filtros  
+                </nav>
+                <article id="article-filtros">
+                    <section>
+                        <h4>Período de dias:</h4>
+                        <div><input type="number"> <span>à</span> <input type="number"></div>
+                    </section>
+                    <section>
+                        <h4>Tipo de despesas:</h4>
+                        <div id="tipo-despesas">
+                            <div>
+                                <input type="checkbox" value="alimento"> Despesa de Alimentação  
+                            </div>
+                            <div>
+                                <input type="checkbox" value="atividade"> Despesa de Atração
+                            </div>
+                        </div>
+                    </section>
+                </article>
             </div>
             <div id="disposicao-despesas">
-                <h1>Timeline dos Gastos: </h1>
+                <nav>
+                    Timeline dos Gastos
+                </nav>
+                <article id="article-despesas">
+                    <div id="container-barra">
+                        <div id="barra-timeline"></div>
+                    </div>
+                </article>
             </div>
         </div>
         <footer>
             <p>Despesas Totais: </p>
         </footer>
+        
+        <script src="js/js-despesas.js"></script>
     </body>
    
 </html>
