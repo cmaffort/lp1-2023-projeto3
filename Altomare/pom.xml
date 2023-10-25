@@ -21,6 +21,7 @@
           
     <module>view-jsp</module>
     <module>service</module>
+    <module>model</module>
   </modules>
       
   <properties>

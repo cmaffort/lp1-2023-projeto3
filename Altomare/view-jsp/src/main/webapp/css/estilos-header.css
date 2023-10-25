@@ -1,9 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Dancing+Script&display=swap'); 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Pathway+Gothic+One&display=swap');
-#header-main h1 {
-   font-size: 6vw;
-   color: white;
-   font-family: 'Dancing Script', cursive; font-style: italic;
+
    font-style: italic;
    margin-top: .5vw;
    margin-bottom: 0;
@@ -114,4 +109,4 @@
         text-align: center;
         background-color: rgb(5, 50, 112);
         border: none;
-    }
+
