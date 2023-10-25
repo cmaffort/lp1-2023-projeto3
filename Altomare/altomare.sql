@@ -29,14 +29,14 @@ CREATE DATABASE altomare
 
 DROP TABLE IF EXISTS `atividade`;
 CREATE TABLE IF NOT EXISTS `atividade` (
-  `Nome` text,
-  `Data` text,
-  `HoraInicio` text,
-  `HoraTermino` text,
-  `Local` text,
+  `Nome` varchar,
+  `Data` varchar,
+  `HoraInicio` varchar,
+  `HoraTermino` varchar,
+  `Local` varchar,
   `Ocupacao` int(11) DEFAULT NULL,
-  `FucionarioResponsavel` text,
-  `Descricao` text
+  `FucionarioResponsavel` varchar,
+  `Descricao` varchar
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -47,18 +47,18 @@ CREATE TABLE IF NOT EXISTS `atividade` (
 
 DROP TABLE IF EXISTS `funcionario`;
 CREATE TABLE IF NOT EXISTS `funcionario` (
-  `Nome` text,
-  `DatNasc` text,
-  `CPF` text,
-  `RG` text,
-  `Sexo` text,
-  `Email` text,
-  `EstadoCivil` text,
-  `Turno` text,
-  `Setor` text,
-  `DataAdmissao` text,
-  `Telefone` text,
-  `Passaporte` text
+  `Nome` varchar,
+  `DatNasc` varchar,
+  `CPF` varchar,
+  `RG` varchar,
+  `Sexo` varchar,
+  `Email` varchar,
+  `EstadoCivil` varchar,
+  `Turno` varchar,
+  `Setor` varchar,
+  `DataAdmissao` varchar,
+  `Telefone` varchar,
+  `Passaporte` varchar
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -69,23 +69,23 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 
 DROP TABLE IF EXISTS `passageiro`;
 CREATE TABLE IF NOT EXISTS `passageiro` (
-  `Nome` text,
-  `DataNasc` text,
+  `Nome` varchar,
+  `DataNasc` varchar,
   `Sexo` char(10) DEFAULT NULL,
-  `CEP` text,
-  `RG` text,
-  `EstadoCivil` text,
-  `Email` text,
-  `Telefone` text,
-  `DadosMedicos` text,
-  `EmbarqueDesembarque` text,
-  `Datas` text,
-  `Classe` text,
-  `TipoSuite` text,
-  `TamanhoSuite` text,
-  `CapacidadeSuite` text,
-  `Endereco` text,
-  `Passaporte` text
+  `CEP` varchar,
+  `RG` varchar,
+  `EstadoCivil` varchar,
+  `Email` varchar,
+  `Telefone` varchar,
+  `DadosMedicos` varchar,
+  `EmbarqueDesembarque` varchar,
+  `Datas` varchar,
+  `Classe` varchar,
+  `TipoSuite` varchar,
+  `TamanhoSuite` varchar,
+  `CapacidadeSuite` varchar,
+  `Endereco` varchar,
+  `Passaporte` varchar
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

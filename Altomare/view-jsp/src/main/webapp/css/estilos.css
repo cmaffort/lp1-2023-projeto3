@@ -7,7 +7,6 @@ html, body{
 }
 
 
-
 #imgPhoto{
     margin-top: 30%;
     max-width: 150px;
@@ -141,6 +140,8 @@ main{
     text-align: center; 
 }
 
+#cadastroPas
+{
     background-color: rgb(217, 217, 217);
     border-radius: 5%;
     margin: 5%;

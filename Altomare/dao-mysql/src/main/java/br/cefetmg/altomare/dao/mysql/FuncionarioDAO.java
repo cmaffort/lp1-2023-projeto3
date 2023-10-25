@@ -115,7 +115,6 @@ public class FuncionarioDAO {
                 funcionario.setDataAdmissao(resultSet.getString("DataAdmissao"));
                 funcionario.setTelefone(resultSet.getString("Telefone"));
                 funcionario.setPassaporte(resultSet.getString("Passaporte"));
-                funcionario.add(funcionario);
         }
     }
     return funcionario;
