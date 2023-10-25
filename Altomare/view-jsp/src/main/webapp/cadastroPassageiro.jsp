@@ -1,7 +1,6 @@
 
 
-
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,33 +28,61 @@
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <img src="imagens/funcionarios.png" style="height: 70px;">
-                <p>Funcionários</p>
+                <img src="">
+                <p>Reserva</p>
             </li>
             <li>
-                <img src="imagens/passageiros.webp" style="height: 70px;">
-                <p>Passageiros</p> 
+                <img src="">
+                <p>Alimentação</p> 
             </li>
             <li>
-                <img src="imagens/pacotes.png" style="height: 70px;">
-                <p>Pacotes</p>             
+                <img src="">
+                <p>Atividades</p>             
             </li>
             <li>
-                <img src="imagens/iconeSeguranca.png" style="height: 70px;">
+                <img src="">
                 <p>Segurança</p>
             </li>
             <li>
-                <img src="imagens/cronograma.png" style="height: 70px;">
-                <p>Conograma</p>
+                <img src="">
+                <p>Saúde</p>
             </li>
-   
+            <li>
+                <img src="">
+                <p>Despesas</p>
+            </li>
         </ul>
     </header>
          <h1 id="titulo">Cadastrar Passageiro</h1>
-         <form name="CadastroPassageiro"  action="CadastroPassageiro" id="cadastroPas" method="post">
+         <form name="CadastroPassageiro"  action="CadastroPassageiroDB" id="cadastroFunc" method="post">
             <main>
-        
-                
+         <div id='setor-admissao'>
+          
+                       <p>
+                            PARTIDA / CHEGADA:
+                       </p>
+                       <p>
+                           <input type='text' id="parChe"  name='parChe' placeholder="PARTIDA / CHEGADA" required>
+                       </p>
+                            <p>
+                            DURAÇÃO:
+                            </p>
+                            <p>
+                                <input type='text' id="duracao"  name='duracao' placeholder="Duração da viagem" required>
+                            </p>
+                          <p>
+                            DATAS: 
+                          </p>
+                          <p>
+                            <input type="text" name="datas" id="datas" value="" placeholder="Datas da viagem" required> 
+                          </p>
+                           <p>
+                               <button id="bot">Enviar Arquivo</button>
+                               <input type="file"  id="arq" name="arquivo" accept="text/*">
+                           </p>
+                  
+                  </div>
+                <div id="traco"></div>
                     <div id='nome-telefone'>
                            <p>
                                Nome:
@@ -84,7 +111,7 @@
                             Telefone: <input type='tel' name='telefone' id="telefone" placeholder="ex: (xx) xxxxx-xxxx" required>
                           </p>
                           <p>
-                              Pacote: <input type='text' name='medico' id="medico" placeholder="Pacote" required>
+                              Dados Médicos: <input type='text' name='medico' id="medico" placeholder="Dados médicos" required>
                           </p>
                           </div>
                          <div id="traco"></div>
@@ -94,17 +121,13 @@
                                        <img id="imgPhoto" src="imagens/camera.png" alt="selecione uma imagem"/>
                                    </div>
                                </div>
-                              <p>
-                               <button id="bot">Enviar Arquivo</button>
-                               <input type="file"  id="arq" name="arquivo" accept="text/*">
-                           </p>
+                               <p><input type='text' name='pacote' id="pacote" placeholder="pacote" value='' required></p>
                                
                               <input type="file" id="foto" name="foto" accept="image/*" required>
-                               <p><input type='submit' value="CADASTRAR" id='enviar'></p>
+                              <p><input type='submit' value="ADICIONAR" id='enviar'></p>
                          </div>
             </main>
             <script src="js/script.js"></script>
             <script src="js/js-header.js"></script>
         </form>
     </body>
-

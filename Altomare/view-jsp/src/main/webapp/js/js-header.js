@@ -18,4 +18,3 @@ burger.addEventListener('click', () => {
     }
 });
 
-
