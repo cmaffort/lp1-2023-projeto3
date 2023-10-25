@@ -1,6 +1,10 @@
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,91 +32,58 @@
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <img src="">
-                <p>Reserva</p>
+                <img src="imagens/funcionarios.png" style="height: 70px;">
+                <p>Funcionários</p>
             </li>
             <li>
-                <img src="">
-                <p>Alimentação</p> 
+                <img src="imagens/passageiros.webp" style="height: 70px;">
+                <p>Passageiros</p> 
             </li>
             <li>
-                <img src="">
-                <p>Atividades</p>             
+                <img src="imagens/pacotes.png" style="height: 70px;">
+                <p>Pacotes</p>             
             </li>
             <li>
-                <img src="">
+                <img src="imagens/iconeSeguranca.png" style="height: 70px;">
                 <p>Segurança</p>
             </li>
             <li>
-                <img src="">
-                <p>Saúde</p>
+                <img src="imagens/cronograma.png" style="height: 70px;">
+                <p>Conograma</p>
             </li>
-            <li>
-                <img src="">
-                <p>Despesas</p>
-            </li>
+   
         </ul>
     </header>
          <h1 id="titulo">Cadastrar Passageiro</h1>
-         <form name="CadastroPassageiro"  action="CadastroPassageiroDB" id="cadastroFunc" method="post">
+         <form name="CadastroPassageiro"  action="CadastroPassageiro" id="cadastroPas" method="post">
             <main>
-         <div id='setor-admissao'>
-          
-                       <p>
-                            PARTIDA / CHEGADA:
-                       </p>
-                       <p>
-                           <input type='text' id="parChe"  name='parChe' placeholder="PARTIDA / CHEGADA" required>
-                       </p>
-                            <p>
-                            DURAÇÃO:
-                            </p>
-                            <p>
-                                <input type='text' id="duracao"  name='duracao' placeholder="Duração da viagem" required>
-                            </p>
-                          <p>
-                            DATAS: 
-                          </p>
-                          <p>
-                            <input type="text" name="datas" id="datas" value="" placeholder="Datas da viagem" required> 
-                          </p>
-                           <p>
-                               <button id="bot">Enviar Arquivo</button>
-                               <input type="file"  id="arq" name="arquivo" accept="text/*">
-                           </p>
-                  
-                  </div>
-                <div id="traco"></div>
+        
+                
                     <div id='nome-telefone'>
                            <p>
                                Nome:
-                               <input type='text' id="nome"  name='nome' placeholder="digite o nome completo" onChange="handleFile(this.files)" required>
+                               <input type='text' id="nome"  name='nome' placeholder="Nome" onChange="handleFile(this.files)" required>
+                                Data de Nascimento: <input type='text' id="dataNascimento" name='dataNascimento' value='' placeholder="Data de nascimento" required>
                           </p>
+                          
                           <p>
-                            Data de Nascimento: <input type='text' id="dataNascimento" name='dataNascimento' value='' required>
-                          </p>
-                          <p>
-                            Sexo: <input type='text' name='sexo' id="sexo" value='' required>
+                            Sexo: <input type='text' name='sexo' id="sexo" value='' placeholder="Sexo" required>
+                             Estado Civil: <input type='text' name='civil' id="civil" value='' placeholder="Estado Civil" required>
                           </p>
                             <p>
-                             CPF: <input type='text' name='cpf' id="cpf" data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx" required>
+                             CPF: <input type='text' name='cpf' id="cpf" data-ls-module="charCounter" maxlength="14" placeholder="CPF" required>
+                             RG: <input type='text' name='rg' id="rg" data-ls-module="charCounter" placeholder=RG" maxlength="13" required>
                             </p>
-                            <p>
-                             RG: <input type='text' name='rg' id="rg" data-ls-module="charCounter" maxlength="13" required>
-                           </p>
-                    
-                            <p>
-                            Estado Civil: <input type='text' name='civil' id="civil" value='' required>
-                             </p>
                               <p>
-                            Email: <input type='email' name='email' id="email" value='' required>
-                          </p>
-                            <p>
-                            Telefone: <input type='tel' name='telefone' id="telefone" placeholder="ex: (xx) xxxxx-xxxx" required>
+                            Email: <input type='email' name='email' id="email" value='' placeholder="Email" required>
+                            Telefone: <input type='tel' name='telefone' id="telefone" placeholder="Telefone" required>
                           </p>
                           <p>
-                              Dados Médicos: <input type='text' name='medico' id="medico" placeholder="Dados médicos" required>
+                              Pacote: <input type='text' name='pacote' id="pacote" placeholder="Pacote" required>
                           </p>
+                          <p> 
+                              Dados medicos: <input type="file"  id="dadosmedico" name="daods" accept="text/*"><!-- comment --></p>
+                          
                           </div>
                          <div id="traco"></div>
                            <div id="foto-botao">
@@ -121,13 +92,17 @@
                                        <img id="imgPhoto" src="imagens/camera.png" alt="selecione uma imagem"/>
                                    </div>
                                </div>
-                               <p><input type='text' name='pacote' id="pacote" placeholder="pacote" value='' required></p>
+                              <p>
+                               <button id="bot">Preencher Campos</button>
+                               <input type="file"  id="arq" name="arquivo" accept="text/*">
+                           </p>
                                
                               <input type="file" id="foto" name="foto" accept="image/*" required>
-                              <p><input type='submit' value="ADICIONAR" id='enviar'></p>
+                               <p><input type='submit' value="CADASTRAR" id='enviar'></p>
                          </div>
             </main>
             <script src="js/script.js"></script>
             <script src="js/js-header.js"></script>
         </form>
     </body>
+

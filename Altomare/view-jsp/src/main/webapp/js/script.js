@@ -35,15 +35,8 @@ arq.addEventListener('change', function handleFile(files){
                     case 5: document.querySelector('#civil').value = lines[line];
                     case 6: document.querySelector('#email').value = lines[line];
                     case 7: document.querySelector('#telefone').value = lines[line];
-
-                    case 8: document.querySelector('#medico').value = lines[line];
-                    case 9: document.querySelector('#parChe').value = lines[line];
-                    case 10: document.querySelector('#duracao').value = lines[line];
-                    case 11: document.querySelector('#datas').value = lines[line];
-                    case 12: document.querySelector('#classe').value = lines[line];
-                    case 13: document.querySelector('#suite').value = lines[line];
-                    case 14: document.querySelector('#tamanho').value = lines[line];
-                    case 15: document.querySelector('#capacidade').value = lines[line];     
+                    case 8: document.querySelector('#pacote').value = lines[line];
+                       
 
                 }        
             }
