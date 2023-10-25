@@ -1,8 +1,4 @@
 
-#header-main h1 {
-   font-size: 6vw;
-   color: white;
-   font-family: Brush Script MT, Brush Script Std, cursive;
    font-style: italic;
    margin-top: .5vw;
    margin-bottom: 0;
@@ -113,11 +109,4 @@
         text-align: center;
         background-color: rgb(5, 50, 112);
         border: none;
-    }
-
-
-    #header-main ul > li p {
-        font-size: 2vw;
-    }
-}
 
