@@ -1,7 +1,7 @@
 package br.cefetmg.altomare.dao;
 
-import br.cefetmg.altomare.dto.FuncionarioDTO;
 import br.cefetmg.altomare.dao.exception.Exception;
+import br.cefetmg.altomare.dto.FuncionarioDTO;
 import java.util.ArrayList;
 
 
