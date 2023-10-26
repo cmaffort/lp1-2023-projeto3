@@ -1,6 +1,7 @@
 package br.cefetmg.altomare.dto;
 
 
+
 public class Passageiro extends Usuario{
 
     private Pacote pacote;
