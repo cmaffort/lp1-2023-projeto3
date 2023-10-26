@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package br.cefetmg.altomare.dto;
 
-/**
- *
- * @author Aluno
- */
+
 public class UsuarioDTO {
    private String cpf;
    private long rg;
@@ -22,7 +16,7 @@ public class UsuarioDTO {
    private String endereco;
    
    
-   public UsuarioDTO(String cpf, long rg, String nome, String dataNascimento,String email, String senha,long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
+   public UsuarioDTO(String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String estadoCivil){
       this.cpf = cpf;
       this.rg = rg;
       this.nome = nome;
@@ -32,10 +26,7 @@ public class UsuarioDTO {
       this.telefone = telefone;
       this.sexo = sexo;
       this.estadoCivil = estadoCivil;
-      this.passaporte = passaporte;
-      this.endereco = endereco;
-    
-    }
+   }
    
    public String getCpf() {
         return cpf;

@@ -1,15 +1,15 @@
 package br.cefetmg.altomare.model.service;
 
-import br.cefetmg.altomare.dto.FuncionaroDTO;
+import br.cefetmg.altomare.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.exception.NException;
-import br.cefetmg.altomare.dao.exception.Exception;
-impoert java.util.list;
+import br.cefetmg.altomare.dao.exception.ExceptionI;
+import java.util.List;
 
 public interface IManterFuncionario {
-    public long cadastrar(FuncionarioDTO funcioinario) throws Exception;
-    public boolean alterar(FuncionarioDTO funcioinario) throws Exception;
-    public boolean excluir(FuncionarioDTO funcioinario) throws Exception;
-    public List<FuncionarioDTO> PesquisarTodos() throws Exception;
-    public Funcionario pesquisarPorId(String id) throws Exception;
-    public long getFuncionarioLogin(String cpf, String senha) throws Exception;
+    public long cadastrar(FuncionarioDTO funcioinario) throws NException;
+    public boolean alterar(FuncionarioDTO funcioinario) throws NException;
+    public boolean excluir(FuncionarioDTO funcioinario) throws NException;
+    public List<FuncionarioDTO> PesquisarTodos() throws ExceptionI;
+    public FuncionarioDTO pesquisarPorId(String id) throws ExceptionI;
+    public long getFuncionarioLogin(String cpf, String senha) throws ExceptionI;
 }

@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package br.cefetmg.altomare.dto;
 
-/**
- *
- * @author Aluno
- */
+
 public class FuncionarioDTO extends UsuarioDTO{
 
     private double salario;
@@ -15,32 +9,16 @@ public class FuncionarioDTO extends UsuarioDTO{
     private String dataAdmissao;
     private double cargaHoraria; //em minutos
     private String turno;
-    private String id;//primeiros 3 e os dois ultimos numeros do cpf
     
-     public FuncionarioDTO(String turno, double salario, String setor, String dataAdmissao, double cargaHoraria,String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String estadoCivil, String passaporte, String endereco){
-        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, passaporte, endereco);
-        this.salario = salario;
-        this.cargaHoraria = cargaHoraria;
-        this.setor = setor;
-        this.dataAdmissao = dataAdmissao;
-        this.turno = turno;
-        id = montaId(cpf);
-        
-    }
-     
-    private String montaId(String cpf){
-	char[] numIndice = new char[5];
-	String str = "";
-	
-	cpf.getChars(0, 3, numIndice, 0);
-        cpf.getChars(9, 11, numIndice, 3);
     
-        for(int i=0; i<5; i++){
-           str += numIndice[i];
-         }
-        
-        return str;
-    }
+     public FuncionarioDTO(double salario, String setor, String dataAdmissao, double cargaHoraria, String turno, String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String estadoCivil){
+      super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo,  estadoCivil);
+      this.salario = salario;
+      this.setor = setor;
+      this.dataAdmissao = dataAdmissao;
+      this.cargaHoraria = cargaHoraria;
+      this.turno = turno;
+   }
 
     public String getTurno(){
         return turno;
@@ -50,13 +28,6 @@ public class FuncionarioDTO extends UsuarioDTO{
         this.turno = turno;
     }
     
-    public String getId(){
-        return id;
-    }
-    
-    public void setId(String id){
-        this.id = id;
-    }
     
     public double getSalario() {
         return salario;
