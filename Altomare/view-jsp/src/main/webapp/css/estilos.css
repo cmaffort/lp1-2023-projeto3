@@ -1,5 +1,7 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Dancing+Script&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Pathway+Gothic+One&display=swap');
 
 html, body{
     min-height: 100%;
@@ -31,7 +33,9 @@ html, body{
 input[type='file']{
      display: none;
 }
-
+#dadosmedico{
+    display: block;
+}
 
 #foto{
     border: 1px solid black;
@@ -63,6 +67,7 @@ main{
 #nome-telefone{
     flex: 1;
     padding: 5%;
+     
 }
 
 #setor-admissao{
@@ -70,6 +75,7 @@ main{
     padding-top: 5%;
     border-radius: 0% 5% 5% 0%;
     text-align: center;
+    
 }
 
 #foto-botao{
@@ -112,10 +118,11 @@ main{
     margin-top: 2%;
     font-size:600%;
     color: white;
-    font-family: Brush Script MT, Brush Script Std, cursive;
-    font-style: italic; 
+    font-family: 'Dancing Script', cursive; 
 }
-
+ul{
+     font-family: 'Dancing Script', cursive;
+}
 #leme{
     width: 10%;
     float: left;
@@ -141,14 +148,9 @@ main{
     text-align: center; 
 }
 
-    background-color: rgb(217, 217, 217);
-    border-radius: 5%;
-    margin: 5%;
-}
-
 #titulo{
     text-align: center;
-    font-family: Bebas Neue;
+    
 }
 
 #botao{
@@ -169,4 +171,24 @@ main{
     margin-top: 1%;
     padding-bottom: 2%;
     padding-top: 1%;
+}
+input { 
+ 
+    padding:10px; margin:10px ; 
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    
+}
+#cadastroFunc{
+    background-color: rgb(217, 217, 217);
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    margin: 5%;
+   
+
+}
+label{
+    display: inline;
+    width: 2px;
 }

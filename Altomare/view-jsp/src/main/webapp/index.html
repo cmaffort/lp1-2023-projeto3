@@ -17,8 +17,8 @@
         <div id="header-upper">
             <img src="imagens\leme.png" id="leme">
             <div>
-                <h1>AltoMare </h1>
-                <h2>EMBARCAÇÕES</h2>
+                <h1 id="altoMare">AltoMare </h1>
+                <h2 id="embarcacoes">EMBARCAÇÕES</h2>
             </div>
             <div>
                 <img src="imagens\user-icon.png" id="user-icon">
@@ -52,34 +52,44 @@
         </ul>
     </header>
          <h1 id="titulo">Cadastrar Passageiro</h1>
-         <form name="CadastroPassageiro"  action="CadastroPassageiro" id="cadastroPas" method="post">
+         <form name="CadastroPassageiro"  action="CadastroPassageiro" id="cadastroFunc" method="post">
             <main>
         
                 
                     <div id='nome-telefone'>
-                           <p>
-                               Nome:
+                        <p>
+                        <label for="nome">Nome:</label>
                                <input type='text' id="nome"  name='nome' placeholder="Nome" onChange="handleFile(this.files)" required>
-                                Data de Nascimento: <input type='text' id="dataNascimento" name='dataNascimento' value='' placeholder="Data de nascimento" required>
-                          </p>
+                        <label for="dataNascimento">Data de Nascimento:</label>
+                                <input type='text' id="dataNascimento" name='dataNascimento' value='' placeholder="Data de nascimento" required>
+                        </p>
+                        <p>
+                        <label for="sexo">Sexo:</label>  
+                           <input type='text' name='sexo' id="sexo" value='' placeholder="Sexo" required>
                           
-                          <p>
-                            Sexo: <input type='text' name='sexo' id="sexo" value='' placeholder="Sexo" required>
-                             Estado Civil: <input type='text' name='civil' id="civil" value='' placeholder="Estado Civil" required>
-                          </p>
-                            <p>
-                             CPF: <input type='text' name='cpf' id="cpf" data-ls-module="charCounter" maxlength="14" placeholder="CPF" required>
-                             RG: <input type='text' name='rg' id="rg" data-ls-module="charCounter" placeholder=RG" maxlength="13" required>
-                            </p>
+                        <label for="civil">Estado Civil:</label>
+                             <input type='text' name='civil' id="civil" value='' placeholder="Estado Civil" required>
+                        </p>
+                        <p> 
+                           <label for="cpf">CPF:</label>
+                              <input type='text' name='cpf' id="cpf" data-ls-module="charCounter" maxlength="14" placeholder="CPF" required>
+                              <label for="rg">RG</label>
+                             <input type='text' name='rg' id="rg" data-ls-module="charCounter" placeholder=RG" maxlength="13" required>
+                        </p>
                               <p>
-                            Email: <input type='email' name='email' id="email" value='' placeholder="Email" required>
-                            Telefone: <input type='tel' name='telefone' id="telefone" placeholder="Telefone" required>
+                                  <label for="email">Email:</label>
+                                    <input type='email' name='email' id="email" value='' placeholder="Email" required>
+                                  <label for="telefone">Telefone:</label>
+                          <input type='tel' name='telefone' id="telefone" placeholder="Telefone" required>
                           </p>
                           <p>
-                              Pacote: <input type='text' name='pacote' id="pacote" placeholder="Pacote" required>
+                              <label for="pacote">Pacote:</label>
+                               <input type='text' name='pacote' id="pacote" placeholder="Pacote" required>
                           </p>
                           <p> 
-                              Dados medicos: <input type="file"  id="dadosmedico" name="daods" accept="text/*"><!-- comment --></p>
+                              <label for="dadosmedico">Dados Medicos:</label>
+                               <input type="file"  id="dadosmedico" name="daods" accept="text/*">
+                          </p>
                           
                           </div>
                          <div id="traco"></div>
