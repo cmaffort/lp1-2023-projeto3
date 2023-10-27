@@ -101,7 +101,7 @@ main{
    color: white;
    padding-top: -70%;
    margin-top: -18%;
-   font-family: 'Nunito Sans';
+   font-family: 'Alegreya SC';
 }
 
 
@@ -114,7 +114,7 @@ main{
     font-family: 'Dancing Script', cursive; 
 }
 ul{
-     font-family: 'Dancing Script', cursive;
+    font-family: 'Alegreya SC';
 }
 #leme{
     width: 10%;
@@ -133,10 +133,10 @@ ul{
 
 #titulo{
     text-align: center; 
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Alegreya SC';
     color: rgb(5, 50, 112);
-     font-size: 2.7vw;
-     margin-bottom: 0%;
+    font-size: 2.7vw;
+    margin-bottom: 0%;
 }
 
 #botao{
@@ -154,15 +154,24 @@ input {
     border: 2px solid #eee;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     border-radius:10px;
+    font-family: 'Alegreya SC';
     
 }
 #cadastroFunc{
     background-color: rgb(217, 217, 217);
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
     border-radius:10px;
-    margin: 5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+p{
+    font-family: 'Alegreya SC';
 }
 label{
     display: inline;
     width: 2px;
+    font-size: -2%;
+    
 }
