@@ -5,7 +5,8 @@ import br.cefetmg.altomare.dto.Passageiro;
 
 
 public interface IPassageiroDAO {
-    void InserirDadosPassageiro(String nome, String dataNascimento, String sexo, String cpf, String rg,String  civil, String email, String telefone, Pacote pacote, Despesas Despesa);
+    void InserirDadosPassageiro(Pacote pacote, Despesas despesa, String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String civil, String dadosMedicos);
     Passageiro ExibirCliente(String cpf);
     Passageiro Procurar(String cpf);
+    public String gerarSenha();
 }

@@ -3,16 +3,20 @@ import java.sql.PreparedStatement;
 import factory.ConnectionFactory;
 import br.cefetmg.altomare.idao.IPassageiro;
 import br.cefetmg.altomare.dao.mysql.ConexaoDB;
+import java.security.SecureRandom;
 import java.sql.Connection;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 
 public class PassageiroDAO import IPassageiro{
-    protected static InserirDadosPassageiro(Pacote pacote, Despesas despesa, String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String civil){
-        Passageiro pass = new Passageiro(pacote, despesa, cpf,  rg, nome, dataNascimento, email, senha,  telefone, sexo, civil);
+    
+    protected static void InserirDadosPassageiro(Pacote pacote, Despesas despesa, String cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String civil, String dadosMedicos){
+        Passageiro pass = new Passageiro(pacote, despesa, cpf,  rg, nome, dataNascimento, email, senha,  telefone, sexo, civil, dadosMedicos);
         
          Connection conexao = ConexaoDB.inicializaDB();
         
-         String sql = "INSERT INTO Passageiro(Pacote, Despesa, CPF, RG, Nome, DataNasc, Email, Senha, Telefone, Sexo, Civil) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+         String sql = "INSERT INTO Passageiro(Pacote, Despesa, CPF, RG, Nome, DataNasc, Email, Senha, Telefone, Sexo, Civil, DadosMedicos) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
          
          try{
                 PreparedStatement in = conexao.prepareStatement(sql); 
@@ -27,6 +31,8 @@ public class PassageiroDAO import IPassageiro{
                 in.setString(9, pass.geTelefone);
                 in.setString(10, pass.getSexo);
                 in.setString(11, pass.getCivil);
+                in.setString(12, pass.getDadosMedicos);
+                
                 
                 in.execute();   
                 in.close();
@@ -36,4 +42,12 @@ public class PassageiroDAO import IPassageiro{
             }    
     }
     
+    public String gerarSenha(){
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        SecureRandom random = new SecureRandom();
+        return IntStream.range(0, 8)
+                .map(i -> random.nextInt(chars.length()))
+                .mapToObj(randomIndex -> String.valueOf(chars.charAt(randomIndex)))
+                .collect(Collectors.joining());
+    }
 }

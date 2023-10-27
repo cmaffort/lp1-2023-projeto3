@@ -1,3 +1,5 @@
+package br.cefetmg.altomare.idao;
+
 import br.cefetmg.altomare.dto.ProdutoDTO;
 import java.util.List;
 
