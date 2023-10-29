@@ -1,5 +1,16 @@
+html, body {
+    min-height: 100%;
+    margin: 0;
+}
 
-
+#header-main h1 {
+    font-size: 6vw;
+    color: white;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-style: italic;
+    margin-top: .5vw;
+    margin-bottom: 0;
+}
 
 #header-main h2 {
     font-size: 2.3vw;
@@ -29,7 +40,7 @@
 
 #header-main {
     background-color: rgb(5, 50, 112);
-    text-align: center; 
+    text-align: center;
     padding-bottom: .3vw;
     position: relative;
     z-index: 3;
@@ -67,6 +78,9 @@
 #burger {
     display: none;
 }
+
+        
+    
 
 @media screen and (orientation: portrait)  {
 
@@ -107,4 +121,10 @@
         background-color: rgb(5, 50, 112);
         border: none;
     }
+
+    #header-main ul > li p {
+        font-size: 2vw;
+    }
+
+   
 }

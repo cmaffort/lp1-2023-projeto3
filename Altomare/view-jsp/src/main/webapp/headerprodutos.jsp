@@ -13,7 +13,7 @@
             <img src="imagens\leme.png" id="leme">
             <div>
                 <h1>AltoMare </h1>
-                <h2>EMBARCAÇÕES</h2>
+                <h2>EMBARCAÃ‡Ã•ES</h2>
             </div>
             <div>
                 <img src="imgs\user-icon.png" id="user-icon">
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div id="linha"></div>
-        <div id="burger"><p>=</p></div>
+        <div id="burger"><p>â˜°</p></div>
         <ul>
             <li>
                 <img src="">

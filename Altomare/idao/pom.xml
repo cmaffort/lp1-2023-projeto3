@@ -11,7 +11,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>Altomare</artifactId>
+            <artifactId>dto</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
