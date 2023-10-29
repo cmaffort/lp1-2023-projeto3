@@ -2,7 +2,8 @@ package br.cefetmg.altomare.dto;
 import java.util.*;
 
 public class ContaUsuarioDTO {
-    ArrayList<Despesa> historico;
+    private long idConta;
+    ArrayList<DespesaDTO> historico;
     private boolean estaAberta;
     private double total;
     
@@ -12,27 +13,35 @@ public class ContaUsuarioDTO {
         total = 0;
     }
     
-    double getTotal() {
+    public double getTotal() {
         return total;
     }
     
-    void setTotal(double valor) {
+    public void setTotal(double valor) {
         total = valor;
     }
     
-    boolean getStatusConta() {
+    public boolean getStatusConta() {
         return this.estaAberta;
     }
    
-    void setStatusConta(boolean novoStatus) {
+    public void setStatusConta(boolean novoStatus) {
         this.estaAberta = novoStatus;
     }
     
-    ArrayList<Despesa> getHistorico() {
+    public ArrayList<DespesaDTO> getHistorico() {
         return historico;
     }
     
-    void setHistorico(ArrayList<Despesa> novoHistorico) {
+    public void setHistorico(ArrayList<DespesaDTO> novoHistorico) {
         historico = novoHistorico;
+    }
+    
+    public long getIdConta() {
+        return idConta;
+    }
+    
+    public void setIdConta(long novoId) {
+        idConta = novoId;
     }
 }

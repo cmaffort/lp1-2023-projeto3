@@ -7,7 +7,17 @@
         <link rel="stylesheet" href="css/estilos-despesas.css">
     </head>
     <body>
-        <%@ include file="header.jsp" %>  
+        <%@ include file="header.jsp" %>
+        
+        <%
+            import br.cefetmg.altomare.service.GetDespesasToView;
+
+            GetDespesasToView getDespesas = new GetDespesasToView(/*Passageiro passageiro*/);
+        %>
+        
+        <div id="get-dados-conta">
+            <%= getDespesas.getDespesas()%>
+        </div>
        
         <div id="container">
             <div id="filtros">

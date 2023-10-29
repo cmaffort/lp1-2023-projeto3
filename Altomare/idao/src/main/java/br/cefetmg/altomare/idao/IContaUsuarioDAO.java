@@ -1,15 +1,16 @@
 package br.cefetmg.altomare.idao;
 
 import java.util.*;
-import br.cefetmg.altomare.dto.ContaUsuario;
+import br.cefetmg.altomare.dto.ContaUsuarioDTO;
+import br.cefetmg.altomare.dto.DespesaDTO;
 
-public class IContaUsuarioDAO {
+public interface IContaUsuarioDAO {
     
-    boolean inserir(ContaUsuario contaUsuario);
+    boolean inserir(ContaUsuarioDTO contaUsuario);
 
-    boolean atualizar(ContaUsuario contaUsuario);
+    boolean atualizar(ContaUsuarioDTO contaUsuario);
 
-    boolean delete(ContaUsuario contaUsuario);
+    boolean delete(ContaUsuarioDTO contaUsuario);
 
-    ArrayList<Despesa> getDespesas(ContaUsuario contaUsuario);
+    ArrayList<DespesaDTO> getDespesas(ContaUsuarioDTO contaUsuario);
 }

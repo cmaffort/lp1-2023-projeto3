@@ -1,14 +1,15 @@
 package br.cefetmg.altomare.dto;
 import java.util.*;
 
-public class Despesa {
+public class DespesaDTO {
+    private long idDespesa;
     private double valor;
     private boolean foiRegistrada;
     private String tipo; //tratar do tipo através de enum no service
     private String descricao;
     private Date dataOcorrencia;
     
-    Despesa() {
+    DespesaDTO() {
         valor = 0;
         foiRegistrada = false;
         tipo = "";
@@ -16,43 +17,51 @@ public class Despesa {
         dataOcorrencia = new Date();
     }
     
-    double getValor() {
+    public double getValor() {
         return valor;
     }
     
-    void setValor(double valorPassado) {
+    public void setValor(double valorPassado) {
         valor = valorPassado;
     }
     
-    boolean getStatus() {
+    public boolean getStatus() {
         return foiRegistrada;
     }
     
-    void setStatus(boolean novoStatus) {
+    public void setStatus(boolean novoStatus) {
         foiRegistrada = novoStatus;
     }
     
-    String getTipo() {
+    public String getTipo() {
         return tipo;
     }
     
-    void setTipo(String tipoPassado) {
+    public void setTipo(String tipoPassado) {
         tipo = tipoPassado;
     }
     
-    String getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
     
-    void setDescricao(String desc) {
+    public void setDescricao(String desc) {
         descricao = desc;
     }
     
-    Date getDataOcorrencia() {
+    public Date getDataOcorrencia() {
         return dataOcorrencia;
     }
     
-    void setDataOcorrencia(Date data) {
+    public void setDataOcorrencia(Date data) {
         dataOcorrencia = data;
+    }
+    
+    public long getIdDespesa() {
+        return idDespesa;
+    }
+    
+    public void setIdDespesa(long novoId) {
+        idDespesa = novoId;
     }
 }

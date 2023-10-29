@@ -1,14 +1,12 @@
 package br.cefetmg.altomare.idao;
 
-import br.cefetmg.altomare.dto.Despesa;
+import br.cefetmg.altomare.dto.DespesaDTO;
 
 public interface IDespesaDAO {
     
-    boolean inserir(Despesa despesa);
+    boolean inserir(DespesaDTO despesa);
 
-    boolean atualizar(Despesa cliente);
+    boolean atualizar(DespesaDTO cliente);
 
-    boolean delete(Despesa despesa);
-
-    String getInfo(Despesa despesa);
+    boolean deletar(DespesaDTO despesa);
 }
