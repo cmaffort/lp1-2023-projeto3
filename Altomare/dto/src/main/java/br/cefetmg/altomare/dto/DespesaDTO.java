@@ -3,18 +3,27 @@ import java.util.*;
 
 public class DespesaDTO {
     private long idDespesa;
-    private double valor;
-    private boolean foiRegistrada;
+    private double valor = 100.0;
+    private boolean foiRegistrada = true;
     private String tipo; //tratar do tipo através de enum no service
     private String descricao;
     private Date dataOcorrencia;
     
-    DespesaDTO() {
+    public DespesaDTO() {
         valor = 0;
         foiRegistrada = false;
         tipo = "";
         descricao = "";
         dataOcorrencia = new Date();
+    }
+    
+    public DespesaDTO(long id, double valor, boolean foiRegistrada, String tipo, String descricao, Date dataOcorrencia) {
+        this.idDespesa = id;
+        this.valor = valor;
+        this.foiRegistrada = foiRegistrada;
+        this.tipo = tipo;
+        this.descricao = descricao;
+        this.dataOcorrencia = dataOcorrencia;
     }
     
     public double getValor() {

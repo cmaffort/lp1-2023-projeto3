@@ -8,18 +8,30 @@
     </head>
     <body>
         <%@ include file="header.jsp" %>
-        
-        <%
-            import br.cefetmg.altomare.service.GetDespesasToView;
+        <%@ page import="br.cefetmg.altomare.dto.*" %>
+        <%@ page import="java.util.*" %>
 
-            GetDespesasToView getDespesas = new GetDespesasToView(/*Passageiro passageiro*/);
+        <%
+            /*import br.cefetmg.altomare.service.GetDespesasToView;
+
+            GetDespesasToView getDespesas = new GetDespesasToView(Passageiro passageiro);*/
+
+            DespesaDTO arr[] = {new DespesaDTO(1, 100.0, true, "produto", "Produto 1", new Date()),
+                                new DespesaDTO(2, 200.0, true, "produto", "Produto 2", new Date()), 
+                                new DespesaDTO(3, 300.0, true, "produto", "Produto 3", new Date()), 
+                                new DespesaDTO(4, 400.0, true, "produto", "Produto 4", new Date()), 
+                                new DespesaDTO(5, 500.0, true, "produto", "Produto 5", new Date())};
         %>
-        
-        <div id="get-dados-conta">
-            <%= getDespesas.getDespesas()%>
-        </div>
        
         <div id="container">
+            <div id="get-dados-conta">
+                <%  /*getDespesas.getDespesas()*/
+
+                    for (DespesaDTO despesa: arr) { %>
+                    
+                    <p><% out.println(despesa.getStatus() + " " + despesa.getValor()); %></p>
+                <%}%>
+            </div>
             <div id="filtros">
                 <nav>
                   Filtros  
