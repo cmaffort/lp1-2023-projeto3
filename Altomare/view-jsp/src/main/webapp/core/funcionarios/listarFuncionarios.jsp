@@ -36,7 +36,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 </div> 
             </div>
         </div>
-            <script src="js/script.js"></script>
+            <script src="js/scriptFuncionario.js"></script>
          <script src="js/jsheader.js"></script>
         
     </body>
