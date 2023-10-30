@@ -37,7 +37,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             </div>
         </div>
             <script src="js/script.js"></script>
-         <script src="js/js-header.js"></script>
+         <script src="js/jsheader.js"></script>
         
     </body>
 </html>
