@@ -24,7 +24,7 @@ public class CadastrarAtividadeServlet extends HttpServlet {
         
         // salvar a instancia criada no banco de dados
         
-        //response.sendRedirect("atividade-confirmacao.jsp"); //criar a pagina de redirecionamento
+        // response.sendRedirect("atividade-confirmacao.jsp"); //criar a pagina de redirecionamento
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

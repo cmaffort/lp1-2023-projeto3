@@ -1,5 +1,4 @@
 package br.cefetmg.altomare.dto;
-//import br.cefetmg.altomare.dto.Funcionario;
 
 public class AtividadeDTO {
     private String nome;
@@ -9,7 +8,7 @@ public class AtividadeDTO {
     private String local;
     private int limiteOcupacao;
     private Funcionario responsavel;
-    private String descricao;
+    private String descricao;   
 
     public AtividadeDTO(String nome, String data, String horaInicio, String horaTermino, String local, int limiteOcupacao, Funcionario responsavel, String descricao) {
         this.nome = nome;
