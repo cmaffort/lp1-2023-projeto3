@@ -7,10 +7,17 @@ public class ContaUsuarioDTO {
     private boolean estaAberta;
     private double total;
     
-    ContaUsuarioDTO() {
+    /*ContaUsuarioDTO() {
         historico = new ArrayList<>();
         this.estaAberta = false; //fechada na criação da conta, aberta no momento do embarque
         total = 0;
+    }*/
+    
+    ContaUsuarioDTO(long id, ArrayList<DespesaDTO> historico, double total) {
+        this.idConta = id;
+        this.historico = historico;
+        this.estaAberta = true;
+        this.total = total;
     }
     
     public double getTotal() {

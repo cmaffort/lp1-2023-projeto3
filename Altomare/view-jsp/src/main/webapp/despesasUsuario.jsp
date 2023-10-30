@@ -9,50 +9,63 @@
     <body>
         <%@ include file="header.jsp" %>
         <%@ page import="br.cefetmg.altomare.dto.*" %>
+        <%@ page import="br.cefetmg.altomare.service.*" %>
         <%@ page import="java.util.*" %>
 
         <%
             /*import br.cefetmg.altomare.service.GetDespesasToView;
 
             GetDespesasToView getDespesas = new GetDespesasToView(Passageiro passageiro);*/
-
-            DespesaDTO arr[] = {new DespesaDTO(1, 100.0, true, "produto", "Produto 1", new Date(2023, 5, 10, 10, 52, 40)),
-                                new DespesaDTO(2, 200.0, true, "atração", "Produto 2", new Date()), 
-                                new DespesaDTO(3, 300.0, true, "produto", "Produto 3", new Date()), 
-                                new DespesaDTO(4, 400.0, true, "produto", "Produto 4", new Date()), 
-                                new DespesaDTO(5, 500.0, true, "atração", "Produto 5", new Date())};
+            
+            ArrayList<DespesaDTO> arr = new ArrayList<>();
+            arr.add(new DespesaDTO(1, 100.0, true, "produto", "Produto 1", new Date(2023, 5, 18, 10, 52, 40)));
+            arr.add(new DespesaDTO(2, 200.0, true, "atração", "Produto 2", new Date(2022, 5, 10, 10, 52, 40)));
+            arr.add(new DespesaDTO(3, 300.0, true, "produto", "Produto 3", new Date(2023, 6, 11, 10, 52, 40)));
+            arr.add(new DespesaDTO(4, 400.0, true, "produto", "Produto 4", new Date(2023, 6, 15, 10, 52, 40)));
+            arr.add(new DespesaDTO(5, 500.0, true, "atração", "Produto 5", new Date(2023, 7, 22, 10, 52, 40)));
+            
+            //GetDespesasToView despesasOrdenadas = new GetDespesasToView(arr);
+            //despesasOrdenadas.ordenaDespesasPorData();
+            
+            double total = 0;
         %>
        
         <div id="container">
             <div id="get-dados-conta">
                 <%  /*getDespesas.getDespesas()*/
 
-                    for (DespesaDTO despesa: arr) { %>
+                    for (DespesaDTO despesa: /*despesasOrdenadas*/ arr) { %>
                     
-                    <p class="conteudo-passado"><% out.println(despesa.getValor() + "*" + despesa.getTipo() + "*" + despesa.getDescricao() + "*" + despesa.getDataOcorrencia()); %></p>
+                    <p class="conteudo-passado"><% out.println(despesa.getValor() + "*" + despesa.getTipo() + "*" + despesa.getDescricao() + "*" + despesa.getDataOcorrencia()); 
+                    %></p>
+                    
+                    <% total+= despesa.getValor(); %>
                 <%}%>
             </div>
             <div id="filtros">
                 <nav>
                   Filtros  
                 </nav>
-                <article id="article-filtros">
-                    <section>
-                        <h4>Período de dias:</h4>
-                        <div><input type="number"> <span>à</span> <input type="number"></div>
-                    </section>
-                    <section>
-                        <h4>Tipo de despesas:</h4>
-                        <div id="tipo-despesas">
-                            <div>
-                                <input type="checkbox" value="alimento"> Despesa de Alimentação  
-                            </div>
-                            <div>
-                                <input type="checkbox" value="atividade"> Despesa de Atração
-                            </div>
+                    <form action="servletDespesas" method="GET" id="article-filtros">
+                        <div id="filtros-escolha">
+                            <section>
+                                <h4>Período de dias:</h4>
+                                <div><input type="number" name="dia1"> <span>à</span> <input type="number" name="dia2"></div>
+                            </section>
+                            <section>
+                                <h4>Tipo de despesas:</h4>
+                                <div id="tipo-despesas">
+                                    <div>
+                                        <input type="checkbox" value="alimento" name="tipo"> Despesa de Alimentação  
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" value="atividade" name="tipo"> Despesa de Atração
+                                    </div>
+                                </div>
+                            </section>
                         </div>
-                    </section>
-                </article>
+                        <input type="submit" value="Filtrar" id="filtrar">
+                    </form>
             </div>
             <div id="disposicao-despesas">
                 <nav>
@@ -65,8 +78,9 @@
                 </article>
             </div>
         </div>
+            
         <footer>
-            <p>Despesas Totais: </p>
+            <p>Despesas Totais: <%= total %></p>
         </footer>
         
         <script src="js/js-despesas.js"></script>

@@ -12,8 +12,9 @@
         <form id="form-passageiro">
             <div>
                 <input type="text" placeholder="Pesquise um passageiro..." id="form-passageiro-digitar">
-                <input type="submit" value="🔎" id="form-passageiro-enviar">
+                <p id="form-passageiro-enviar">🔎</p>
             </div>
+            <input type="submit" id="envia-verdadeiro">
         </form>
         
         <div id="aux">

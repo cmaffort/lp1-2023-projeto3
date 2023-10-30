@@ -9,7 +9,7 @@
     box-shadow: 0 0.3vh .6vh 0 rgb(5, 50, 112);
 }
 
-#form-passageiro input {
+#form-passageiro input, p {
     border-radius: 1vh;
 }
 
@@ -25,6 +25,7 @@
     height: 4.8vh;
     border: none;
     background-color: rgb(217, 217, 217);
+    text-align: center;
 }
 
 #form-passageiro div {
@@ -32,6 +33,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    height: 5vh;
 }
 
 #form-passageiro-digitar::placeholder {
@@ -40,23 +42,30 @@
 }
 
 #form-despesa {
-    height: 47.5vh;
+    height: 53vh;
     width: 45vh;
     border: .3vh solid rgb(5, 50, 112);
     display: none;
     transition: all ease 1s;
+    margin-top: 5vh;
+    background-color: rgb(217, 217, 217);
+    box-shadow: .1vh .1vh black;
 }
 
 #form-despesa h2 {
     font-size: 2vh;
 }
 
-#form-despesa input {
-    border: .3vh solid rgb(5, 50, 112);
-    box-shadow: .09vh .09vh black;
+#form-despesa h1 {
+    font-size: 3.5vh;
 }
 
-#form-despesa-not-desc {
+#form-despesa input {
+    border: .3vh solid rgb(5, 50, 112);
+    box-shadow: .1vh .1vh black;
+}
+
+.form-despesa-not-desc {
     height: 2vh;
     width: 20vh;
 }
@@ -100,5 +109,9 @@
 }
 
 .form-despesa-cetralizar input {
-    margin-top: 1vh;
+    margin-top: 1.4vh;
+}
+
+#envia-verdadeiro {
+    display: none;
 }
