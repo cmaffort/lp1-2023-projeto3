@@ -15,7 +15,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="css/estilos-header.css">
-        <link rel="stylesheet"  href="css/estilos.css">
+        <link rel="stylesheet"  href="css/estilosFuncionario.css">
         <link rel="icon" href="imagens/leme.png" type="image/webp">
         <%@include file="headerGerente.jsp" %>
         <title>Escalar Funcionários</title>
@@ -36,7 +36,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 </div> 
             </div>
         </div>
-            
+            <script src="js/script.js"></script>
+         <script src="js/js-header.js"></script>
         
     </body>
 </html>
