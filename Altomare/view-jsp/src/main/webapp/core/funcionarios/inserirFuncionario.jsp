@@ -11,7 +11,7 @@
         <title>Cadastro Funcionário</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
-        <link rel="stylesheet"  href="css/estilos.css">
+        <link rel="stylesheet"  href="css/estilosFuncionario.css">
         <link rel="stylesheet" href="css/estilos-header.css">
         <link rel="icon" href="imagens/leme.png" type="image/webp">
         <%@include file="headerGerente.jsp" %>
@@ -120,6 +120,6 @@
           <footer>
                <button id="botaoVoltar">VOLTAR</button>
            </footer>
-         <script src="js/script.js"></script>
-         <script src="js/js-header.js"></script>
+         <script src="js/scriptFuncionario.js"></script>
+         <script src="js/jsheader.js"></script>
     </body>
