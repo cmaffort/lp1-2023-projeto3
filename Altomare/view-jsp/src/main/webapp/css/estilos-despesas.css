@@ -85,9 +85,11 @@ nav {
 
 .despesa {
     background-color: white;
-    height: 10vh;
-    width: 18vh;
+    height: 12vh;
+    width: 24vh;
     position: absolute;
+    padding: 2vh;
+    border: .4vh solid rgb(5, 50, 112);
 }
 
 .circulo {
@@ -132,6 +134,29 @@ nav {
 
 .direita {
     right: 10%;
+}
+
+.flex-conteudo-despesas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.flex-despesas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 2.5vh;
+}
+
+#get-dados-conta {
+    display: none;
 }
 
 @media screen and (orientation: portrait)  {

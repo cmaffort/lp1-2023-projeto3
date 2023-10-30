@@ -16,11 +16,11 @@
 
             GetDespesasToView getDespesas = new GetDespesasToView(Passageiro passageiro);*/
 
-            DespesaDTO arr[] = {new DespesaDTO(1, 100.0, true, "produto", "Produto 1", new Date()),
-                                new DespesaDTO(2, 200.0, true, "produto", "Produto 2", new Date()), 
+            DespesaDTO arr[] = {new DespesaDTO(1, 100.0, true, "produto", "Produto 1", new Date(2023, 5, 10, 10, 52, 40)),
+                                new DespesaDTO(2, 200.0, true, "atração", "Produto 2", new Date()), 
                                 new DespesaDTO(3, 300.0, true, "produto", "Produto 3", new Date()), 
                                 new DespesaDTO(4, 400.0, true, "produto", "Produto 4", new Date()), 
-                                new DespesaDTO(5, 500.0, true, "produto", "Produto 5", new Date())};
+                                new DespesaDTO(5, 500.0, true, "atração", "Produto 5", new Date())};
         %>
        
         <div id="container">
@@ -29,7 +29,7 @@
 
                     for (DespesaDTO despesa: arr) { %>
                     
-                    <p><% out.println(despesa.getStatus() + " " + despesa.getValor()); %></p>
+                    <p class="conteudo-passado"><% out.println(despesa.getValor() + "*" + despesa.getTipo() + "*" + despesa.getDescricao() + "*" + despesa.getDataOcorrencia()); %></p>
                 <%}%>
             </div>
             <div id="filtros">

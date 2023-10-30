@@ -11,14 +11,14 @@ function adicionaCirculo() {
     novoCirculo.classList.add("circulo");
     
     novoCirculo.style.top = posicaoCirculo + "%";
-    posicaoCirculo+= 20;
+    posicaoCirculo+= 30;
     
     contDespesas.appendChild(novoCirculo);
 }
 
 function aumentaBarra() {
     barra.style.height = tamanhoBarra + "%";
-    tamanhoBarra+= 20;
+    tamanhoBarra+= 30;
 }
 
 function criaBarraHorizontal() {
@@ -37,9 +37,34 @@ function criaBarraHorizontal() {
     contDespesas.appendChild(novaBarra);
 }
 
-function adicionaDespesa() {
+function adicionaDespesa(valor, tipo, descricao, data) {
     let novaDespesa = document.createElement("div"); 
     novaDespesa.classList.add("despesa");
+    
+    let novoTitulo = document.createElement("div");
+    novoTitulo.textContent = "Despesa de " + tipo;
+    
+    let novoConteudo = document.createElement("div");
+    
+    let novoValor = document.createElement("div");
+    novoValor.textContent = "Valor: R$" + valor;
+    
+    let novaData = document.createElement("div");
+    novaData.textContent = "Data ocorrência: " + data;
+    
+    let novaDescricao = document.createElement("div");
+    novaDescricao.textContent = "Descrição: " + descricao;
+    
+    novoConteudo.appendChild(novoValor);
+    novoConteudo.appendChild(novaData);
+    novoConteudo.appendChild(novaDescricao);
+    
+    novaDespesa.appendChild(novoTitulo);
+    novaDespesa.appendChild(novoConteudo);
+    
+    novoConteudo.classList.add("flex-conteudo-despesas");
+    novoTitulo.classList.add("flex-titulo");
+    novaDespesa.classList.add("flex-despesas");
     
     criaBarraHorizontal();
     
@@ -53,7 +78,7 @@ function adicionaDespesa() {
     }
     
     novaDespesa.style.top = posicaoDespesas + "%";
-    posicaoDespesas+= 20;
+    posicaoDespesas+= 30;
     
     adicionaCirculo();
     aumentaBarra();
@@ -61,14 +86,16 @@ function adicionaDespesa() {
     contDespesas.appendChild(novaDespesa);
 }
 
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
-adicionaDespesa();
+let conteudosObtidos = document.querySelectorAll(".conteudo-passado");
+
+for (let i = 0; i < conteudosObtidos.length; i++) {
+    let conteudoAtual = conteudosObtidos[i].innerHTML;
+    let conteudoDivido = conteudoAtual.split('*');
+    
+    let valor = conteudoDivido[0];
+    let tipo = conteudoDivido[1];
+    let descricao = conteudoDivido[2];
+    let data = conteudoDivido[3];
+    
+    adicionaDespesa(valor, tipo, descricao, data);
+}

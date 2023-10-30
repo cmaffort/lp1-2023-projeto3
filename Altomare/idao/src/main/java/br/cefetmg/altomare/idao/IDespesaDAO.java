@@ -6,7 +6,7 @@ public interface IDespesaDAO {
     
     boolean inserir(DespesaDTO despesa);
 
-    boolean atualizar(DespesaDTO cliente);
+    boolean atualizar(DespesaDTO despesa);
 
     boolean deletar(DespesaDTO despesa);
 }
