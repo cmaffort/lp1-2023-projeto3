@@ -8,7 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import br.cefetmg.altomare.dao.connection.ConexaoDB;
 import java.sql.Connection;
 import br.cefetmg.altomare.model.dto.Passageiro;
-import br.dao.InterfacePassageiro;
+import br.cefetmg.altomare.dao.IPassageiroDAO;
 import br.cefetmg.altomare.model.dao.PassageiroDAO;
 import java.sql.SQLException;
 import jakarta.servlet.RequestDispatcher;
