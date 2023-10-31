@@ -9,7 +9,7 @@ import br.cefetmg.altomare.dao.connection.ConexaoDB;
 import java.sql.Connection;
 import br.cefetmg.altomare.model.dto.Passageiro;
 import br.cefetmg.altomare.dao.IPassageiroDAO;
-import br.cefetmg.altomare.model.dao.PassageiroDAO;
+import br.cefetmg.altomare.dao.model.PassageiroDAO;
 import java.sql.SQLException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
