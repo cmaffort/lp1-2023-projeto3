@@ -2,7 +2,7 @@
 package br.cefetmg.inf.sisloc.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
-import br.cefetmg.altomare.model.dto.Funcionario;
+import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.service.IManterFuncionario;
 import br.cefetmg.altomare.model.service.ManterFuncionario;
 
@@ -15,7 +15,7 @@ public class GravarInsercaoFuncionario {
             String email = request.getParameter("emailFuncionario");
             String senha = request.getParameter("senhaFuncionario");
             
-            Funcionario funcionario = new Funcionario();
+            FuncionarioDTO funcionario = new FuncionarioDTO();
             funcionario.setNome(nome);
             funcionario.setEmail(email);
             funcionario.setSenha(senha);

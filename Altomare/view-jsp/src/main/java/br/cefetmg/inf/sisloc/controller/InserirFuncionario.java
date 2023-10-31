@@ -1,3 +1,5 @@
+package br.cefetmg.inf.sisloc.controller;
+
 
 
 import java.io.IOException;
