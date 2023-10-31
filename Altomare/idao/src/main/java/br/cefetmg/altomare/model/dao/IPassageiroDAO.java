@@ -1,4 +1,4 @@
-package cefetmg.br.dao;
+package br.cefetmg.altomare.model.dao;
 import br.cefetmg.altomare.model.dto.Passageiro;
 import java.sql.SQLException;
 
