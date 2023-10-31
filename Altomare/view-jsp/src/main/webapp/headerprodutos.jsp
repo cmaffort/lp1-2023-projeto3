@@ -25,15 +25,21 @@
         <ul>
             <li>
                 <img src="">
-                <input type="button" class="button" name="ordem" value="Cadastro" onclick="abreModal('cadasProduto')">
+                <input type="button" class="button" name="ordem" value="Cadastro" onclick="window.location=('cadastrar.jsp')">
             </li>
             <li>
                 <img src="">
-                <input type="button" class="button" name="ordem" value="Edição" onclick="abreModal('alterProduto')"> 
+                <input type="button" class="button" name="ordem" value="Edição" onclick="window.location=('alterar.jsp')"> 
+            </li>
+            
+            <li>
+                <img src="">
+                <input type="button" class="button" name="ordem" value="Listagem" onclick="window.location=('listar.jsp')">
+
             </li>
             <li>
                 <img src="">
-                <input type="button" class="button" name="ordem" value="Listagem" onclick="abreModal('listProduto')">
+                <input type="button" class="button" name="ordem" value="Exclusão" onclick="window.location=('excluir.jsp')">
 
             </li>
 
