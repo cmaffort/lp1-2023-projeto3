@@ -4,10 +4,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Despesas</title>
-        <link rel="stylesheet" href="css/estilos-despesas.css">
+        <link rel="stylesheet" href="../../css/estilos-despesas.css">
     </head>
     <body>
-        <%@ include file="header.jsp" %>
+        <%@ include file="../../headerPassageiro.jsp" %>
         <%@ page import="br.cefetmg.altomare.model.dto.*" %>
         <%@ page import="br.cefetmg.altomare.model.service.*" %>
         <%@ page import="java.util.*" %>
@@ -83,7 +83,7 @@
             <p>Despesas Totais: <%= total %></p>
         </footer>
         
-        <script src="js/js-despesas.js"></script>
+        <script src="../../js/js-despesas.js"></script>
     </body>
    
 </html>

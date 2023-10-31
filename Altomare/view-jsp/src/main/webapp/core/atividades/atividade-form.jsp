@@ -4,11 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <title>Cadastro de Atividade</title>
+                <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
+
     </head>
     <body>
-        <%@ include file="headerGerente.jsp" %>
+        <%@ include file="../../headerGerente.jsp" %>
         <h1>Cadastro de Nova Atividade</h1>
-        <form action="CadastrarAtividadeServlet" method="post">
+        <form action="../../CadastrarAtividadeServlet" method="post">
             <label>Data:</label>
             <input type="text" name="data" required><br>
 

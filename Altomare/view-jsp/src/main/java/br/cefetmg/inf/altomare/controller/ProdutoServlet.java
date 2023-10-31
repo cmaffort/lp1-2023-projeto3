@@ -1,4 +1,4 @@
-package controller;
+package br.cefetmg.inf.altomare.controller;
 
 
 import java.io.IOException;
@@ -14,21 +14,37 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ProdutoServlet extends HttpServlet {
     private String jsp = "";
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         
         request.setCharacterEncoding("UTF-8");
         String acao = request.getParameter("acao");
         
-        if(acao.equals("Cadastrar"))
+        if(acao.equals("Cadastrar")) {
             jsp = CadastrarProduto.execute(request);
-        else if (acao.equals("Listar"))
+            RequestDispatcher rd = request.getRequestDispatcher(jsp);
+            rd.forward(request, response);
+        }
+        else if (acao.equals("Listar")) {
             jsp = ListarProduto.execute(request);
-        else if (acao.equals("Alterar"))
+            RequestDispatcher rd = request.getRequestDispatcher(jsp);
+            rd.forward(request, response);
+
+        }
+        else if (acao.equals("Alterar")) {
             jsp = AlterarProduto.execute(request);
-        else if (acao.equals("Excluir"))
+            RequestDispatcher rd = request.getRequestDispatcher(jsp);
+            rd.forward(request, response);
+
+        }
+        else if (acao.equals("Excluir")) {
             jsp = ExcluirProduto.execute(request);
+            RequestDispatcher rd = request.getRequestDispatcher(jsp);
+            rd.forward(request, response);
+
+        }
         
-        RequestDispatcher rd = request.getRequestDispatcher(jsp);
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
     }
 }

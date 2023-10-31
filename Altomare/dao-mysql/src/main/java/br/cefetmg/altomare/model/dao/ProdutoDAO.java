@@ -1,9 +1,10 @@
-package br.cefetmg.altomare.dao.mysql;
+package br.cefetmg.altomare.model.dao;
 
-import br.cefetmg.altomare.dto.ProdutoDTO;
-import br.cefetmg.altomare.idao.IProdutoDAO;
+import br.cefetmg.altomare.model.dto.ProdutoDTO;
+import br.cefetmg.altomare.model.dao.IProdutoDAO;
 import java.sql.Connection;
-import br.cefetmg.altomare.dao.mysql.ConexaoDB;
+import br.cefetmg.altomare.dao.connection.ConexaoDB;
+import br.cefetmg.altomare.model.dto.ProdutoDTO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

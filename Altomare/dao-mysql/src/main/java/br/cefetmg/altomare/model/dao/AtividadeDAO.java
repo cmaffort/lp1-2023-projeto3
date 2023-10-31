@@ -1,6 +1,6 @@
-package br.cefetmg.altomare.dao.mysql;
+package br.cefetmg.altomare.model.dao;
 
-import br.cefetmg.altomare.dto.AtividadeDTO;
+import br.cefetmg.altomare.model.dto.AtividadeDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,7 +27,7 @@ public class AtividadeDAO {
             preparedStatement.setString(4, atividade.getHoraTermino());
             preparedStatement.setString(5, atividade.getLocal());
             preparedStatement.setInt(6, atividade.getLimiteOcupacao());
-            preparedStatement.setString(7, (String) atividade.getResponsavel());
+           // preparedStatement.setString(7, (String) atividade.getResponsavel());
             preparedStatement.setString(8, atividade.getDescricao());
 
             preparedStatement.executeUpdate();
@@ -48,7 +48,7 @@ public class AtividadeDAO {
             preparedStatement.setString(4, atividade.getHoraTermino());
             preparedStatement.setString(5, atividade.getLocal());
             preparedStatement.setInt(6, atividade.getLimiteOcupacao());
-            preparedStatement.setString(7, (String) atividade.getResponsavel());
+           // preparedStatement.setString(7, (String) atividade.getResponsavel());
             preparedStatement.setString(8, atividade.getDescricao());
              
             preparedStatement.executeUpdate();
@@ -70,7 +70,7 @@ public class AtividadeDAO {
                         resultSet.getString("hora_termino"),
                         resultSet.getString("local"),
                         resultSet.getInt("limite_ocupacao"),
-                        resultSet.getString("responsavel"),
+                        //resultSet.getString("responsavel"),
                         resultSet.getString("descricao")
                 );
                 atividades.add(atividade);

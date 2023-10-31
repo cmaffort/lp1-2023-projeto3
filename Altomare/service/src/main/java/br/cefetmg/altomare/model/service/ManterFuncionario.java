@@ -6,13 +6,14 @@ import br.cefetmg.altomare.model.dao.FuncionarioDAO;
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
 import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ManterFuncionario implements IManterFuncionario{
     private IFuncionarioDAO funcionarioDAO;
     
-    public ManterFuncionario() {
-        funcionarioDAO = new FuncionarioDAO();
+    public ManterFuncionario() throws SQLException, ClassNotFoundException {
+        funcionarioDAO = (IFuncionarioDAO) new FuncionarioDAO();
     }
      @Override
      public long cadastrar(FuncionarioDTO funcionario) throws PersistenciaException, NegocioException{

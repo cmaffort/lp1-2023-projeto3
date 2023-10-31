@@ -1,4 +1,4 @@
-package br.cefetmg.inf.sisloc.controller;
+package br.cefetmg.inf.altomare.controller;
 
 import java.io.IOException;
 import jakarta.servlet.RequestDispatcher;

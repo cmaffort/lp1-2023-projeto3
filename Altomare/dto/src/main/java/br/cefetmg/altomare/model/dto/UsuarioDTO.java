@@ -15,6 +15,9 @@ public class UsuarioDTO {
    private String passaporte;
    private long cep;
    
+   public UsuarioDTO() {
+       
+   }
    
    public UsuarioDTO(long cpf, long rg, String nome, String dataNascimento,String email, String senha,long telefone, String sexo, String estadoCivil, String passaporte, long cep){
       this.cpf = cpf;

@@ -15,7 +15,7 @@
        <header id="header1">
              <h1 id="altoMare">Alto Mare </h1>
              <h2 id="embarcacoes">Embarcações</h2>
-           <img id="leme" src="imagens\leme.png" alt="alt"/>
+           <img id="leme" src="../../imagens\leme.png" alt="alt"/>
            <div id="linha"></div>
         </header>
     </body>

@@ -1,6 +1,6 @@
-package br.cefetmg.altomare.dao;
+package br.cefetmg.altomare.model.dao;
 
-import br.cefetmg.altomare.dto.AtividadeDTO;
+import br.cefetmg.altomare.model.dto.AtividadeDTO;
 import java.sql.SQLException;
 import java.util.List;
 

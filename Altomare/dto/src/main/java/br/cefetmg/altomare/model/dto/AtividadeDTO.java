@@ -1,16 +1,19 @@
-package br.cefetmg.altomare.dto;
+package br.cefetmg.altomare.model.dto;
+import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 
 public class AtividadeDTO {
+    
+    
     private String nome;
     private String data;
     private String horaInicio;
     private String horaTermino;
     private String local;
     private int limiteOcupacao;
-    private Funcionario responsavel;
+    private FuncionarioDTO responsavel;
     private String descricao;   
 
-    public AtividadeDTO(String nome, String data, String horaInicio, String horaTermino, String local, int limiteOcupacao, Funcionario responsavel, String descricao) {
+    public AtividadeDTO(String nome, String data, String horaInicio, String horaTermino, String local, int limiteOcupacao, String descricao) {
         this.nome = nome;
         this.data = data;
         this.horaInicio = horaInicio;
@@ -68,11 +71,11 @@ public class AtividadeDTO {
         this.limiteOcupacao = limiteOcupacao;
     }
 
-    public Funcionario getResponsavel() {
+    public FuncionarioDTO getResponsavel() {
         return responsavel;
     }
 
-    public void setResponsavel(Funcionario responsavel) {
+    public void setResponsavel(FuncionarioDTO responsavel) {
         this.responsavel = responsavel;
     }
     

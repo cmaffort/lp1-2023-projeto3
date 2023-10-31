@@ -1,4 +1,4 @@
-package br.cefetmg.altomare.dto;
+package br.cefetmg.altomare.model.dto;
 
 import java.util.Date;
 

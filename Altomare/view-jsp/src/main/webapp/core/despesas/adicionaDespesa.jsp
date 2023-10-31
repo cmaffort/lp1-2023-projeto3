@@ -4,10 +4,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Despesas</title>
-        <link rel="stylesheet" href="css/estilos-adiciona-despesas.css">
+        <link rel="stylesheet" href="../../css/estilos-adiciona-despesas.css">
     </head>
     <body>
-        <%@ include file="header.jsp" %>
+        <%@ include file="../../headerPassageiro.jsp" %>
 
         <form id="form-passageiro">
             <div>
@@ -44,7 +44,7 @@
             </form> 
         </div>
  
-        <script src="js/js-adiciona-despesa.js"></script>
+        <script src="../../js/js-adiciona-despesa.js"></script>
     </body>
    
 </html>

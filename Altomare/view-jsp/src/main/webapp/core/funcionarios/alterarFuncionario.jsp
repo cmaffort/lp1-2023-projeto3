@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <%@include file="headerGerente.jsp" %>
+        <%@include file="../../headerGerente.jsp" %>
         <title>JSP Page</title>
     </head>
     <body>

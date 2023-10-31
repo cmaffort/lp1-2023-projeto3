@@ -1,11 +1,9 @@
-package br.cefetmg.inf.sisloc.controller;
+package br.cefetmg.inf.altomare.controller;
 
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
+import br.cefetmg.altomare.model.dto.PassageiroDTO;
 import br.cefetmg.altomare.model.service.IManterFuncionario;
 import br.cefetmg.altomare.model.service.ManterFuncionario;
-import br.cefetmg.altomare.model.dto.PassageiroDTO;
-import br.cefetmg.altomare.model.service.IManterPassageiro;
-import br.cefetmg.altomare.model.service.ManterPasssageiro;
 import java.io.IOException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -44,8 +42,8 @@ public class Login {
                 if(funcionario.getSetor().equals("restaurante"))     
                     jsp = "/cozinheiro.jsp";
             }else{
-                IManterPassageiroDTO manterPassageiro = new ManterPassageiro();
-                PassageiroDTO passageiro = manterPassageiro.getUserLogin(user, senha);
+                IManterFuncionario manterPassageiro = new ManterFuncionario();
+                FuncionarioDTO passageiro = manterPassageiro.getUserLogin(user, senha);
                 
                 if(passageiro == null){
                     String erro = "Usuário não encontrado.";

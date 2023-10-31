@@ -16,7 +16,7 @@
                 <h2>EMBARCAÇÕES</h2>
             </div>
             <div>
-                <img src="imgs\user-icon.png" id="user-icon">
+                <img src="imagens\user-icon.png" id="user-icon">
                 <p>USER</p>
             </div>
         </div>

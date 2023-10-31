@@ -1,6 +1,6 @@
-package controller;
-import br.cefetmg.altomare.dao.mysql.ProdutoDAO;
-import br.cefetmg.altomare.dto.ProdutoDTO;
+package br.cefetmg.inf.altomare.controller;
+import br.cefetmg.altomare.model.dao.ProdutoDAO;
+import br.cefetmg.altomare.model.dto.ProdutoDTO;
 import java.io.IOException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

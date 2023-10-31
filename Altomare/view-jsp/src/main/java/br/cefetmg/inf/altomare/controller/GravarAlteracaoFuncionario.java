@@ -1,5 +1,5 @@
 
-package br.cefetmg.inf.sisloc.controller;
+package br.cefetmg.inf.altomare.controller;
 
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.service.IManterFuncionario;

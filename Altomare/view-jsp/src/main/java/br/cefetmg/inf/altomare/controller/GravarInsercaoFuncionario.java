@@ -1,5 +1,5 @@
 
-package br.cefetmg.inf.sisloc.controller;
+package br.cefetmg.inf.altomare.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
