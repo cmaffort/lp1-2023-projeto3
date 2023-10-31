@@ -1,4 +1,3 @@
-
 package br.cefetmg.inf.sisloc.controller;
 
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
