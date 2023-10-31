@@ -1,52 +1,53 @@
-    /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.cefetmg.altomare.dto;
 
-import java.util.List;
+import java.util.Date;
 
-/**
- *
- * @author User
- */
-public class Produto {
-
-    private static void remove(String tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    private static boolean contains(String tipo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+public class ProdutoDTO {
+    private Integer Id;
     private String nome;
     private String tipo;
     private double preco;
     private String estado;
-    private List<Produto> Produto;
+    private Integer quantidade;
+    private Date data;
+    
 
-    public Produto(String nome, double preco, String tipo, String estado) {
+    public ProdutoDTO() {
+    }
+
+    public ProdutoDTO(String nome, double preco, String tipo, String estado, Integer Id,Integer quantidade,Date data) {
         this.nome = nome;
         this.preco = preco;
         this.tipo = tipo;
         this.estado = estado;
-
+        this.Id = Id;
+        this.quantidade = quantidade;
+        this.data = data;
+        
     }
 
-    public List<Produto> getTipo() {
-        return this.Produto;
-    }
-    
-!!!!!!!!
-    public void setTipo(tipo) {
-        if (!Produto.contains(tipo)) {
-            this.Produto.add(tipo);
-        }
+    public void setData(Date data) {
+        this.data = data;
     }
 
-    public void removerTipo(String tipo) {
-        Produto.remove(tipo);
+    public Date getData() {
+        return data;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public String getNome() {
@@ -57,14 +58,27 @@ public class Produto {
         this.nome = nome;
     }
 
-     public void  setEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
-       
-
     }
+
     public String getEstado() {
         return estado;
     }
 
-   
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(Integer Id) {
+        this.Id = Id;
+    }
 }
