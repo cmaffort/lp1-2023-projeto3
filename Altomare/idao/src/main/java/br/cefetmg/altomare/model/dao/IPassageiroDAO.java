@@ -1,5 +1,5 @@
 package br.cefetmg.altomare.model.dao;
-import br.cefetmg.altomare.model.dto.Passageiro;
+import br.cefetmg.altomare.model.dto.PassageiroDTO;
 import java.sql.SQLException;
 
 public interface IPassageiroDAO{
