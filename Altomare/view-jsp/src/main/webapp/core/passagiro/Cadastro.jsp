@@ -109,7 +109,7 @@
                          
             </main>
             
-            <script src="js/script.js"></script>
+            <script src="js/script-Passageiro.js"></script>
             <script src="js/js-header.js"></script>
         </form>
          <footer>
