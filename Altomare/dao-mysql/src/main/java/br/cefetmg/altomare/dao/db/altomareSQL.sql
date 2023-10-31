@@ -29,14 +29,14 @@ CREATE DATABASE altomare
 
 DROP TABLE IF EXISTS `atividade`;
 CREATE TABLE IF NOT EXISTS `atividade` (
-  `Nome` text,
-  `Data` text,
-  `HoraInicio` text,
-  `HoraTermino` text,
-  `Local` text,
+  `Nome` varchar(50),
+  `Data` varchar(50),
+  `HoraInicio` varchar(50),
+  `HoraTermino` varchar(50),
+  `Local` varchar(50),
   `Ocupacao` int(11) DEFAULT NULL,
-  `FucionarioResponsavel` text,
-  `Descricao` text
+  `FucionarioResponsavel` varchar(50),
+  `Descricao` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -48,19 +48,17 @@ CREATE TABLE IF NOT EXISTS `atividade` (
 DROP TABLE IF EXISTS `funcionario`;
 CREATE TABLE IF NOT EXISTS `funcionario` (
   `Nome` varchar(50),
-  `DatNasc` date,
+  `DatNasc` varchar(50),
   `CPF` varchar(50),
   `RG` varchar(50),
-  `Sexo` ENUM('feminino', 'masculino'),
+  `Sexo` varchar(50),
   `Email` varchar(50),
   `EstadoCivil` varchar(50),
-  `Turno` ENUM('manha', 'tarde', 'noite'),
+  `Turno` varchar(50),
   `Setor` varchar(50),
-  `DataAdmissao` date),
+  `DataAdmissao` varchar(50),
   `Telefone` varchar(50),
-  `Passaporte` varchar(50),
-  `CEP` varchar(50),
-   `Senha` varchar(50)
+  `Passaporte` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -71,23 +69,23 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 
 DROP TABLE IF EXISTS `passageiro`;
 CREATE TABLE IF NOT EXISTS `passageiro` (
-  `Nome` text,
-  `DataNasc` text,
+  `Nome` varchar(50),
+  `DataNasc` varchar(50),
   `Sexo` char(10) DEFAULT NULL,
-  `CEP` text,
-  `RG` text,
-  `EstadoCivil` text,
-  `Email` text,
-  `Telefone` text,
-  `DadosMedicos` text,
-  `EmbarqueDesembarque` text,
-  `Datas` text,
-  `Classe` text,
-  `TipoSuite` text,
-  `TamanhoSuite` text,
-  `CapacidadeSuite` text,
-  `Endereco` text,
-  `Passaporte` text
+  `CEP` varchar(50),
+  `RG` varchar(50),
+  `EstadoCivil` varchar(50),
+  `Email` varchar(50),
+  `Telefone` varchar(50),
+  `DadosMedicos` varchar(50),
+  `EmbarqueDesembarque` varchar(50),
+  `Datas` varchar(50),
+  `Classe` varchar(50),
+  `TipoSuite` varchar(50),
+  `TamanhoSuite` varchar(50),
+  `CapacidadeSuite` varchar(50),
+  `Endereco` varchar(50),
+  `Passaporte` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -98,9 +96,9 @@ CREATE TABLE IF NOT EXISTS `passageiro` (
 
 DROP TABLE IF EXISTS `produto`;
 CREATE TABLE IF NOT EXISTS `produto` (
-  `Tipo` varchar(50) DEFAULT NULL,
+  `Tipo` varchar(50)(50) DEFAULT NULL,
   `Preco` double DEFAULT NULL,
-  `Estado` varchar(20) DEFAULT NULL,
+  `Estado` varchar(50)(20) DEFAULT NULL,
   `Nome` text NOT NULL,
   `Id` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
