@@ -103,7 +103,7 @@
                                <input type="file"  id="arq" name="arquivo" accept="text/*">
                            </p>
                                
-                              <input type="file" id="foto" name="foto" accept="image/*" required>
+                              <input type="file" id="foto" name="foto" accept="image/*" >
                                <p><button type='submit' name="acao" value="CadastrarPassageiro" id='enviar'>CADASTRAR</button></p>
                          </div>
                          

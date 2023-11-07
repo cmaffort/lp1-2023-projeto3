@@ -37,7 +37,7 @@ public class CadastrarPassageiro extends HttpServlet{
                     PassageiroDAO pass = new PassageiroDAO();
                     pass.InserirDadosPassageiro(passageiro);
           
-                   jsp = "ExibePassageiro.jsp";
+                   jsp = "core/passageiro/ExibePassageiro.jsp";
                   
              } catch(PersistenciaException | ClassNotFoundException | SQLException e) {
               request.setAttribute("tperror", "cadastroPassageiro");

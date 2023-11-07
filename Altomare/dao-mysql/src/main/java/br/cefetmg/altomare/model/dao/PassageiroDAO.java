@@ -21,10 +21,10 @@ public class PassageiroDAO implements IPassageiroDAO{
     @Override
         public boolean InserirDadosPassageiro(PassageiroDTO pass)throws PersistenciaException {
            
-            String sql = "INSERT INTO Passageiro(CPF, RG, Nome, DataNasc, Email, Senha, Telefone, Sexo, Civil, DadosMedicos) VALUES(?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO Passageiro(CPF, RG, Nome, DataNasc, Email, Senha, Telefone, Sexo, Civil, DadosMedicos) VALUES(?,?,?,?,?,?,?,?,?, ?)";
             pass.setSenha(gerarSenha());
          
-            try (PreparedStatement in = conexao.prepareStatement(sql); ResultSet resultSet = in.executeQuery()) {
+            try (PreparedStatement in = conexao.prepareStatement(sql)) {
                
                 in.setString(1, pass.getCpf());
                 in.setString(2, pass.getRg());
@@ -37,9 +37,7 @@ public class PassageiroDAO implements IPassageiroDAO{
                 in.setString(9, pass.getEstadoCivil());
                 in.setString(10, pass.getDadosMedicos());
                 
-                
                 in.execute();
-                resultSet.close();
                 in.close(); 
              } 
             catch (SQLException ex) {
