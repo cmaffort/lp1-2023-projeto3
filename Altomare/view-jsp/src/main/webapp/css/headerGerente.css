@@ -76,8 +76,16 @@ html, body {
     display: none;
 }
 
+.icones{
+    
+}
+
 @media screen and (orientation: portrait)  {
 
+    .icones{
+        display: none;
+    }
+    
     #burger {
         display: block;
         margin: 0;

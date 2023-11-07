@@ -10,8 +10,8 @@ public class FuncionarioDTO extends UsuarioDTO{
     private double cargaHoraria; //em minutos
     private String turno;
     
-     public FuncionarioDTO(String turno, double salario, String setor, String dataAdmissao, double cargaHoraria,long cpf, long rg, String nome, String dataNascimento, String email, String senha, long telefone, String sexo, String estadoCivil, String passaporte, long cep){
-        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, passaporte, cep);
+     public FuncionarioDTO(String turno, double salario, String setor, String dataAdmissao, double cargaHoraria,String cpf, String rg, String nome, String dataNascimento, String email, String senha, String telefone, String sexo, String estadoCivil){
+        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil);
         this.salario = salario;
         this.cargaHoraria = cargaHoraria;
         this.setor = setor;
@@ -20,7 +20,7 @@ public class FuncionarioDTO extends UsuarioDTO{
     }
 
     public FuncionarioDTO() {
-        super(0, 0, "", "", "", "" , 0, "", "", "", 0);
+        super("", "", "", "", "", "" , "", "", "");
         this.salario = 0.0;
         this.cargaHoraria = 0.0;
         this.setor = "";

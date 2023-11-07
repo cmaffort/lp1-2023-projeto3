@@ -10,13 +10,13 @@
 
     <header id="header-main">
         <div id="header-upper">
-            <img src="imagens\leme.png" id="leme">
+            <img src="imagens\leme.png" alt="" id="leme">
             <div>
                 <h1>AltoMare </h1>
                 <h2>EMBARCAÇÕES</h2>
             </div>
             <div>
-                <img src="imagens\user-icon.png" id="user-icon">
+                <img src="imagens\user-icon.png" alt="" id="user-icon">
                 <p>USER</p>
             </div>
         </div>
@@ -24,24 +24,25 @@
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <img src="">
-                <input type="button" class="button" name="ordem" value="Cadastro" onclick="window.location=('cadastrar.jsp')">
+                <img alt="" src="">
+                <input type="button"  class="button" name="ordem" value="Cadastro" onclick="window.location=('cadastrar.jsp')">
             </li>
             <li>
-                <img src="">
+                <img alt="" src="">
                 <input type="button" class="button" name="ordem" value="Edição" onclick="window.location=('alterar.jsp')"> 
             </li>
             
             <li>
-                <img src="">
+                <img alt="" src="">
                 <input type="button" class="button" name="ordem" value="Listagem" onclick="window.location=('listar.jsp')">
 
             </li>
             <li>
-                <img src="">
+                <img alt="" src="">
                 <input type="button" class="button" name="ordem" value="Exclusão" onclick="window.location=('excluir.jsp')">
 
             </li>
+        </ul>
 
     </header>
 

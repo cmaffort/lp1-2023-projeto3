@@ -11,7 +11,7 @@
         <%@include file="../../headerLogin.jsp" %>
     </head>
     <body>
-        <FORM id="login" name="login" action="login.java" method="POST">
+        <FORM id="login" name="login" action="../../Login" method="POST">
             <h1>LOGIN</h1>
             <p>Usuário: <input class="campos" type="text" name="cpfUsuario" required></p>
             <p>Senha: <input  class="campos" type="password" name="senhaUsuario" required></p>

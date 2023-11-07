@@ -51,7 +51,7 @@
         </ul>
     </header>
          <h1 id="titulo">Cadastrar Passageiro</h1>
-         <form name="CadastroPassageiro"  action="CadastroPassageiro" id="cadastroFunc" method="GET">
+         <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" method="POST">
             <main>
         
                 
@@ -83,11 +83,11 @@
                           </p>
                           <p>
                               <label class="mover" style="font-family: 'Alegreya SC';" for="pacote">Pacote:</label>
-                               <input type="file" name='pacote' id="dadosmedico" placeholder="Pacote" required accept="text/*">
+                               <input type="file" name="pacote" id="dadosmedico" accept="text/*" required>
                                
                           </p>
                           <p> 
-                             Dados Medicos:<input type="file"  id="dadosmedico" name="daods" accept="text/*">
+                             Dados Medicos:<input type="text"  id="dadosmedico" name="dados" >
                           </p>
                           
                           </div>
@@ -104,7 +104,7 @@
                            </p>
                                
                               <input type="file" id="foto" name="foto" accept="image/*" required>
-                               <p><input type='submit' value="CADASTRAR" id='enviar'></p>
+                               <p><button type='submit' name="acao" value="CadastrarPassageiro" id='enviar'>CADASTRAR</button></p>
                          </div>
                          
             </main>

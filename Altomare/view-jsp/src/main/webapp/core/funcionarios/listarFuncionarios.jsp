@@ -23,19 +23,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <body>
           
         <h1 id="titulo">Escalar Funcionários</h1>
-        <div id="cardFuncionario">
-            <div id="botaoChamarFuncionario">
-                
-            </div> 
-            <div id="informacoesFuncionario">
-                <div id="foto-codigo">
-                    
-                </div>
-                <div id="turno-setor"> 
-                    
-                </div> 
-            </div>
-        </div>
+       
             <script src="../../js/scriptFuncionario.js"></script>
          <script src="../../js/jsheader.js"></script>
         
