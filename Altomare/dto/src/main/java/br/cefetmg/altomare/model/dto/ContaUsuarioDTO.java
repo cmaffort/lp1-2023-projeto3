@@ -4,6 +4,7 @@ import java.util.*;
 public class ContaUsuarioDTO {
     private long idConta;
     ArrayList<DespesaDTO> historico;
+    ArrayList<CartaoDTO> cartoes;
     private boolean estaAberta;
     private double total;
     
@@ -13,9 +14,10 @@ public class ContaUsuarioDTO {
         total = 0;
     }
     
-    public ContaUsuarioDTO(long id, ArrayList<DespesaDTO> historico, double total) {
+    public ContaUsuarioDTO(long id, ArrayList<DespesaDTO> historico, ArrayList<CartaoDTO> cartoes, double total) {
         this.idConta = id;
         this.historico = historico;
+        this.cartoes = cartoes;
         this.estaAberta = true;
         this.total = total;
     }
@@ -42,6 +44,14 @@ public class ContaUsuarioDTO {
     
     public void setHistorico(ArrayList<DespesaDTO> novoHistorico) {
         historico = novoHistorico;
+    }
+    
+    public ArrayList<CartaoDTO> getCartoes() {
+        return cartoes;
+    }
+    
+    public void setCartoes(ArrayList<CartaoDTO> novosCartoes) {
+        this.cartoes = novosCartoes;
     }
     
     public long getIdConta() {

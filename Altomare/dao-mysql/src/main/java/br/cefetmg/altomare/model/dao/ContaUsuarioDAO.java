@@ -3,6 +3,7 @@ package br.cefetmg.altomare.model.dao;
 import java.util.*;
 import br.cefetmg.altomare.model.dto.ContaUsuarioDTO;
 import br.cefetmg.altomare.model.dto.DespesaDTO;
+import br.cefetmg.altomare.model.dto.CartaoDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -112,6 +113,30 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
             connection.close();
             
             return (ArrayList<DespesaDTO>) rs;
+        }
+        catch (SQLException u) {    
+            throw new RuntimeException(u);    
+        }
+        catch (ClassNotFoundException o) {
+            throw new RuntimeException(o);
+        }
+    }
+    
+    @Override
+    public ArrayList<CartaoDTO> getCartoes(ContaUsuarioDTO contaUsuario) { //tratar retorno da query -> rs não é ArrayList
+ 
+        String sql = "SELECT cartoes FROM conta_usuario";
+
+        try {
+            Connection connection = ConexaoDB.inicializaDB();
+            
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+
+            pstmt.close();
+            connection.close();
+            
+            return (ArrayList<CartaoDTO>) rs;
         }
         catch (SQLException u) {    
             throw new RuntimeException(u);    
