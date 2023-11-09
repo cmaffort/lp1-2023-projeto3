@@ -5,4 +5,5 @@ br\cefetmg\altomare\model\dto\UsuarioDTO.class
 br\cefetmg\altomare\model\dto\EstoqueDTO.class
 br\cefetmg\altomare\model\dto\AtividadeDTO.class
 br\cefetmg\altomare\model\dto\DespesaDTO.class
+br\cefetmg\altomare\model\dto\CartaoDTO.class
 br\cefetmg\altomare\model\dto\ContaUsuarioDTO.class

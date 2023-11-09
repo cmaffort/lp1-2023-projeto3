@@ -218,7 +218,7 @@ footer a {
 
 #confirmar-adicao-cartao {
     color: white;
-    height: 2vh;
+    height: 4vh;
     width: 70%;
     background-color: rgb(5, 50, 112);
     font-size: 1.9vh;
@@ -226,6 +226,35 @@ footer a {
     text-align: center;
     margin-top: 1.5vh;
     border: none;
+}
+
+#qrcode {
+    height: 40vh;
+    width: 40vh;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+#qrcode img {
+    height: 30vh;
+    width: 30vh;
+}
+
+#qrcode div {
+    color: white;
+    height: 4vh;
+    width: 12vh;
+    background-color: rgb(5, 50, 112);
+    font-size: 1.9vh;
+    padding: .8vh;
+    text-align: center;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 *:focus {

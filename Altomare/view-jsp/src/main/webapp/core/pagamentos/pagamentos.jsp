@@ -64,8 +64,12 @@
                         <h5>Número do Cartão</h5>
                         <input type="text" id="inp4"> 
                     </div>
-                    <input id="confirmar-adicao-cartao" value="Registrar">
+                    <input id="confirmar-adicao-cartao" value="Registrar" type="submit">
                 </form>
+            </section>
+            <section id="qrcode">
+                <img src="../../imagens/qrcode-pagamentos.png">
+                <div>CANCELAR</div>
             </section>
         </div>
         

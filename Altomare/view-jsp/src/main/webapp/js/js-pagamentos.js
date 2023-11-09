@@ -9,6 +9,8 @@ let botaoAdicionaCartao = document.querySelector("#botao-adicionar");
 
 let cont = document.querySelector("#container");
 
+let saidaTelaAdiciona = document.querySelector("#xis-tela-adiciona");
+
 opcoesCartao.forEach((opcao) => opcao.addEventListener("click", () => {
     telaCartoes.style.display = "flex";
     formasPagamento.style.display = "none";
@@ -32,5 +34,26 @@ botaoAdicionaCartao.addEventListener("click", () => {
     telaCartoes.style.display = "none";
 });
 
+saidaTelaAdiciona.addEventListener("click", () => {
+    telaCartoes.style.display = "flex";
+    telaRegistroCartao.style.display = "none";
+});
+
+//--------------------------------------------
+
+let opcaoPix = document.querySelector(".opcao-pix");
+let telaQrcode = document.querySelector("#qrcode");
+
+opcaoPix.addEventListener("click", () => {
+    formasPagamento.style.display = "none";
+    telaQrcode.style.display = "flex";
+});
+
+let cancelaPix = document.querySelector("#qrcode div");
+
+cancelaPix.addEventListener("click", () => {
+    formasPagamento.style.display = "flex";
+    telaQrcode.style.display = "none";
+});
 
 
