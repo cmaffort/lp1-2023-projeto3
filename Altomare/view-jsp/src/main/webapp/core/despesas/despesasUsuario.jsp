@@ -81,6 +81,7 @@
             
         <footer>
             <p>Despesas Totais: <%= total %></p>
+            <a href="../pagamentos/pagamentos.jsp"><div>PAGAR</div></a>
         </footer>
         
         <script src="../../js/js-despesas.js"></script>
