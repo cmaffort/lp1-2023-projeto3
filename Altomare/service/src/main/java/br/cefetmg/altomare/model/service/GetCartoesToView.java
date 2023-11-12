@@ -22,11 +22,11 @@ public class GetCartoesToView {
         cartaoParaDeletar.setIdCartao(0);
         cartaoManager.deletar(cartaoParaDeletar);
         
-        CartaoDTO cartao1 = new CartaoDTO("Cara Legal", new Date(), 111, 1111111111L, contaParaAdicionar.getIdConta());
-        CartaoDTO cartao2 = new CartaoDTO("Cara Bacana", new Date(), 222, 222222222L, contaParaAdicionar.getIdConta());
-        CartaoDTO cartao3 = new CartaoDTO("Cara chato", new Date(), 333, 12345678L, contaParaAdicionar.getIdConta());
-        CartaoDTO cartao4 = new CartaoDTO("batata", new Date(), 444, 00000000L, contaParaAdicionar.getIdConta());
-        CartaoDTO cartao5 = new CartaoDTO("opa", new Date(), 555, 10101010L, contaParaAdicionar.getIdConta());
+        CartaoDTO cartao1 = new CartaoDTO("Cara Legal", new Date(), "debito", 111, 1111111111L, contaParaAdicionar.getIdConta());
+        CartaoDTO cartao2 = new CartaoDTO("Cara Bacana", new Date(), "credito", 222, 222222222L, contaParaAdicionar.getIdConta());
+        CartaoDTO cartao3 = new CartaoDTO("Cara chato", new Date(), "credito", 333, 12345678L, contaParaAdicionar.getIdConta());
+        CartaoDTO cartao4 = new CartaoDTO("batata", new Date(), "debito", 444, 00000000L, contaParaAdicionar.getIdConta());
+        CartaoDTO cartao5 = new CartaoDTO("opa", new Date(), "debito", 555, 10101010L, contaParaAdicionar.getIdConta());
         
         cartaoManager.inserir(cartao1);
         cartaoManager.inserir(cartao2);

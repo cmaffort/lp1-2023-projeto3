@@ -78,17 +78,19 @@
         
         <footer>
             <a href="../despesas/despesasUsuario.jsp"> <div>VOLTAR</div></a>
-            <div>
-                <%  GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
-                    ArrayList<CartaoDTO> arr = cartoesUsuarioLogado.getCartoes();
-                %>   
-                <%  for (CartaoDTO cartao: arr) { %>
-                
-                <p><% out.println(cartao.getTitular()); %></p>
-                        
-                <%}%>
-            </div>
         </footer>
+        
+        <div id="cartoes-from-backend">
+            <%  GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
+                ArrayList<CartaoDTO> arr = cartoesUsuarioLogado.getCartoes();
+            %>   
+            <%  for (CartaoDTO cartao: arr) { %>
+
+            <p class="cartao-individual-db"><% out.println(cartao.getTitular() + "*" + cartao.getNumero() + "*" + 
+                                               cartao.getVencimento() + "*" + cartao.getTipo()); %></p>
+
+            <%}%>
+        </div>
         
         <script src="../../js/js-pagamentos.js"></script>
     </body>

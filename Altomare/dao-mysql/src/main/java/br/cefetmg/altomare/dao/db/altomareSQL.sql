@@ -138,7 +138,8 @@ DROP TABLE IF EXISTS `cartao`;
 CREATE TABLE IF NOT EXISTS `cartao` (
   id_cartao BIGINT AUTO_INCREMENT,
   titular VARCHAR(50),
-  vencimento DATE,
+  vencimento VARCHAR(20),
+  tipo VARCHAR(10),
   cvv INT(3),
   numero BIGINT(12),
   id_conta BIGINT(10),

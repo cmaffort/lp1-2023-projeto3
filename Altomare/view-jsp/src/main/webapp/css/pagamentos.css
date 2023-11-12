@@ -257,6 +257,29 @@ footer a {
     flex-direction: column;
 }
 
+#cartoes-from-backend {
+    display: none;
+}
+
+#cartoes {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.novoCartao {
+    border: .3vh solid black;
+    width: 90%;
+    height: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 *:focus {
     outline: none;
 }

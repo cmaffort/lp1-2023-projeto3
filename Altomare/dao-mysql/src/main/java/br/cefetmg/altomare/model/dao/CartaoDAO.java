@@ -13,8 +13,8 @@ public class CartaoDAO implements ICartaoDAO{
     @Override
     public boolean inserir(CartaoDTO cartao) {
 
-        String sql = "INSERT INTO cartao (titular, vencimento, cvv, numero, id_conta"
-                + ") VALUES(?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta"
+                + ") VALUES(?, ?, ?, ?, ?, ?)";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
@@ -22,9 +22,10 @@ public class CartaoDAO implements ICartaoDAO{
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, cartao.getTitular());
             pstmt.setString(2, cartao.getVencimento());
-            pstmt.setInt(3, cartao.getCvv());
-            pstmt.setLong(4, cartao.getNumero());
-            pstmt.setLong(5, cartao.getIdConta());
+            pstmt.setString(3, cartao.getTipo());
+            pstmt.setInt(4, cartao.getCvv());
+            pstmt.setLong(5, cartao.getNumero());
+            pstmt.setLong(6, cartao.getIdConta());
             
             pstmt.execute();
 
@@ -47,6 +48,7 @@ public class CartaoDAO implements ICartaoDAO{
         String sql = "UPDATE cartao " +
                        " SET titular = ?, " +
                        "     vencimento = ? " +
+                       "     tipo = ? " +
                        "     cvv = ? " +
                        "     numero = ? " +
                        "     id_conta = ? " +
@@ -58,9 +60,10 @@ public class CartaoDAO implements ICartaoDAO{
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, cartao.getTitular());
             pstmt.setString(2, cartao.getVencimento());
-            pstmt.setInt(3, cartao.getCvv());
+            pstmt.setString(3, cartao.getTipo());
+            pstmt.setInt(4, cartao.getCvv());
             pstmt.setLong(5, cartao.getNumero());
-            pstmt.setLong(6, cartao.getIdConta()); //java.util.Date != sql Date
+            pstmt.setLong(6, cartao.getIdConta());
             pstmt.setLong(1, cartao.getIdCartao());
             pstmt.executeUpdate();
 
@@ -120,6 +123,7 @@ public class CartaoDAO implements ICartaoDAO{
                 cartao.setIdCartao(rs.getLong("id_cartao"));
                 cartao.setTitular(rs.getString("titular"));
                 cartao.setVencimento(rs.getString("vencimento"));
+                cartao.setTipo(rs.getString("tipo"));
                 cartao.setCvv(rs.getInt("cvv"));
                 cartao.setNumero(rs.getLong("numero"));
                 cartao.setIdConta(rs.getLong("id_conta"));

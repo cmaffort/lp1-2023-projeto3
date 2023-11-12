@@ -7,6 +7,7 @@ public class CartaoDTO {
     private Long idCartao;
     private String titular;
     private String vencimento;
+    private String tipo;
     private Integer cvv;
     private Long numero;
     private Long idRelacionaConta;
@@ -17,9 +18,10 @@ public class CartaoDTO {
     
     }
     
-    public CartaoDTO(String titular, Date vencimento, Integer cvv, Long numero, Long idConta) {
+    public CartaoDTO(String titular, Date vencimento, String tipo, Integer cvv, Long numero, Long idConta) {
         this.titular = titular;
         this.vencimento = dateFormat.format(vencimento);
+        this.tipo = tipo;
         this.cvv = cvv;
         this.numero = numero;
         this.idRelacionaConta = idConta;
@@ -39,6 +41,14 @@ public class CartaoDTO {
     
     public void setVencimento(String newVencimento) {
         this.vencimento = newVencimento;
+    }
+    
+    public String getTipo() {
+        return this.tipo;
+    }
+    
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     
     public Integer getCvv() {
