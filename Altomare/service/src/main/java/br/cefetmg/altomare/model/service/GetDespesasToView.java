@@ -3,11 +3,10 @@ package br.cefetmg.altomare.model.service;
 import br.cefetmg.altomare.model.dao.*;
 import br.cefetmg.altomare.model.dto.*;
 import java.util.*;
-import java.text.*;
 
 public class GetDespesasToView {
     private ArrayList<DespesaDTO> despesas;
-    
+
     public ContaUsuarioDTO getContaUsuario() {
         //lógica de pegar usuário pela variável de session -> por enquanto inserindo no banco para teste
         

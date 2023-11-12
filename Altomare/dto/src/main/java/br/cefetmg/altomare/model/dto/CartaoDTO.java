@@ -1,23 +1,25 @@
 package br.cefetmg.altomare.model.dto;
 
 import java.util.*;
+import java.text.*;
 
 public class CartaoDTO {
     private Long idCartao;
     private String titular;
-    private Date vencimento;
+    private String vencimento;
     private Integer cvv;
     private Long numero;
     private Long idRelacionaConta;
+    
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
     
     public CartaoDTO() {
     
     }
     
-    public CartaoDTO(Long idCartao, String titular, Date vencimento, Integer cvv, Long numero, Long idConta) {
-        this.idCartao = idCartao;
+    public CartaoDTO(String titular, Date vencimento, Integer cvv, Long numero, Long idConta) {
         this.titular = titular;
-        this.vencimento = vencimento;
+        this.vencimento = dateFormat.format(vencimento);
         this.cvv = cvv;
         this.numero = numero;
         this.idRelacionaConta = idConta;
@@ -31,11 +33,11 @@ public class CartaoDTO {
         this.titular = newTitular;
     }
     
-    public Date getVencimento() {
+    public String getVencimento() {
         return this.vencimento;
     }
     
-    public void setVencimento(Date newVencimento) {
+    public void setVencimento(String newVencimento) {
         this.vencimento = newVencimento;
     }
     

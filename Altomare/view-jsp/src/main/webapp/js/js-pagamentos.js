@@ -56,4 +56,13 @@ cancelaPix.addEventListener("click", () => {
     telaQrcode.style.display = "none";
 });
 
+//---------------------------------------------------
+
+
+let teste = document.querySelectorAll("footer div p");
+
+for (let i = 0; i < teste.length; i++) {
+    console.log(teste[i].innerHTML);
+}
+
 

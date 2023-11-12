@@ -14,6 +14,9 @@
     </head>
     <body>
         <%@ include file="../../headerPassageiro.jsp" %>
+        <%@ page import="br.cefetmg.altomare.model.dto.*" %>
+        <%@ page import="br.cefetmg.altomare.model.service.*" %>
+        <%@ page import="java.util.*" %>
         
         <div id="container">
             <section id="formas-pagamento">
@@ -75,6 +78,16 @@
         
         <footer>
             <a href="../despesas/despesasUsuario.jsp"> <div>VOLTAR</div></a>
+            <div>
+                <%  GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
+                    ArrayList<CartaoDTO> arr = cartoesUsuarioLogado.getCartoes();
+                %>   
+                <%  for (CartaoDTO cartao: arr) { %>
+                
+                <p><% out.println(cartao.getTitular()); %></p>
+                        
+                <%}%>
+            </div>
         </footer>
         
         <script src="../../js/js-pagamentos.js"></script>

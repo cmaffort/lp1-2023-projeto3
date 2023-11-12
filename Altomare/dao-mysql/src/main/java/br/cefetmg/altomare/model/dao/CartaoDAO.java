@@ -21,13 +21,13 @@ public class CartaoDAO implements ICartaoDAO{
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, cartao.getTitular());
-            pstmt.setDate(2, new java.sql.Date(cartao.getVencimento().getTime()));
+            pstmt.setString(2, cartao.getVencimento());
             pstmt.setInt(3, cartao.getCvv());
             pstmt.setLong(4, cartao.getNumero());
             pstmt.setLong(5, cartao.getIdConta());
-            ResultSet rs = pstmt.executeQuery();
+            
+            pstmt.execute();
 
-            rs.close();
             pstmt.close();
             connection.close();
         }
@@ -57,7 +57,7 @@ public class CartaoDAO implements ICartaoDAO{
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, cartao.getTitular());
-            pstmt.setDate(2, new java.sql.Date(cartao.getVencimento().getTime()));
+            pstmt.setString(2, cartao.getVencimento());
             pstmt.setInt(3, cartao.getCvv());
             pstmt.setLong(5, cartao.getNumero());
             pstmt.setLong(6, cartao.getIdConta()); //java.util.Date != sql Date
@@ -80,7 +80,7 @@ public class CartaoDAO implements ICartaoDAO{
     @Override
     public boolean deletar(CartaoDTO cartao) {
 
-        String sql = "DELETE FROM cartao WHERE id = ?";
+        String sql = "DELETE FROM cartao WHERE id_cartao = ?";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
@@ -115,11 +115,11 @@ public class CartaoDAO implements ICartaoDAO{
 
             ArrayList<CartaoDTO> cartoesEncontrados = new ArrayList<>();
             CartaoDTO cartao;
-            if (rs.next()) {
+            while (rs.next()) {
                 cartao = new CartaoDTO();
                 cartao.setIdCartao(rs.getLong("id_cartao"));
                 cartao.setTitular(rs.getString("titular"));
-                cartao.setVencimento(rs.getDate("vencimento"));
+                cartao.setVencimento(rs.getString("vencimento"));
                 cartao.setCvv(rs.getInt("cvv"));
                 cartao.setNumero(rs.getLong("numero"));
                 cartao.setIdConta(rs.getLong("id_conta"));
