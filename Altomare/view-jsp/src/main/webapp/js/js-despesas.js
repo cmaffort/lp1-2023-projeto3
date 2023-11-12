@@ -98,7 +98,7 @@ for (let i = 0; i < conteudosObtidos.length; i++) {
     let data = conteudoDivido[3];
     
     let dataDividida = data.split(' ');
-    data = dataDividida[1] + " " + dataDividida[2] + " " + dataDividida[3];
+    data = dataDividida[1];
     
     adicionaDespesa(valor, tipo, descricao, data);
 }

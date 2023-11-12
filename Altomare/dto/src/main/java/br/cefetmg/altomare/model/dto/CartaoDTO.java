@@ -3,16 +3,24 @@ package br.cefetmg.altomare.model.dto;
 import java.util.*;
 
 public class CartaoDTO {
+    private Long idCartao;
     private String titular;
     private Date vencimento;
     private Integer cvv;
     private Long numero;
+    private Long idRelacionaConta;
     
-    public CartaoDTO(String titular, Date vencimento, Integer cvv, Long numero) {
+    public CartaoDTO() {
+    
+    }
+    
+    public CartaoDTO(Long idCartao, String titular, Date vencimento, Integer cvv, Long numero, Long idConta) {
+        this.idCartao = idCartao;
         this.titular = titular;
         this.vencimento = vencimento;
         this.cvv = cvv;
         this.numero = numero;
+        this.idRelacionaConta = idConta;
     }
     
     public String getTitular() {
@@ -45,5 +53,21 @@ public class CartaoDTO {
     
     public void setNumero(Long newNumero) {
         this.numero = newNumero;
+    }
+    
+    public long getIdCartao() {
+        return idCartao;
+    }
+    
+    public void setIdCartao(long novoId) {
+        idCartao = novoId;
+    }
+    
+    public long getIdConta() {
+        return idRelacionaConta;
+    }
+    
+    public void setIdConta(long novoId) {
+        idRelacionaConta = novoId;
     }
 }

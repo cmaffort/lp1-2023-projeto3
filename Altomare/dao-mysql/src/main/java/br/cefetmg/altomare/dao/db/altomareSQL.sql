@@ -1,28 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Tempo de geração: 23-Out-2023 às 15:00
--- Versão do servidor: 5.7.36
--- versão do PHP: 7.4.26
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Banco de dados: `altomare`
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE altomare
+CREATE DATABASE IF NOT EXISTS altomare
 --
 -- Estrutura da tabela `atividade`
 --
@@ -108,3 +93,54 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `conta_usuario`
+--
+
+DROP TABLE IF EXISTS `contausuario`;
+CREATE TABLE IF NOT EXISTS `contausuario` (
+  id_conta BIGINT AUTO_INCREMENT,
+  esta_aberta BOOLEAN,
+  total DOUBLE,
+  PRIMARY KEY (id_conta)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `despesa`
+--
+
+DROP TABLE IF EXISTS `despesa`;
+CREATE TABLE IF NOT EXISTS `despesa` (
+  id_despesa BIGINT AUTO_INCREMENT,
+  valor DOUBLE NOT NULL,
+  foi_registrada BOOLEAN,
+  tipo VARCHAR(20),
+  descricao VARCHAR(200),
+  data_ocorrencia VARCHAR(20),
+  id_conta BIGINT(10),
+  PRIMARY KEY (id_despesa)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cartao`
+--
+
+DROP TABLE IF EXISTS `cartao`;
+CREATE TABLE IF NOT EXISTS `cartao` (
+  id_cartao BIGINT AUTO_INCREMENT,
+  titular VARCHAR(50),
+  vencimento DATE,
+  cvv INT(3),
+  numero BIGINT(12),
+  id_conta BIGINT(10),
+  PRIMARY KEY (id_cartao)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

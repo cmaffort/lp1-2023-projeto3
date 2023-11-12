@@ -3,23 +3,23 @@ import java.util.*;
 
 public class ContaUsuarioDTO {
     private long idConta;
-    ArrayList<DespesaDTO> historico;
-    ArrayList<CartaoDTO> cartoes;
     private boolean estaAberta;
     private double total;
     
     public ContaUsuarioDTO() {
-        historico = new ArrayList<>();
         this.estaAberta = false; //fechada na criação da conta, aberta no momento do embarque
         total = 0;
     }
     
-    public ContaUsuarioDTO(long id, ArrayList<DespesaDTO> historico, ArrayList<CartaoDTO> cartoes, double total) {
-        this.idConta = id;
-        this.historico = historico;
-        this.cartoes = cartoes;
-        this.estaAberta = true;
+    public ContaUsuarioDTO(boolean estado, double total) {
+        this.estaAberta = estado;
         this.total = total;
+    }
+    
+    public ContaUsuarioDTO(boolean estado, double total, long idConta) {
+        this.estaAberta = estado;
+        this.total = total;
+        this.idConta = idConta;
     }
     
     public double getTotal() {
@@ -36,22 +36,6 @@ public class ContaUsuarioDTO {
    
     public void setStatusConta(boolean novoStatus) {
         this.estaAberta = novoStatus;
-    }
-    
-    public ArrayList<DespesaDTO> getHistorico() {
-        return historico;
-    }
-    
-    public void setHistorico(ArrayList<DespesaDTO> novoHistorico) {
-        historico = novoHistorico;
-    }
-    
-    public ArrayList<CartaoDTO> getCartoes() {
-        return cartoes;
-    }
-    
-    public void setCartoes(ArrayList<CartaoDTO> novosCartoes) {
-        this.cartoes = novosCartoes;
     }
     
     public long getIdConta() {

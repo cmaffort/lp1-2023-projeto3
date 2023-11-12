@@ -13,33 +13,18 @@
         <%@ page import="java.util.*" %>
 
         <%
-            /*import br.cefetmg.altomare.service.GetDespesasToView;
-
-            GetDespesasToView getDespesas = new GetDespesasToView(Passageiro passageiro);*/
-            
-            ArrayList<DespesaDTO> arr = new ArrayList<>();
-            arr.add(new DespesaDTO(1, 100.0, true, "produto", "Produto 1", new Date(2023, 5, 18, 10, 52, 40)));
-            arr.add(new DespesaDTO(2, 200.0, true, "atração", "Produto 2", new Date(2022, 5, 10, 10, 52, 40)));
-            arr.add(new DespesaDTO(3, 300.0, true, "produto", "Produto 3", new Date(2023, 6, 11, 10, 52, 40)));
-            arr.add(new DespesaDTO(4, 400.0, true, "produto", "Produto 4", new Date(2023, 6, 15, 10, 52, 40)));
-            arr.add(new DespesaDTO(5, 500.0, true, "atração", "Produto 5", new Date(2023, 7, 22, 10, 52, 40)));
-            
-            //GetDespesasToView despesasOrdenadas = new GetDespesasToView(arr);
-            //despesasOrdenadas.ordenaDespesasPorData();
-            
-            double total = 0;
+            GetDespesasToView despesasUsuarioLogado = new GetDespesasToView();
+            ArrayList<DespesaDTO> arr = despesasUsuarioLogado.getDespesas();
         %>
        
         <div id="container">
             <div id="get-dados-conta">
-                <%  /*getDespesas.getDespesas()*/
-
-                    for (DespesaDTO despesa: /*despesasOrdenadas*/ arr) { %>
+                <% 
+                    for (DespesaDTO despesa: arr) { %>
                     
                     <p class="conteudo-passado"><% out.println(despesa.getValor() + "*" + despesa.getTipo() + "*" + despesa.getDescricao() + "*" + despesa.getDataOcorrencia()); 
                     %></p>
                     
-                    <% total+= despesa.getValor(); %>
                 <%}%>
             </div>
             <div id="filtros">
@@ -80,7 +65,7 @@
         </div>
             
         <footer>
-            <p>Despesas Totais: <%= total %></p>
+            <p>Despesas Totais: <%= despesasUsuarioLogado.getContaUsuario().getTotal() %></p>
             <a href="../pagamentos/pagamentos.jsp"><div>PAGAR</div></a>
         </footer>
         

@@ -1,29 +1,37 @@
 package br.cefetmg.altomare.model.dto;
 import java.util.*;
+import java.text.*;  
 
 public class DespesaDTO {
     private long idDespesa;
-    private double valor = 100.0;
+    private double valor;
     private boolean foiRegistrada = true;
     private String tipo; //tratar do tipo através de enum no service
     private String descricao;
-    private Date dataOcorrencia;
+    private String dataOcorrencia;
+    private long idRelacionaConta;
+    
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
     
     public DespesaDTO() {
-        valor = 0;
-        foiRegistrada = false;
-        tipo = "";
-        descricao = "";
-        dataOcorrencia = new Date();
+        valor = 100.00;
+        foiRegistrada = true;
+        tipo = "Produto";
+        descricao = "teste";
+        
+        Date date = new Date(System.currentTimeMillis());   
+        dataOcorrencia = dateFormat.format(date);
+        
+        idRelacionaConta = 100;
     }
     
-    public DespesaDTO(long id, double valor, boolean foiRegistrada, String tipo, String descricao, Date dataOcorrencia) {
-        this.idDespesa = id;
+    public DespesaDTO(double valor, boolean foiRegistrada, String tipo, String descricao, Date dataOcorrencia, long idConta) {
         this.valor = valor;
         this.foiRegistrada = foiRegistrada;
         this.tipo = tipo;
         this.descricao = descricao;
-        this.dataOcorrencia = dataOcorrencia;
+        this.dataOcorrencia = dateFormat.format(dataOcorrencia);
+        this.idRelacionaConta = idConta;
     }
     
     public double getValor() {
@@ -58,11 +66,11 @@ public class DespesaDTO {
         descricao = desc;
     }
     
-    public Date getDataOcorrencia() {
+    public String getDataOcorrencia() {
         return dataOcorrencia;
     }
     
-    public void setDataOcorrencia(Date data) {
+    public void setDataOcorrencia(String data) {
         dataOcorrencia = data;
     }
     
@@ -72,5 +80,13 @@ public class DespesaDTO {
     
     public void setIdDespesa(long novoId) {
         idDespesa = novoId;
+    }
+    
+    public long getIdConta() {
+        return idRelacionaConta;
+    }
+    
+    public void setIdConta(long novoId) {
+        idRelacionaConta = novoId;
     }
 }
