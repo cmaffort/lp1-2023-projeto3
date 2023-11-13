@@ -11,8 +11,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class CadastrarFuncionario extends HttpServlet {
 
@@ -32,17 +37,27 @@ public class CadastrarFuncionario extends HttpServlet {
             String turno = request.getParameter("turno");
             String nome = request.getParameter("nomeFuncionario");
             String dataNascimento = request.getParameter("dataNascimentoFuncionario");
-            String cpf = request.getParameter("cpfFuncionario");
+            String cpf = request.getParameter("cpf");
             String estadoCivil = request.getParameter("estadoCivilFuncionario");
             String rg = request.getParameter("rgFuncionario");
             String sexo = request.getParameter("sexoFuncionario");
             String email = request.getParameter("emailFuncionario");
             String telefone = request.getParameter("telefoneFuncionario");
             String dataAdmissao = request.getParameter("dataAdmissao");
-            //String foto = request.getParameter("foto");
+            String photo = request.getParameter("foto");
+            //String fileName = Paths.get(photo.getSubmittedFileName()).getFileName().toString(); 
             String senha = cpf; //a senha inicial de um funcionario cadastrado é seu próprio cpf
-
-            FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil);
+            String caminho = null;
+            
+            
+          /*  File diretorio = new File("imagensFuncionario");
+                    if(! diretorio.exists()){
+                        diretorio.mkdir();
+                        File foto = new File(diretorio, fileName);
+                        caminho = foto.getAbsolutePath();
+                    }*/
+                    
+            FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, photo);
             
             
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
@@ -50,11 +65,11 @@ public class CadastrarFuncionario extends HttpServlet {
             
             request.setAttribute("sucess", "Funcionario cadastrado com sucesso");
 
-        }  catch(PersistenciaException | ClassNotFoundException | SQLException e) {
+        }  catch(PersistenciaException | ClassNotFoundException | SQLException  e) {
             e.printStackTrace();
             request.setAttribute("tperror", "cadastroFuncionario");
             request.setAttribute("error", "Não foi possível realizar o cadastro, tente novamente");
-        }
+        } 
 
         return jsp;
     }

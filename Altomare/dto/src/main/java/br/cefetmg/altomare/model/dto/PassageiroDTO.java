@@ -7,15 +7,15 @@ public class PassageiroDTO extends UsuarioDTO{
     public String dadosMedicos;
     
             
-    public PassageiroDTO(/*Pacote pacote,*/ ContaUsuarioDTO contaUsuario, String cpf, String nome, String dataNascimento, String email, String senha, String sexo, String estadoCivil, String dadosMedicos, String rg, String telefone){
-        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil); 
+    public PassageiroDTO(/*Pacote pacote,*/ ContaUsuarioDTO contaUsuario, String cpf, String nome, String dataNascimento, String email, String senha, String sexo, String estadoCivil, String dadosMedicos, String rg, String telefone, String foto){
+        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, foto); 
         // this.pacote = pacote;
          this.contaUsuario = contaUsuario;
         this.dadosMedicos = dadosMedicos;
     }
 
     public PassageiroDTO() {
-        super("", "", "", "", "", "" , "", "", "");
+        super("", "", "", "", "", "" , "", "", "", "");
         this.contaUsuario = null;
         this.dadosMedicos = "";
         

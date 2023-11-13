@@ -21,7 +21,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 
     @Override
     public void inserir(FuncionarioDTO funcionario) throws PersistenciaException {
-        String sql = "INSERT INTO funcionarios (Nome, DatNasc, CPF, RG, Sexo, Email, EstadoCivil, Turno, Setor, DataAdmissao, Telefone) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO funcionarios (Nome, DatNasc, CPF, RG, Sexo, Email, EstadoCivil, Turno, Setor, DataAdmissao, Telefone, Foto) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try ( PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, funcionario.getNome());
@@ -35,6 +35,7 @@ public class FuncionarioDAO implements IFuncionarioDAO {
             statement.setString(9, funcionario.getSetor());
             statement.setString(10, funcionario.getDataAdmissao());
             statement.setString(11, funcionario.getTelefone());
+            statement.setString(12, funcionario.getFoto());
             statement.executeUpdate();
         } catch (SQLException ex) {
             throw new PersistenciaException(ex.getMessage());

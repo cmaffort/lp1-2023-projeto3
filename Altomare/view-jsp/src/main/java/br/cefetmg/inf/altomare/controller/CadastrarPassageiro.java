@@ -10,7 +10,12 @@ import br.cefetmg.altomare.model.dao.PassageiroDAO;
 import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
 import br.cefetmg.altomare.model.dto.ContaUsuarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
+import jakarta.servlet.http.Part;
+import java.io.File;
+import java.nio.file.Paths;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 @WebServlet(urlPatterns = {"/CadastrarPassageiro"})
@@ -29,10 +34,19 @@ public class CadastrarPassageiro extends HttpServlet{
                     String email = request.getParameter("email");
                     String telefone = request.getParameter("telefone");
                     String medico = request.getParameter("medico");
-                    //String foto = request.getParameter("foto");
+                    String photo = request.getParameter("foto");
+                    //String fileName = Paths.get(photo.getSubmittedFileName()).getFileName().toString();
                     String senha = "";
+                   // String caminho = null;
+                    
+                   /* File diretorio = new File("imagensPassageiro");
+                    if(! diretorio.exists()){
+                        diretorio.mkdir();
+                        File foto = new File(diretorio, fileName);
+                        caminho = foto.getAbsolutePath();
+                    }*/
             
-                    PassageiroDTO passageiro = new PassageiroDTO (new ContaUsuarioDTO(), cpf, nome, dataNascimento, email, senha, sexo, civil, medico, rg, telefone);
+                    PassageiroDTO passageiro = new PassageiroDTO (new ContaUsuarioDTO(), cpf, nome, dataNascimento, email, senha, sexo, civil, medico, rg, telefone, photo);
                    
                     PassageiroDAO pass = new PassageiroDAO();
                     pass.InserirDadosPassageiro(passageiro);
@@ -42,7 +56,7 @@ public class CadastrarPassageiro extends HttpServlet{
              } catch(PersistenciaException | ClassNotFoundException | SQLException e) {
               request.setAttribute("tperror", "cadastroPassageiro");
               request.setAttribute("error", "Não foi possível realizar o cadastro, tente novamente");
-        }
+        } 
                return jsp;
     }
 }

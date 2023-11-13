@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+//@include file="../../headerGerente.jsp";
 
 @WebServlet(name = "Fachada", urlPatterns = {"/Fachada"})
 public class Fachada extends HttpServlet {
@@ -27,11 +27,15 @@ public class Fachada extends HttpServlet {
             request.setCharacterEncoding("UTF-8");
            String acao = request.getParameter("acao");
            String jsp;
+           
+       // out.println("<head>");
+         // out.println("<link rel=\"stylesheet\" href=\"../../css/estilos-header.css\">");
+          //out.println("</head>");
         
        if(acao.equals("CadastrarProduto"))
           jsp = CadastrarProduto.execute(request);
        else if(acao.equals("CadastrarFuncionario"))
-          jsp = CadastrarFuncionario.execute(request);
+          jsp = CadastrarFuncionario.execute(request); 
        else if(acao.equals("CadastrarPassageiro"))
            jsp = CadastrarPassageiro.execute(request);
        else if(acao.equals("ListarProduto"))
@@ -40,6 +44,8 @@ public class Fachada extends HttpServlet {
           jsp = AlterarProduto.execute(request);
        else if(acao.equals("ExcluirProduto"))
           jsp = ExcluirProduto.execute(request);
+       else if(acao.equals("CadastrarFuncionario"))
+           jsp = CadastrarFuncionario.execute(request);
        else
            jsp = "/erro.jsp";
        

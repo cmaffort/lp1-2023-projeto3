@@ -57,7 +57,8 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   `Turno` varchar(50),
   `Setor` varchar(50),
   `DataAdmissao` varchar(50),
-  `Telefone` varchar(50)
+  `Telefone` varchar(50),
+  `Foto` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,6 +79,7 @@ CREATE TABLE IF NOT EXISTS `passageiro` (
   `Sexo` varchar(50),
   `Civil` varchar(50),
   `DadosMedicos` varchar(50),
+  `Foto` varchar(50),
   `Pacote` varchar(50),
   `Despesa` varchar(50)
 

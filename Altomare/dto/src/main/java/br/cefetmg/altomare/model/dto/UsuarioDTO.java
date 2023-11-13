@@ -12,12 +12,13 @@ public class UsuarioDTO {
    private String telefone;
    private String sexo;
    private String estadoCivil;
+   private String foto;
    
    public UsuarioDTO() {
        
    }
    
-   public UsuarioDTO(String cpf, String rg, String nome, String dataNascimento,String email, String senha,String telefone, String sexo, String estadoCivil){
+   public UsuarioDTO(String cpf, String rg, String nome, String dataNascimento,String email, String senha,String telefone, String sexo, String estadoCivil, String foto){
       this.cpf = cpf;
       this.rg = rg;
       this.nome = nome;
@@ -27,7 +28,7 @@ public class UsuarioDTO {
       this.telefone = telefone;
       this.sexo = sexo;
       this.estadoCivil = estadoCivil;
-    
+      this.foto = foto;
     }
    
    public String getCpf() {
@@ -100,5 +101,12 @@ public class UsuarioDTO {
 
     public void setEstadoCivil(String estadoCivil){
         this.estadoCivil = estadoCivil;
+    }
+    
+    public String getFoto(){
+        return foto;
+    }
+    public void setFoto(String foto){
+        this.foto = foto;
     }
 }

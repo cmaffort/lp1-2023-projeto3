@@ -1,4 +1,7 @@
 
+<%@page import="br.cefetmg.altomare.model.dao.PassageiroDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.cefetmg.altomare.model.dto.PassageiroDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -55,11 +58,25 @@
         <input id="in" onkeyup="pesquisa()" type="text"
                 name="barra" placeholder="ProcurarPassageiro" style="width: 400px;">
         </div>
-        <div id="div1">
-             <!-- <img src="imagens\user-icon.png" alt="alt" style="height: 200px;">-->
-            <!-- comment  <p style="float:right;">Nome: Doris</p> -->
-            <!-- comment<p style="float:right;">Cpf:xxx.xxx.xxx-xx</p>-->
-            
+        <div class="row">
+            <%
+               ArrayList<PassageiroDTO> passageiros = new ArrayList<>();
+               try{
+                  PassageiroDAO passageiroDAO = new PassageiroDAO();
+                  passageiros = passageiroDAO.listarTodos();
+                }catch(Exception e){
+                   out.print(e);
+                }
+                
+               for(PassageiroDTO passageiro : passageiros){
+            %>
+               <div class="card red">
+                   <img class="image" src="imagens/user-icon.png" alt="article">
+                   <div class="informacoes">
+                       <h2 id="nomeFunc"><%=passageiro.getNome()%></h2>
+                   </div>
+                   <div>
+            <%}%>
         </div>
         <script src="../../js/script.js"></script>
             <script src="../../js/js-header.js"></script>
