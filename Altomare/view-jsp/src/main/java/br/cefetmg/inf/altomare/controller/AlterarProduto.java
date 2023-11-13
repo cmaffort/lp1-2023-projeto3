@@ -34,7 +34,7 @@ public class AlterarProduto extends HttpServlet {
         if (quantidadeStr != null && !quantidadeStr.isEmpty()) {
             quantidade = Integer.parseInt(quantidadeStr);
         }
-
+            
         Date data = Date.valueOf(dataStr);
 
         ProdutoDTO produto = new ProdutoDTO(nome, preco, tipo, estado, produtoId, quantidade, data);

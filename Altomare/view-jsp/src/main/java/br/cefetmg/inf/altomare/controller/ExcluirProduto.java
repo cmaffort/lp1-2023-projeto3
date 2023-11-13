@@ -19,14 +19,14 @@ public static String execute(HttpServletRequest request) {
         String jsp = "";
 
         try {
-            String idStr = request.getParameter("produtoId");
-            int produtoId = Integer.parseInt(idStr);
+            String namePro = request.getParameter("Nome");
+            
 
             ProdutoDAO produtoDAO = new ProdutoDAO();
-            produtoDAO.excluirProduto(produtoId);
+            produtoDAO.excluirProduto(namePro);
             jsp = "index.jsp"; // Define a página de redirecionamento após a exclusão
         } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
+            System.out.println(ex);
             jsp = "erro.jsp"; // Define a página de erro
         }
 
