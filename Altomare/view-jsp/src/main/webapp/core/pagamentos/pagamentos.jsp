@@ -48,24 +48,24 @@
             <section id="registrando-cartao">
                 <div id="xis-tela-adiciona">×</div>
                 <h2>Registro de Cartão</h2>
-                <form>
+                <form action="PagamentosServlet" method="GET">
                     <div class="input-cartao" id="dv1">
                         <h5>Nome do titular</h5>
-                        <input type="text" id="inp1"> 
+                        <input type="text" id="inp1" name="titular"> 
                     </div>
                     <div id="venc-cvv">
                         <div class="input-cartao" id="dv2">
                             <h5>Data Vencimento</h5>
-                            <input type="text" id="inp2"> 
+                            <input type="text" id="inp2" name="vencimento"> 
                         </div>
                         <div class="input-cartao" id="dv3">
                             <h5>CVV</h5>
-                            <input type="text" id="inp3"> 
+                            <input type="text" id="inp3" name="cvv"> 
                         </div>
                     </div>
                     <div class="input-cartao" id="dv4">
                         <h5>Número do Cartão</h5>
-                        <input type="text" id="inp4"> 
+                        <input type="text" id="inp4" name="numero"> 
                     </div>
                     <input id="confirmar-adicao-cartao" value="Registrar" type="submit">
                 </form>
@@ -81,8 +81,16 @@
         </footer>
         
         <div id="cartoes-from-backend">
-            <%  GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
-                ArrayList<CartaoDTO> arr = cartoesUsuarioLogado.getCartoes();
+            <%  
+                ArrayList<CartaoDTO> arr;
+                
+                if (request.getAttribute("cartoes") != null) {
+                    arr = (ArrayList<CartaoDTO>)request.getAttribute("cartoes");
+                }
+                else {
+                    GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
+                    arr = cartoesUsuarioLogado.getCartoes(null);
+                }
             %>   
             <%  for (CartaoDTO cartao: arr) { %>
 

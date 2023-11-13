@@ -27,6 +27,15 @@ public class CartaoDTO {
         this.idRelacionaConta = idConta;
     }
     
+    public CartaoDTO(String titular, String vencimento, String tipo, Integer cvv, Long numero, Long idConta) {
+        this.titular = titular;
+        this.vencimento = dateFormat.format(vencimento);
+        this.tipo = tipo;
+        this.cvv = cvv;
+        this.numero = numero;
+        this.idRelacionaConta = idConta;
+    }
+    
     public String getTitular() {
         return this.titular;
     }

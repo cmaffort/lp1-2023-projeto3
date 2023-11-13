@@ -82,6 +82,7 @@ function adicionaCartao(titular, vencimento, numero, tipo) {
     novoNumero.textContent = "**** **** **** " + String(numero).substr(-4);
     parteSuperior.appendChild(novoTipo);
     parteSuperior.appendChild(novoNumero);
+    parteSuperior.classList.add("parte-superior");
     
     let novoTitular = document.createElement("div");
     novoTitular.textContent = titular;
@@ -93,7 +94,8 @@ function adicionaCartao(titular, vencimento, numero, tipo) {
     novaEscolhaCartao.appendChild(parteSuperior);
     novaEscolhaCartao.appendChild(parteInferior);
     
-    if (tipo === "debito") 
+    tipo = tipo.trim();
+    if (tipo.toString() === "debito")
         novaEscolhaCartao.classList.add("debito");
     else
         novaEscolhaCartao.classList.add("credito");
@@ -114,5 +116,5 @@ for (let i = 0; i < cartoesDoBanco.length; i++) {
     let vencimento = cartoDividido[2];
     let tipo = cartoDividido[3];
 
-    adicionaCartao(titular, numero, vencimento.split()[0], tipo);
+    adicionaCartao(titular, vencimento.split(" ")[0], numero, tipo);
 }
