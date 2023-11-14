@@ -14,8 +14,8 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
     @Override
     public boolean inserir(ContaUsuarioDTO contaUsuario) {
 
-        String sql = "INSERT INTO contausuario (esta_aberta, total"
-                + ") VALUES(?, ?);";
+        String sql = "INSERT INTO contausuario (esta_aberta, total, id_conta"
+                + ") VALUES(?, ?, ?);";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
@@ -23,6 +23,7 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setBoolean(1, contaUsuario.getStatusConta());
             pstmt.setDouble(2, contaUsuario.getTotal());
+            pstmt.setLong(3, contaUsuario.getIdConta());
             pstmt.executeUpdate();
             
             String sqlToGetId = "SELECT * FROM contausuario ORDER BY id_conta DESC LIMIT 1;";
@@ -120,5 +121,38 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
             
         return pegaCartoes.buscaPorIdConta(contaUsuario.getIdConta());
         
+    }
+    
+    @Override
+    public ContaUsuarioDTO getContaPorId(Long id) {
+        try {
+            Connection connection = ConexaoDB.inicializaDB();
+
+            String sql = "SELECT * FROM contausuario WHERE id_conta = ?";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setLong(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            ContaUsuarioDTO contaRecuperada = null;
+            if (rs.next()) {
+                contaRecuperada = new ContaUsuarioDTO();
+                contaRecuperada.setStatusConta(rs.getBoolean("esta_aberta"));
+                contaRecuperada.setTotal(rs.getDouble("total"));
+                contaRecuperada.setIdConta(rs.getLong("id_conta"));
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+            
+            return contaRecuperada;
+        }
+        catch (SQLException u) {    
+            throw new RuntimeException(u);    
+        }
+        catch (ClassNotFoundException o) {
+            throw new RuntimeException(o);
+        }
     }
 }

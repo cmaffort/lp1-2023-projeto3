@@ -34,6 +34,15 @@ public class DespesaDTO {
         this.idRelacionaConta = idConta;
     }
     
+    public DespesaDTO(double valor, boolean foiRegistrada, String tipo, String descricao, String dataOcorrencia, long idConta) {
+        this.valor = valor;
+        this.foiRegistrada = foiRegistrada;
+        this.tipo = tipo;
+        this.descricao = descricao;
+        this.dataOcorrencia = dataOcorrencia;
+        this.idRelacionaConta = idConta;
+    }
+    
     public double getValor() {
         return valor;
     }

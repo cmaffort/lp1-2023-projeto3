@@ -14,7 +14,7 @@ public class GetDespesasToView {
         ContaUsuarioDTO contaParaDeletar = new ContaUsuarioDTO(true, 0.0, 0);
         contaManager.delete(contaParaDeletar);
         
-        ContaUsuarioDTO contaParaAdicionar = new ContaUsuarioDTO(true, 0.0);
+        ContaUsuarioDTO contaParaAdicionar = new ContaUsuarioDTO(true, 0.0, 2);
         contaManager.inserir(contaParaAdicionar);
         
         DespesaDAO despesaManager = new DespesaDAO();
@@ -22,11 +22,11 @@ public class GetDespesasToView {
         despesaParaDeletar.setIdDespesa(0);
         despesaManager.deletar(despesaParaDeletar);
         
-        DespesaDTO despesa1 = new DespesaDTO(100.00, true, "produto", "produto1", new Date(System.currentTimeMillis()), contaParaAdicionar.getIdConta());
-        DespesaDTO despesa2 = new DespesaDTO(200.00, true, "produto", "produto2", new Date(System.currentTimeMillis()), contaParaAdicionar.getIdConta());
-        DespesaDTO despesa3 = new DespesaDTO(300.00, true, "produto", "produto3", new Date(System.currentTimeMillis()), contaParaAdicionar.getIdConta());
-        DespesaDTO despesa4 = new DespesaDTO(400.00, true, "produto", "produto4", new Date(System.currentTimeMillis()), contaParaAdicionar.getIdConta());
-        DespesaDTO despesa5 = new DespesaDTO(500.00, true, "produto", "produto5", new Date(System.currentTimeMillis()), contaParaAdicionar.getIdConta());
+        DespesaDTO despesa1 = new DespesaDTO(100.00, true, "produto", "produto1", "2023-15-11 : 20:58:10", contaParaAdicionar.getIdConta());
+        DespesaDTO despesa2 = new DespesaDTO(200.00, true, "produto", "produto2", "2023-15-11 : 20:58:10", contaParaAdicionar.getIdConta());
+        DespesaDTO despesa3 = new DespesaDTO(300.00, true, "produto", "produto3", "2023-15-11 : 20:58:10", contaParaAdicionar.getIdConta());
+        DespesaDTO despesa4 = new DespesaDTO(400.00, true, "produto", "produto4", "2023-15-11 : 20:58:10", contaParaAdicionar.getIdConta());
+        DespesaDTO despesa5 = new DespesaDTO(500.00, true, "produto", "produto5", "2023-15-11 : 20:58:10", contaParaAdicionar.getIdConta());
         
         despesaManager.inserir(despesa1);
         contaParaAdicionar.setTotal(contaParaAdicionar.getTotal() + despesa1.getValor());

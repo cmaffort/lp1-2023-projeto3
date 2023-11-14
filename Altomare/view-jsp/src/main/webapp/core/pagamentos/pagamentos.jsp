@@ -40,15 +40,15 @@
                 <div id="escolha-cartoes">
                     <div id="xis-tela-cartoes">×</div>
                     <h2>Cartão de </h2>
-                    <div id="cartoes">
-                       <div id="botao-adicionar">Adicionar Cartão</div> 
+                    <div id="lugar-cartoes">
                     </div>
+                    <div id="botao-adicionar">Adicionar Cartão</div> 
                 </div>
             </section>
             <section id="registrando-cartao">
                 <div id="xis-tela-adiciona">×</div>
                 <h2>Registro de Cartão</h2>
-                <form action="PagamentosServlet" method="GET">
+                <form action="../../PagamentosServlet" method="POST">
                     <div class="input-cartao" id="dv1">
                         <h5>Nome do titular</h5>
                         <input type="text" id="inp1" name="titular"> 
@@ -82,16 +82,11 @@
         
         <div id="cartoes-from-backend">
             <%  
-                ArrayList<CartaoDTO> arr;
+                GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
+                ArrayList<CartaoDTO> arr = cartoesUsuarioLogado.getCartoes();
                 
-                if (request.getAttribute("cartoes") != null) {
-                    arr = (ArrayList<CartaoDTO>)request.getAttribute("cartoes");
-                }
-                else {
-                    GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
-                    arr = cartoesUsuarioLogado.getCartoes(null);
-                }
             %>   
+            <p><%= arr%></p>
             <%  for (CartaoDTO cartao: arr) { %>
 
             <p class="cartao-individual-db"><% out.println(cartao.getTitular() + "*" + cartao.getNumero() + "*" + 

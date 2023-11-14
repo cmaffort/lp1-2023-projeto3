@@ -186,6 +186,9 @@ nav {
     margin-bottom: 2vh;
     color: rgb(5, 50, 112);
     border: .3vh solid rgb(5, 50, 112);
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
 }
 
 @media screen and (orientation: portrait)  {

@@ -7,7 +7,8 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE IF NOT EXISTS altomare
+CREATE DATABASE IF NOT EXISTS altomare;
+USE altomare;
 --
 -- Estrutura da tabela `atividade`
 --
@@ -79,20 +80,20 @@ CREATE TABLE IF NOT EXISTS `passageiro` (
 -- Estrutura da tabela `produto`
 --
 
-DROP TABLE IF EXISTS `produto`;
-CREATE TABLE IF NOT EXISTS `produto` (
-  `Tipo` varchar(50)(50) DEFAULT NULL,
-  `Preco` double DEFAULT NULL,
-  `Estado` varchar(50)(20) DEFAULT NULL,
-  `Nome` text NOT NULL,
-  `Id` int(11) NOT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-COMMIT;
+-- DROP TABLE IF EXISTS `produto`;
+-- CREATE TABLE IF NOT EXISTS `produto` (
+--  `Tipo` varchar(50)(50) DEFAULT NULL,
+--  `Preco` double DEFAULT NULL,
+--  `Estado` varchar(50)(20) DEFAULT NULL,
+--  `Nome` text NOT NULL,
+--  `Id` int(11) NOT NULL,
+--  PRIMARY KEY (`Id`)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+-- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+-- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 -- --------------------------------------------------------
@@ -103,7 +104,7 @@ COMMIT;
 
 DROP TABLE IF EXISTS `contausuario`;
 CREATE TABLE IF NOT EXISTS `contausuario` (
-  id_conta BIGINT AUTO_INCREMENT,
+  id_conta BIGINT, -- autoincrement
   esta_aberta BOOLEAN,
   total DOUBLE,
   PRIMARY KEY (id_conta)
@@ -123,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `despesa` (
   foi_registrada BOOLEAN,
   tipo VARCHAR(20),
   descricao VARCHAR(200),
-  data_ocorrencia VARCHAR(20),
+  data_ocorrencia VARCHAR(50),
   id_conta BIGINT(10),
   PRIMARY KEY (id_despesa)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -145,3 +146,11 @@ CREATE TABLE IF NOT EXISTS `cartao` (
   id_conta BIGINT(10),
   PRIMARY KEY (id_cartao)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO contausuario (esta_aberta, total, id_conta) VALUES (true, 1500.00, 1);
+
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Legal", "2023-10-10", "debito", 111, 1111111111111111, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Bacana", "2023-10-10", "credito", 222, 2222222222222222, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Gente Boa", "2023-10-10", "credito", 333, 3333333333333333, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Dahora", "2023-10-10", "debito", 444, 4444444444444444, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Bom", "2023-10-10", "debito", 555, 5555555555555555, 1);

@@ -18,18 +18,18 @@ public class CartaoDTO {
     
     }
     
-    public CartaoDTO(String titular, Date vencimento, String tipo, Integer cvv, Long numero, Long idConta) {
+    /*public CartaoDTO(String titular, Date vencimento, String tipo, Integer cvv, Long numero, Long idConta) {
         this.titular = titular;
         this.vencimento = dateFormat.format(vencimento);
         this.tipo = tipo;
         this.cvv = cvv;
         this.numero = numero;
         this.idRelacionaConta = idConta;
-    }
+    }*/
     
     public CartaoDTO(String titular, String vencimento, String tipo, Integer cvv, Long numero, Long idConta) {
         this.titular = titular;
-        this.vencimento = dateFormat.format(vencimento);
+        this.vencimento = vencimento;
         this.tipo = tipo;
         this.cvv = cvv;
         this.numero = numero;

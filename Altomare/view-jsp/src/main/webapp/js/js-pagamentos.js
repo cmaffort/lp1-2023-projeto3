@@ -69,7 +69,7 @@ cancelaPix.addEventListener("click", () => {
 
 
 let cartoes = document.querySelectorAll(".cartao-individual");
-let lugarProsCartoes = document.querySelector("#cartoes");
+let lugarProsCartoes = document.querySelector("#lugar-cartoes");
 
 function adicionaCartao(titular, vencimento, numero, tipo) {
     let novaEscolhaCartao = document.createElement("div");

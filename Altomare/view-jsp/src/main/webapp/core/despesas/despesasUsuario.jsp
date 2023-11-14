@@ -31,25 +31,25 @@
                 <nav>
                   Filtros  
                 </nav>
-                    <form action="servletDespesas" method="GET" id="article-filtros">
+                    <form id="article-filtros">
                         <div id="filtros-escolha">
                             <section>
                                 <h4>Período de dias:</h4>
-                                <div><input type="number" name="dia1"> <span>à</span> <input type="number" name="dia2"></div>
+                                <div><input type="number" name="dia1" id="dia1"> <span>à</span> <input type="number" name="dia2" id="dia2"></div>
                             </section>
                             <section>
                                 <h4>Tipo de despesas:</h4>
                                 <div id="tipo-despesas">
                                     <div>
-                                        <input type="checkbox" value="alimento" name="tipo"> Despesa de Alimentação  
+                                        <input type="checkbox" value="alimento" name="tipo" id="alimento" checked> Despesas de Produtos  
                                     </div>
                                     <div>
-                                        <input type="checkbox" value="atividade" name="tipo"> Despesa de Atração
+                                        <input type="checkbox" value="atividade" name="tipo" id="atracao" checked> Despesas de Atrações
                                     </div>
                                 </div>
                             </section>
                         </div>
-                        <input type="submit" value="Filtrar" id="filtrar">
+                        <div id="filtrar">Filtrar</div>
                     </form>
             </div>
             <div id="disposicao-despesas">

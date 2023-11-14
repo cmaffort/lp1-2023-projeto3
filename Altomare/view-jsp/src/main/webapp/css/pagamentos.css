@@ -92,7 +92,7 @@ footer a {
     padding: 1vh;
     background-color: rgb(217, 217, 217);
     position: absolute;
-    width: 40vh;
+    width: 43vh;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -279,6 +279,8 @@ footer a {
     justify-content: space-between;
     align-items: flex-start;
     padding: 1vh;
+    font-size: 2vh;
+    margin-bottom: 2vh
 }
 
 .parte-superior {
@@ -287,6 +289,24 @@ footer a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+#lugar-cartoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 32vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#escolha-cartoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 *:focus {
