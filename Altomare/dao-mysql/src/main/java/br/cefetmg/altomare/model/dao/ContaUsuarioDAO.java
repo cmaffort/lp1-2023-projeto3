@@ -14,18 +14,27 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
     @Override
     public boolean inserir(ContaUsuarioDTO contaUsuario) {
 
-        String sql = "INSERT INTO conta_usuario (id_conta, historico, esta_aberta, total"
-                + ") VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO contausuario (esta_aberta, total, id_conta"
+                + ") VALUES(?, ?, ?);";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, contaUsuario.getIdConta());
-            //pstmt.setArray(2, contaUsuario.getHistorico()); Array != ArrayList
-            pstmt.setBoolean(3, contaUsuario.getStatusConta());
-            pstmt.setDouble(4, contaUsuario.getTotal());
-            ResultSet rs = pstmt.executeQuery();
+            pstmt.setBoolean(1, contaUsuario.getStatusConta());
+            pstmt.setDouble(2, contaUsuario.getTotal());
+            pstmt.setLong(3, contaUsuario.getIdConta());
+            pstmt.executeUpdate();
+            
+            String sqlToGetId = "SELECT * FROM contausuario ORDER BY id_conta DESC LIMIT 1;";
+            PreparedStatement retornarIdConta = connection.prepareStatement(sql);
+            ResultSet rs = retornarIdConta.executeQuery(sqlToGetId);
+            
+            Long idContaAdicionada = null;
+            if (rs.next()) {
+                idContaAdicionada = rs.getLong("id_conta");
+                contaUsuario.setIdConta(idContaAdicionada);
+            }
 
             rs.close();
             pstmt.close();
@@ -44,9 +53,8 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
     @Override
     public boolean atualizar(ContaUsuarioDTO contaUsuario){
 
-        String sql = "UPDATE conta_usuario " +
-                       " SET historico = ?, " +
-                       "     esta_aberta = ? " +
+        String sql = "UPDATE contausuario " +
+                       " SET esta_aberta = ?, " +
                        "     total = ? " +
                        " WHERE id_conta = ?";
 
@@ -54,10 +62,9 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            //pstmt.setArray(1, contaUsuario.getHistorico()); Array != ArrayList
-            pstmt.setBoolean(2, contaUsuario.getStatusConta());
-            pstmt.setDouble(3, contaUsuario.getTotal());
-            pstmt.setLong(5, contaUsuario.getIdConta());
+            pstmt.setBoolean(1, contaUsuario.getStatusConta());
+            pstmt.setDouble(2, contaUsuario.getTotal());
+            pstmt.setLong(3, contaUsuario.getIdConta());
             pstmt.executeUpdate();
 
             pstmt.close();
@@ -76,7 +83,7 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
     @Override
     public boolean delete(ContaUsuarioDTO contaUsuario) {
 
-        String sql = "DELETE FROM conta_usuario WHERE id = ?";
+        String sql = "DELETE FROM contausuario WHERE id_conta > ?"; // por enquanto coloquei >
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
@@ -99,44 +106,47 @@ public class ContaUsuarioDAO implements IContaUsuarioDAO{
     }
     
     @Override
-    public ArrayList<DespesaDTO> getDespesas(ContaUsuarioDTO contaUsuario) { //tratar retorno da query -> rs não é ArrayList
- 
-        String sql = "SELECT historico FROM conta_usuario";
+    public ArrayList<DespesaDTO> getDespesas(ContaUsuarioDTO contaUsuario) {
 
-        try {
-            Connection connection = ConexaoDB.inicializaDB();
+        DespesaDAO pegaDespesas = new DespesaDAO();
             
-            PreparedStatement pstmt = connection.prepareStatement(sql);
-            ResultSet rs = pstmt.executeQuery();
-
-            pstmt.close();
-            connection.close();
-            
-            return (ArrayList<DespesaDTO>) rs;
-        }
-        catch (SQLException u) {    
-            throw new RuntimeException(u);    
-        }
-        catch (ClassNotFoundException o) {
-            throw new RuntimeException(o);
-        }
+        return pegaDespesas.buscaPorIdConta(contaUsuario.getIdConta());
+        
     }
     
     @Override
-    public ArrayList<CartaoDTO> getCartoes(ContaUsuarioDTO contaUsuario) { //tratar retorno da query -> rs não é ArrayList
- 
-        String sql = "SELECT cartoes FROM conta_usuario";
+    public ArrayList<CartaoDTO> getCartoes(ContaUsuarioDTO contaUsuario) {
 
+        CartaoDAO pegaCartoes = new CartaoDAO();
+            
+        return pegaCartoes.buscaPorIdConta(contaUsuario.getIdConta());
+        
+    }
+    
+    @Override
+    public ContaUsuarioDTO getContaPorId(Long id) {
         try {
             Connection connection = ConexaoDB.inicializaDB();
-            
+
+            String sql = "SELECT * FROM contausuario WHERE id_conta = ?";
+
             PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setLong(1, id);
             ResultSet rs = pstmt.executeQuery();
 
+            ContaUsuarioDTO contaRecuperada = null;
+            if (rs.next()) {
+                contaRecuperada = new ContaUsuarioDTO();
+                contaRecuperada.setStatusConta(rs.getBoolean("esta_aberta"));
+                contaRecuperada.setTotal(rs.getDouble("total"));
+                contaRecuperada.setIdConta(rs.getLong("id_conta"));
+            }
+
+            rs.close();
             pstmt.close();
             connection.close();
             
-            return (ArrayList<CartaoDTO>) rs;
+            return contaRecuperada;
         }
         catch (SQLException u) {    
             throw new RuntimeException(u);    

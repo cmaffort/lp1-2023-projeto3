@@ -1,6 +1,6 @@
 package br.cefetmg.altomare.model.dao;
 
-import br.cefetmg.altomare.model.dto.DespesaDTO;
+import br.cefetmg.altomare.model.dto.CartaoDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,26 +9,26 @@ import br.cefetmg.altomare.dao.connection.ConexaoDB;
 import java.util.*;
 import java.sql.Date;
 
-public class DespesaDAO implements IDespesaDAO{
+public class CartaoDAO implements ICartaoDAO{
     @Override
-    public boolean inserir(DespesaDTO despesa) {
+    public boolean inserir(CartaoDTO cartao) {
 
-        String sql = "INSERT INTO despesa (valor, foi_registrada, tipo, descricao, data_ocorrencia, id_conta"
+        String sql = "INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta"
                 + ") VALUES(?, ?, ?, ?, ?, ?)";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setDouble(1, despesa.getValor());
-            pstmt.setBoolean(2, despesa.getStatus());
-            pstmt.setString(3, despesa.getTipo());
-            pstmt.setString(4, despesa.getDescricao());
-            pstmt.setString(5, despesa.getDataOcorrencia());
-            pstmt.setLong(6, despesa.getIdConta());
-            //ResultSet rs = pstmt.executeQuery();
+            pstmt.setString(1, cartao.getTitular());
+            pstmt.setString(2, cartao.getVencimento());
+            pstmt.setString(3, cartao.getTipo());
+            pstmt.setInt(4, cartao.getCvv());
+            pstmt.setLong(5, cartao.getNumero());
+            pstmt.setLong(6, cartao.getIdConta());
+            
             pstmt.execute();
-            //rs.close();
+
             pstmt.close();
             connection.close();
         }
@@ -43,26 +43,28 @@ public class DespesaDAO implements IDespesaDAO{
     }
 
     @Override
-    public boolean atualizar(DespesaDTO despesa){
+    public boolean atualizar(CartaoDTO cartao){
 
-        String sql = "UPDATE despesa " +
-                       " SET valor = ?, " +
-                       "     foi_registrada = ? " +
+        String sql = "UPDATE cartao " +
+                       " SET titular = ?, " +
+                       "     vencimento = ? " +
                        "     tipo = ? " +
-                       "     descricao = ? " +
-                       "     data_ocorrencia = ? " +
-                       " WHERE id_despesa = ?";
+                       "     cvv = ? " +
+                       "     numero = ? " +
+                       "     id_conta = ? " +
+                       " WHERE id_cartao = ?";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setDouble(1, despesa.getValor());
-            pstmt.setBoolean(2, despesa.getStatus());
-            pstmt.setString(3, despesa.getTipo());
-            pstmt.setString(4, despesa.getDescricao());
-            pstmt.setString(5, despesa.getDataOcorrencia());
-            pstmt.setLong(6, despesa.getIdDespesa());
+            pstmt.setString(1, cartao.getTitular());
+            pstmt.setString(2, cartao.getVencimento());
+            pstmt.setString(3, cartao.getTipo());
+            pstmt.setInt(4, cartao.getCvv());
+            pstmt.setLong(5, cartao.getNumero());
+            pstmt.setLong(6, cartao.getIdConta());
+            pstmt.setLong(1, cartao.getIdCartao());
             pstmt.executeUpdate();
 
             pstmt.close();
@@ -79,15 +81,15 @@ public class DespesaDAO implements IDespesaDAO{
     }
 
     @Override
-    public boolean deletar(DespesaDTO despesa) {
+    public boolean deletar(CartaoDTO cartao) {
 
-        String sql = "DELETE FROM despesa WHERE id_despesa = ?";
+        String sql = "DELETE FROM cartao WHERE id_cartao = ?";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, despesa.getIdDespesa());
+            pstmt.setLong(1, cartao.getIdCartao());
             pstmt.executeUpdate();
 
             pstmt.close();
@@ -104,36 +106,36 @@ public class DespesaDAO implements IDespesaDAO{
     }
     
     @Override
-    public ArrayList<DespesaDTO> buscaPorIdConta(Long id) {
+    public ArrayList<CartaoDTO> buscaPorIdConta(Long id) {
          try {
             Connection connection = ConexaoDB.inicializaDB();
 
-            String sql = "SELECT * FROM despesa WHERE id_conta = ?";
+            String sql = "SELECT * FROM cartao WHERE id_conta = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, id);
             ResultSet rs = pstmt.executeQuery();
 
-            ArrayList<DespesaDTO> despesasEncontradas = new ArrayList<>();
-            DespesaDTO despesa;
+            ArrayList<CartaoDTO> cartoesEncontrados = new ArrayList<>();
+            CartaoDTO cartao;
             while (rs.next()) {
-                despesa = new DespesaDTO();
-                despesa.setIdDespesa(rs.getLong("id_despesa"));
-                despesa.setValor(rs.getDouble("valor"));
-                despesa.setStatus(rs.getBoolean("foi_registrada"));
-                despesa.setTipo(rs.getString("tipo"));
-                despesa.setDescricao(rs.getString("descricao"));
-                despesa.setDataOcorrencia(rs.getString("data_ocorrencia"));
-                despesa.setIdConta(rs.getLong("id_conta"));
+                cartao = new CartaoDTO();
+                cartao.setIdCartao(rs.getLong("id_cartao"));
+                cartao.setTitular(rs.getString("titular"));
+                cartao.setVencimento(rs.getString("vencimento"));
+                cartao.setTipo(rs.getString("tipo"));
+                cartao.setCvv(rs.getInt("cvv"));
+                cartao.setNumero(rs.getLong("numero"));
+                cartao.setIdConta(rs.getLong("id_conta"));
                 
-                despesasEncontradas.add(despesa);
+                cartoesEncontrados.add(cartao);
             }
 
             rs.close();
             pstmt.close();
             connection.close();
             
-            return despesasEncontradas;
+            return cartoesEncontrados;
         }
         catch (SQLException u) {    
             throw new RuntimeException(u);    

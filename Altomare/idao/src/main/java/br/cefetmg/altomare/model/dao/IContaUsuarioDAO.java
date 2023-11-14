@@ -16,4 +16,6 @@ public interface IContaUsuarioDAO {
     ArrayList<DespesaDTO> getDespesas(ContaUsuarioDTO contaUsuario);
     
     ArrayList<CartaoDTO> getCartoes(ContaUsuarioDTO contaUsuario);
+    
+    ContaUsuarioDTO getContaPorId(Long id);
 }

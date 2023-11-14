@@ -14,6 +14,9 @@
     </head>
     <body>
         <%@ include file="../../headerPassageiro.jsp" %>
+        <%@ page import="br.cefetmg.altomare.model.dto.*" %>
+        <%@ page import="br.cefetmg.altomare.model.service.*" %>
+        <%@ page import="java.util.*" %>
         
         <div id="container">
             <section id="formas-pagamento">
@@ -37,32 +40,32 @@
                 <div id="escolha-cartoes">
                     <div id="xis-tela-cartoes">×</div>
                     <h2>Cartão de </h2>
-                    <div id="cartoes">
-                       <div id="botao-adicionar">Adicionar Cartão</div> 
+                    <div id="lugar-cartoes">
                     </div>
+                    <div id="botao-adicionar">Adicionar Cartão</div> 
                 </div>
             </section>
             <section id="registrando-cartao">
                 <div id="xis-tela-adiciona">×</div>
                 <h2>Registro de Cartão</h2>
-                <form>
+                <form action="../../PagamentosServlet" method="POST">
                     <div class="input-cartao" id="dv1">
                         <h5>Nome do titular</h5>
-                        <input type="text" id="inp1"> 
+                        <input type="text" id="inp1" name="titular"> 
                     </div>
                     <div id="venc-cvv">
                         <div class="input-cartao" id="dv2">
                             <h5>Data Vencimento</h5>
-                            <input type="text" id="inp2"> 
+                            <input type="text" id="inp2" name="vencimento"> 
                         </div>
                         <div class="input-cartao" id="dv3">
                             <h5>CVV</h5>
-                            <input type="text" id="inp3"> 
+                            <input type="text" id="inp3" name="cvv"> 
                         </div>
                     </div>
                     <div class="input-cartao" id="dv4">
                         <h5>Número do Cartão</h5>
-                        <input type="text" id="inp4"> 
+                        <input type="text" id="inp4" name="numero"> 
                     </div>
                     <input id="confirmar-adicao-cartao" value="Registrar" type="submit">
                 </form>
@@ -76,6 +79,21 @@
         <footer>
             <a href="../despesas/despesasUsuario.jsp"> <div>VOLTAR</div></a>
         </footer>
+        
+        <div id="cartoes-from-backend">
+            <%  
+                GetCartoesToView cartoesUsuarioLogado = new GetCartoesToView();
+                ArrayList<CartaoDTO> arr = cartoesUsuarioLogado.getCartoes();
+                
+            %>   
+            <p><%= arr%></p>
+            <%  for (CartaoDTO cartao: arr) { %>
+
+            <p class="cartao-individual-db"><% out.println(cartao.getTitular() + "*" + cartao.getNumero() + "*" + 
+                                               cartao.getVencimento() + "*" + cartao.getTipo()); %></p>
+
+            <%}%>
+        </div>
         
         <script src="../../js/js-pagamentos.js"></script>
     </body>
