@@ -11,8 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Produtos</title>
 
-          <link rel="stylesheet" type="text/css" href="css/produtos.css">
-        <%@include file="headerprodutos.jsp" %>
+          <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
+          
+        <%@include file="../../headerprodutos.jsp" %>
 
  
          

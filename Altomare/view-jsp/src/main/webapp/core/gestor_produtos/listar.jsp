@@ -1,49 +1,50 @@
-<%-- 
-    Document   : listar
-    Created on : 14 de out. de 2023, 23:37:35
-    Author     : User
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Lista de produtos</title>
-        <link rel="stylesheet" type="text/css" href="css/produtos.css">
+        <title>Produtos Disponíveis</title>
+       <link rel="stylesheet" href="../../css/produtos.css">
+        <link rel="stylesheet" href="../../css/estilos-header.css">
         <%@include file="../../headerprodutos.jsp" %>
         
+        <%@ page import="br.cefetmg.altomare.model.dto.ProdutoDTO" %>
+        <%@ page import="br.cefetmg.altomare.model.dao.ProdutoDAO" %>
+
     </head>
     <body>
-        <h3>Listagem de produtos</h3>
-            
-        <form name="listarPessoa" action="ProdutoServlet" method="post">
+        <h1>Produtos Disponíveis</h1>
+        <form  action="../../ProdutoServlet"  method="POST">
 
 
-            <table id="produtos">
-                <tr>
-                    <th>
-                        NOME DO PRODUTO
-                    </th>
-                    <th>
-
-                    </th>
-                    <th>
-                        PREÇO DE COMPRA 
-                    </th>
-                    <th>
-                        DATA DE ENTRADA
-                    </th>
-                    <th>
-                        TIPO DE PRODUTO
-                    </th>
-
-                    <th>
-
-                    </th>
-                </tr>
-                <center> <input type="submit" name="acao" value="Listar" class="button" name="ordem" value="Listar"><center>
-
+            <%
+                ArrayList<ProdutoDTO> produtos = new ArrayList<>();
+                try{
+                   ProdutoDAO produtoDAO = new ProdutoDAO();
+                   produtos = produtoDAO.listarProdutos();
+                }catch(Exception e){
+                  out.print(e);
+                }
                 
-                </body>
-                </html>
+               for(ProdutoDTO produto : produtos){
+               
+            %>
+
+            <div class="contract-box">
+                <div class="lpnome">ID: <%=produto.getId()%></div>
+                <div class="lpnome"><%=produto.getNome()%></div>
+                <div class="lppreco">Preço de Compra: R$ <%=produto.getPreco()%></div>
+                
+                
+                <div class="lptipo">Tipo:<%=produto.getTipo()%></div>
+                <div class="lpestado"><%=produto.getEstado()%></div>
+
+            </div>
+            <%}%>
+
+
+    </body>
+</html>

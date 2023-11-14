@@ -10,8 +10,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastro de Produtos</title>
-          <link rel="stylesheet" type="text/css" href="css/produtos.css">
-        <%@include file="headerprodutos.jsp" %>
+           <link rel="stylesheet" href="../../css/produtos.css">
+    <link rel="stylesheet" href="../../css/estilos-header.css">
+        <%@include file="../../headerprodutos.jsp" %>
  
          
 
@@ -22,34 +23,39 @@
     <center><h3>Cadastro de Produtos</h3> </center>
         
            
-
-                <form name="CadastrarProduto" action="../../ProdutoServlet" method="post">
-  
+                <form  action="../../ProdutoServlet"  method="POST">
+                    
                     
                         <label>Nome do produto: <input type="text" placeholder="Nome do produto:" name="NAMEProd" required></label>
                         <br>
                         <label>Preço de compra: <input type="text" placeholder="Preço:" name="PrecProd" required></label>
                         
                          <br>
-
-                        <label>Quantidade: <input type="number" placeholder="Quantidade" name="QuantProd" required></label>
-                        <label>Data de entrada: <input type="date" placeholder="Data de entrada:" name="DATEPro" required></label>
-
+                        <label>Quantidade: <input type="number" placeholder="Quantidade" name="QuantProd" ></label>
+                        <label>Data de entrada: <input type="date" placeholder="Data de entrada:" name="DATEPro" ></label>
                          <br>
                         <label>Tipo de produto: <select id="tipoProduto" name="tipoProduto">
                                  <option value="none"></option>
-                                <option value="Alimento">Alimento</option>
-                                <option value="Médicos">Médicos</option>
+                                <option value="Alimentício">Alimentício</option>
+                                <option value="Médico">Médico</option>
                                 <option value="Bebidas">Bebidas</option>
+                                <option value="Limpeza">Limpeza</option>
                                </select>
                             
                          <br>
                          <br>
-                            <label>Estado: <input type="text" placeholder="Estado:" name="EstadPro" required></label>    
+                            <label>Estado: 
+                            <select id="EstadPro" name="EstadPro">
+                                 <option value="none"></option>
+                                <option value="Esgotado">Esgotado</option>
+                                <option value="Disponível">Disponível</option>
+                                
+                               </select>
               
                             
                         
                          <br> 
+                         <br>
             <input type="submit" name="acao" value="Cadastrar" class="button" name="ordem" value="Cadastrar">
                         
                         

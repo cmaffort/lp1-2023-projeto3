@@ -30,7 +30,6 @@ public  class ProdutoDAO implements IProdutoDAO {
            
 
             inserirStatement.setString(1, produto.getNome());
-            inserirStatement.setString(1, produto.getNome());
             inserirStatement.setString(2, produto.getTipo());
             inserirStatement.setDouble(3, produto.getPreco());
             inserirStatement.setString(4, produto.getEstado());
