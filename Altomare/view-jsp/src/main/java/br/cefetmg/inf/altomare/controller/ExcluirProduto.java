@@ -15,21 +15,41 @@ import java.util.List;
 @WebServlet(name = "ExcluirProduto", urlPatterns = {"/ExcluirProduto"})
 public class ExcluirProduto extends HttpServlet {
 
-public static String execute(HttpServletRequest request) {
+public static String executeNome(HttpServletRequest request) {
         String jsp = "";
 
         try {
-            String idStr = request.getParameter("produtoId");
-            int produtoId = Integer.parseInt(idStr);
+            String namePro = request.getParameter("Nome");
+            
+            
 
             ProdutoDAO produtoDAO = new ProdutoDAO();
-            produtoDAO.excluirProduto(produtoId);
-            jsp = "index.jsp"; // Define a página de redirecionamento após a exclusão
+            produtoDAO.excluirProdutoNome(namePro);
+            jsp = "index.jsp";
         } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-            jsp = "erro.jsp"; // Define a página de erro
+            System.out.println(ex);
+            jsp = "erro.jsp"; 
+        }
+
+        return jsp;
+    }
+public static String executeID(HttpServletRequest request) {
+    String jsp = "";
+
+        try {
+            String IdPro = request.getParameter("Id");
+            
+            
+           int produtoId = Integer.parseInt(IdPro);
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+            produtoDAO.excluirProdutoID(produtoId);
+            jsp = "index.jsp"; 
+        } catch (SQLException | ClassNotFoundException ex) {
+            System.out.println(ex);
+            jsp = "erro.jsp"; 
         }
 
         return jsp;
     }
 }
+

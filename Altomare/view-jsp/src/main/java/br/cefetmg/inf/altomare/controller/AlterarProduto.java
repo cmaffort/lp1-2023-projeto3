@@ -25,7 +25,7 @@ public class AlterarProduto extends HttpServlet {
         String estado = request.getParameter("novoEstado");
         String tipo = request.getParameter("novoTipoProduto");
         String quantidadeStr = request.getParameter("Novaquantidade");
-        String dataStr = request.getParameter("novaDataEntrada");
+        String data = request.getParameter("novaDataEntrada");
 
         int produtoId = Integer.parseInt(idStr);
         double preco = Double.parseDouble(precoStr);
@@ -34,8 +34,8 @@ public class AlterarProduto extends HttpServlet {
         if (quantidadeStr != null && !quantidadeStr.isEmpty()) {
             quantidade = Integer.parseInt(quantidadeStr);
         }
-
-        Date data = Date.valueOf(dataStr);
+            
+       
 
         ProdutoDTO produto = new ProdutoDTO(nome, preco, tipo, estado, produtoId, quantidade, data);
 

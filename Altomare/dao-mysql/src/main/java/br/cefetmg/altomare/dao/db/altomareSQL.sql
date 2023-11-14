@@ -43,8 +43,10 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   `Turno` varchar(50),
   `Setor` varchar(50),
   `DataAdmissao` varchar(50),
+
   `Telefone` varchar(50),
   `Foto` varchar(50)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,15 +80,32 @@ CREATE TABLE IF NOT EXISTS `passageiro` (
 --
 
 DROP TABLE IF EXISTS `produto`;
+
 CREATE TABLE IF NOT EXISTS `produto` (
-  `Tipo` varchar(50)(50) DEFAULT NULL,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(255) NOT NULL,
+  `Data`  varchar(255),
+  `Quantidade` int (255),
+  `QuantidadeTotal` int (255), 
+  `Tipo` varchar(50),
   `Preco` double DEFAULT NULL,
-  `Estado` varchar(50)(20) DEFAULT NULL,
-  `Nome` text NOT NULL,
-  `Id` int(11) NOT NULL,
+  `Estado` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `pacote`;
+
+CREATE TABLE IF NOT EXISTS `pacote` (
+  `Nome` varchar(255) NOT NULL,
+  `cpf` varchar(255) NOT NULL,
+  `telefone` varchar(255),
+  `destino` varchar(255),
+  `datapart` varchar(50),
+  `duracao` varchar(255)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

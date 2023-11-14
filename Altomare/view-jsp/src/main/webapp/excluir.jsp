@@ -10,12 +10,20 @@
     </head>
     
     <body>
-        <h1>Exclusão de produtos</h1>
-        <h2>Exclusão por Id</h2>
-        <form action="../../ProdutoServlet" method="post">
-        <label>ID do produto: <input type="number" placeholder="ID" name="produtoId" required></label>
-        <input type="submit" name="acao" value="Excluir"  name="ordem">
-        </form>
 
+        
+        <h2>Exclusão por Nome</h2>
+        <form action="ProdutoServlet" method="post">
+        <label>Nome do produto: <input type="text" placeholder="NOME" name="Nome" required></label>
+        <input type="submit" name="acao" value="ExcluirNome"    >
+        </form>
+        
+        <h2>Exclusão por Id</h2>
+        <form action="ProdutoServlet" method="post">
+        <label>ID do produto: <input type="text" placeholder="Id" name="Id" required></label>
+        <input type="submit" name="acao" value="ExcluirId"   >
+
+
+        </form>
     </body>
 </html>

@@ -22,16 +22,19 @@
     <center><h3>Cadastro de Produtos</h3> </center>
         
            
+
                 <form name="CadastrarProduto" action="../../ProdutoServlet" method="post">
-                    
+  
                     
                         <label>Nome do produto: <input type="text" placeholder="Nome do produto:" name="NAMEProd" required></label>
                         <br>
                         <label>Preço de compra: <input type="text" placeholder="Preço:" name="PrecProd" required></label>
                         
                          <br>
+
                         <label>Quantidade: <input type="number" placeholder="Quantidade" name="QuantProd" required></label>
                         <label>Data de entrada: <input type="date" placeholder="Data de entrada:" name="DATEPro" required></label>
+
                          <br>
                         <label>Tipo de produto: <select id="tipoProduto" name="tipoProduto">
                                  <option value="none"></option>

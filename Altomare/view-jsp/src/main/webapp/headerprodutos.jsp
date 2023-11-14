@@ -8,28 +8,56 @@
         <link rel="icon" href="imagens/leme.png" type="image/webp">
     </head>
 
-    <header id="header-main">
+     <header id="header-main">
         <div id="header-upper">
-            <img src="imagens\leme.png" alt="" id="leme">
+
+            <img src="../../imagens\leme.png" id="leme">
+
             <div>
-                <h1>AltoMare </h1>
-                <h2>EMBARCAÇÕES</h2>
+                <h1 id="altoMare">AltoMare </h1>
+                <h2 id="embarcacoes">EMBARCAÇÕES</h2>
             </div>
             <div>
-                <img src="imagens\user-icon.png" alt="" id="user-icon">
-                <p>USER</p>
+
+                <img src="../../imagens\user-icon.png" id="user-icon">
+                <p style="font-family: 'Alegreya SC'; padding-left: 30vw;">GERENTE</p>
+
             </div>
         </div>
         <div id="linha"></div>
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <img alt="" src="">
-                <input type="button"  class="button" name="ordem" value="Cadastro" onclick="window.location=('cadastrar.jsp')">
+
+                <img src="../../imagens/funcionarios.png" style="height: 70px;">
+                <p>Funcionários</p>
             </li>
             <li>
-                <img alt="" src="">
-                <input type="button" class="button" name="ordem" value="Edição" onclick="window.location=('alterar.jsp')"> 
+                <img src="../../imagens/passageiros.png" style="height: 70px;">
+                <p>Passageiros</p> 
+            </li>
+            <li>
+                <img src="../../imagens/pacotes.png" style="height: 70px;">
+                <p>Pacotes</p>             
+            </li>
+            <li>
+                <img src="../../imagens/iconeSeguranca.png" style="height: 70px;">
+                <p>Segurança</p>
+            </li>
+            <li>
+                <img src="../../imagens/cronograma.png" style="height: 70px;">
+                <p>Conograma</p>
+            </li>
+   
+        </ul>
+    
+        <br>
+    
+        <ul>
+            <li>
+                <img src="">
+                <input type="button" class="button" name="ordem" value="Cadastro" onclick="window.location=('cadastrar.jsp')">
+
             </li>
             
             <li>
@@ -44,7 +72,7 @@
             </li>
         </ul>
 
-    </header>
+     </header>
 
     <script src="js/jsheader.js"></script>
 </html>
