@@ -10,10 +10,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ManterFuncionario implements IManterFuncionario{
-    private IFuncionarioDAO funcionarioDAO;
+    final IFuncionarioDAO funcionarioDAO;
     
     public ManterFuncionario() throws SQLException, ClassNotFoundException {
-        funcionarioDAO = (IFuncionarioDAO) new FuncionarioDAO();
+        funcionarioDAO = new FuncionarioDAO();
     }
      @Override
      public long cadastrar(FuncionarioDTO funcionario) throws PersistenciaException, NegocioException{
@@ -22,10 +22,10 @@ public class ManterFuncionario implements IManterFuncionario{
          if((funcionario.getNome() == null) || (funcionario.getNome().isEmpty()))
               throw new NegocioException("Por favor informe o nome do funcionário.");
          
-         if((Long.toString(funcionario.getCpf()).isEmpty()))
+          if((funcionario.getCpf() == null) || (funcionario.getCpf().isEmpty()))
              throw new NegocioException("Por favor informe o CPF do funcionário.");
          
-         if((Long.toString(funcionario.getRg()).isEmpty()))
+          if((funcionario.getRg() == null) || (funcionario.getRg().isEmpty()))
              throw new NegocioException("Por favor informe o RG do funcionário.");
          
          if((funcionario.getDataNascimento() == null) || (funcionario.getDataNascimento().isEmpty()))
@@ -34,7 +34,7 @@ public class ManterFuncionario implements IManterFuncionario{
          if((funcionario.getEmail() == null) || (funcionario.getEmail().isEmpty()))
              throw new NegocioException("Por favor informe o e-mail do funcionário.");
          
-       if((Long.toString(funcionario.getTelefone()).isEmpty()))
+        if((funcionario.getTelefone() == null) || (funcionario.getTelefone().isEmpty()))
              throw new NegocioException("Por favor informe um telefone do funcionário.");
          
         if((funcionario.getSexo() == null) || (funcionario.getSexo().isEmpty()))
@@ -42,16 +42,6 @@ public class ManterFuncionario implements IManterFuncionario{
          
         if((funcionario.getEstadoCivil() == null) || (funcionario.getEstadoCivil().isEmpty()))
              throw new NegocioException("Por favor informe o estado civil do funcionário.");
-         
-        if((funcionario.getPassaporte() == null) || (funcionario.getPassaporte().isEmpty()))
-             throw new NegocioException("Por favor informe o passaporte do funcionário.");
-         
-        if((Long.toString(funcionario.getCep()).isEmpty()))
-             throw new NegocioException("Por favor informe o CEP do funcionário.");
-         
-        if((funcionario.getPassaporte() == null) || (funcionario.getPassaporte().isEmpty()))
-             throw new NegocioException("Por favor informe o passaporte do funcionário.");
-         
         if((funcionario.getSetor() == null) || (funcionario.getSetor().isEmpty()))
              throw new NegocioException("Por favor informe o setor do funcionário.");
         
@@ -61,8 +51,8 @@ public class ManterFuncionario implements IManterFuncionario{
         if((funcionario.getTurno() == null) || (funcionario.getTurno().isEmpty()))
              throw new NegocioException("Por favor informe o turno do funcionário.");
          
-         long result = funcionarioDAO.inserir(funcionario);
-         return result;
+         funcionarioDAO.inserir(funcionario);
+         return 1;
          
      }
      
@@ -70,10 +60,10 @@ public class ManterFuncionario implements IManterFuncionario{
      public boolean alterar(FuncionarioDTO funcionario) throws PersistenciaException, NegocioException{
          if((funcionario.getNome() == null) || funcionario.getNome().isEmpty())
                throw new NegocioException("Obrigatório infomar o nome.");
-          if((Long.toString(funcionario.getCpf()).isEmpty()))
+           if((funcionario.getCpf() == null) || (funcionario.getCpf().isEmpty()))
              throw new NegocioException("Por favor informe o CPF do funcionário.");
          
-         if((Long.toString(funcionario.getRg()).isEmpty()))
+          if((funcionario.getRg() == null) || (funcionario.getRg().isEmpty()))
              throw new NegocioException("Por favor informe o RG do funcionário.");
          
          if((funcionario.getDataNascimento() == null) || (funcionario.getDataNascimento().isEmpty()))
@@ -82,7 +72,7 @@ public class ManterFuncionario implements IManterFuncionario{
          if((funcionario.getEmail() == null) || (funcionario.getEmail().isEmpty()))
              throw new NegocioException("Por favor informe o e-mail do funcionário.");
          
-       if((Long.toString(funcionario.getTelefone()).isEmpty()))
+        if((funcionario.getTelefone() == null) || (funcionario.getTelefone().isEmpty()))
              throw new NegocioException("Por favor informe um telefone do funcionário.");
          
         if((funcionario.getSexo() == null) || (funcionario.getSexo().isEmpty()))
@@ -90,15 +80,6 @@ public class ManterFuncionario implements IManterFuncionario{
          
         if((funcionario.getEstadoCivil() == null) || (funcionario.getEstadoCivil().isEmpty()))
              throw new NegocioException("Por favor informe o estado civil do funcionário.");
-         
-        if((funcionario.getPassaporte() == null) || (funcionario.getPassaporte().isEmpty()))
-             throw new NegocioException("Por favor informe o passaporte do funcionário.");
-         
-        if((Long.toString(funcionario.getCep()).isEmpty()))
-             throw new NegocioException("Por favor informe o CEP do funcionário.");
-         
-        if((funcionario.getPassaporte() == null) || (funcionario.getPassaporte().isEmpty()))
-             throw new NegocioException("Por favor informe o passaporte do funcionário.");
          
         if((funcionario.getSetor() == null) || (funcionario.getSetor().isEmpty()))
              throw new NegocioException("Por favor informe o setor do funcionário.");
@@ -109,8 +90,8 @@ public class ManterFuncionario implements IManterFuncionario{
         if((funcionario.getTurno() == null) || (funcionario.getTurno().isEmpty()))
              throw new NegocioException("Por favor informe o turno do funcionário.");
      
-        boolean result = funcionarioDAO.atualizar(funcionario);
-        return result;
+        funcionarioDAO.atualizar(funcionario);
+        return true;
      }
      
      @Override
@@ -126,8 +107,7 @@ public class ManterFuncionario implements IManterFuncionario{
          return result;
      }
      
-     @Override
-     public FuncionarioDTO pesquisarPorId(long cpf) throws PersistenciaException{
+     public FuncionarioDTO pesquisarPorId(String cpf) throws PersistenciaException{
          FuncionarioDTO result = funcionarioDAO.consultarPorId(cpf);
          return result;
      }
@@ -137,5 +117,10 @@ public class ManterFuncionario implements IManterFuncionario{
          FuncionarioDTO result = funcionarioDAO.consultarPorUsuarioSenha(cpf, senha);
          return result;
      }
+
+    @Override
+    public FuncionarioDTO pesquisarPorId(long cpf) throws PersistenciaException {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
        

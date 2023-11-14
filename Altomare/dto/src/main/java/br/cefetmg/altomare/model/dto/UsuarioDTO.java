@@ -3,23 +3,22 @@ package br.cefetmg.altomare.model.dto;
 
 
 public class UsuarioDTO {
-   private long cpf;
-   private long rg;
+   private String cpf;
+   private String rg;
    private String nome;
    private String dataNascimento;
    private String email;
    private String senha;
-   private long telefone;
+   private String telefone;
    private String sexo;
    private String estadoCivil;
-   private String passaporte;
-   private long cep;
+   private String foto;
    
    public UsuarioDTO() {
        
    }
    
-   public UsuarioDTO(long cpf, long rg, String nome, String dataNascimento,String email, String senha,long telefone, String sexo, String estadoCivil, String passaporte, long cep){
+   public UsuarioDTO(String cpf, String rg, String nome, String dataNascimento,String email, String senha,String telefone, String sexo, String estadoCivil, String foto){
       this.cpf = cpf;
       this.rg = rg;
       this.nome = nome;
@@ -29,24 +28,22 @@ public class UsuarioDTO {
       this.telefone = telefone;
       this.sexo = sexo;
       this.estadoCivil = estadoCivil;
-      this.passaporte = passaporte;
-      this.cep = cep;
-    
+      this.foto = foto;
     }
    
-   public long getCpf() {
+   public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(long cpf){
+    public void setCpf(String cpf){
         this.cpf = cpf;
     }
     
-     public long getRg() {
+     public String getRg() {
         return rg;
     }
 
-    public void setRg(long rg){
+    public void setRg(String rg){
         this.rg = rg;
     }
     
@@ -82,11 +79,11 @@ public class UsuarioDTO {
         this.senha = senha;
     }
     
-     public long getTelefone() {
+     public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(long telefone){
+    public void setTelefone(String telefone){
         this.telefone = telefone;
     }
     
@@ -106,19 +103,10 @@ public class UsuarioDTO {
         this.estadoCivil = estadoCivil;
     }
     
-     public String getPassaporte() {
-        return passaporte;
+    public String getFoto(){
+        return foto;
     }
-
-    public void setPassaporte(String passaporte){
-        this.passaporte = passaporte;
-    }
-    
-     public long getCep() {
-        return cep;
-    }
-
-    public void setCep(long endereco){
-        this.cep = cep;
+    public void setFoto(String foto){
+        this.foto = foto;
     }
 }

@@ -10,13 +10,13 @@
     
     <header id="header-main">
         <div id="header-upper">
-            <img src="../../imagens/leme.png" id="leme">
+            <img src="../../imagens/leme.png" alt="" id="leme">
             <div>
                 <h1>AltoMare </h1>
                 <h2>EMBARCAÇÕES</h2>
             </div>
             <div>
-                <img src="../../imagens/user-icon.png" id="user-icon">
+                <img src="../../imagens/user-icon.png" alt="" id="user-icon">
                 <p>USER</p>
             </div>
         </div>

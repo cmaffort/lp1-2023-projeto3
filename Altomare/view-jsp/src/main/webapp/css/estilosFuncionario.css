@@ -260,3 +260,66 @@ footer {
     line-height: 100px;
     
 }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fafafa;
+}
+ 
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 30px;
+  margin: 20px;
+  width: 400px;
+  transition: all 0.3s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  cursor: pointer;
+}
+ 
+.card p {
+  color: #a3a5ae;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.image {
+  float: left;
+  max-width: 64px;
+  max-height: 64px;
+}
+
+.blue {
+  border: 5px solid #4895ff;
+}
+ 
+.green {
+  border: 5px solid #3bb54a;
+}
+ 
+.red {
+  border: 5px solid #b3404a;
+}
+
+#nomeFunc{
+    padding-left: 7%;
+    margin-top: 0%;
+    
+}
+
+.informacoes p{
+    text-align: left;
+    margin-top: -5%; 
+    padding-left: 7%;
+}
+
