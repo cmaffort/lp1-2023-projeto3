@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Lista de produtos</title>
         <link rel="stylesheet" type="text/css" href="css/produtos.css">
-        <%@include file="headerprodutos.jsp" %>
+        <%@include file="../../headerprodutos.jsp" %>
         
     </head>
     <body>

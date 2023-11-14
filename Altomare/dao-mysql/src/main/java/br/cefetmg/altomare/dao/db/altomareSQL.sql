@@ -31,8 +31,8 @@ CREATE TABLE IF NOT EXISTS `atividade` (
 -- Estrutura da tabela `funcionario`
 --
 
-DROP TABLE IF EXISTS `funcionario`;
-CREATE TABLE IF NOT EXISTS `funcionario` (
+DROP TABLE IF EXISTS `funcionarios`;
+CREATE TABLE IF NOT EXISTS `funcionarios` (
   `Nome` varchar(50),
   `DatNasc` varchar(50),
   `CPF` varchar(50),
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `Setor` varchar(50),
   `DataAdmissao` varchar(50),
   `Telefone` varchar(50),
-  `Passaporte` varchar(50)
+  `Foto` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -55,23 +55,20 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
 
 DROP TABLE IF EXISTS `passageiro`;
 CREATE TABLE IF NOT EXISTS `passageiro` (
-  `Nome` varchar(50),
-  `DataNasc` varchar(50),
-  `Sexo` char(10) DEFAULT NULL,
-  `CEP` varchar(50),
+  `CPF` varchar(50),
   `RG` varchar(50),
-  `EstadoCivil` varchar(50),
+  `Nome` varchar(50) DEFAULT NULL,
+  `DataNasc` varchar(50),
   `Email` varchar(50),
+  `Senha` varchar(50),
   `Telefone` varchar(50),
+  `Sexo` varchar(50),
+  `Civil` varchar(50),
   `DadosMedicos` varchar(50),
-  `EmbarqueDesembarque` varchar(50),
-  `Datas` varchar(50),
-  `Classe` varchar(50),
-  `TipoSuite` varchar(50),
-  `TamanhoSuite` varchar(50),
-  `CapacidadeSuite` varchar(50),
-  `Endereco` varchar(50),
-  `Passaporte` varchar(50)
+  `Foto` varchar(50),
+  `Pacote` varchar(50),
+  `Despesa` varchar(50)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

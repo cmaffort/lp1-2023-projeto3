@@ -35,6 +35,7 @@ arq.addEventListener('change', function handleFile(files){
                     case 5: document.querySelector('#civil').value = lines[line];
                     case 6: document.querySelector('#email').value = lines[line];
                     case 7: document.querySelector('#telefone').value = lines[line];
+                    case 8: document.querySelector('#dados').value = lines[line];
                     
                        
 

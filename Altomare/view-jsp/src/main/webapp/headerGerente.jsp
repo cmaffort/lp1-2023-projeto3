@@ -12,13 +12,13 @@
 
      <header id="header-main">
         <div id="header-upper">
-            <img src="../../imagens\leme.png" id="leme">
+            <img src="../../imagens\leme.png" alt="" id="leme">
             <div>
                 <h1 id="altoMare">AltoMare </h1>
                 <h2 id="embarcacoes">EMBARCAÇÕES</h2>
             </div>
             <div>
-                <img src="../../imagens\user-icon.png" id="user-icon">
+                <img src="../../imagens\user-icon.png" alt="" id="user-icon">
                 <p style="font-family: 'Alegreya SC'; padding-left: 30vw;">GERENTE</p>
             </div>
         </div>
@@ -26,23 +26,23 @@
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <img src="../../imagens/funcionarios.png" style="height: 70px;">
+                <img class="icones" alt="" src="../../imagens/funcionarios.png" style="height: 70px;">
                 <p>Funcionários</p>
             </li>
             <li>
-                <img src="../../imagens/passageiros.png" style="height: 70px;">
+                <img class="icones" alt="" src="../../imagens/passageiros.png" style="height: 70px;">
                 <p>Passageiros</p> 
             </li>
             <li>
-                <img src="../../imagens/pacotes.png" style="height: 70px;">
+                <img class="icones" alt="" src="../../imagens/pacotes.png" style="height: 70px;">
                 <p>Pacotes</p>             
             </li>
             <li>
-                <img src="../../imagens/iconeSeguranca.png" style="height: 70px;">
+                <img class="icones" alt="" src="../../imagens/iconeSeguranca.png" style="height: 70px;">
                 <p>Segurança</p>
             </li>
             <li>
-                <img src="../../imagens/cronograma.png" style="height: 70px;">
+                <img class="icones" alt="" src="../../imagens/cronograma.png" style="height: 70px;">
                 <p>Conograma</p>
             </li>
    
