@@ -1,53 +1,66 @@
-
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList" %>
 <%@ page import="br.cefetmg.altomare.model.dto.PacoteDTO" %>
 <%@ page import="br.cefetmg.altomare.model.dao.PacoteDAO" %>
-<html>
-    <head>
-        <title>Exibição do Pacote</title>
-        <link rel="stylesheet" href="../../../css/produtos.css">
-        <link rel="stylesheet" href="../../../css/estilos-header.css">
-        <%@include file="../../../headerGerente.jsp" %>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Pacote</title>
+     <%@include file="../../../headerPassageiro.jsp" %>
+
+    
+</head>
+<body>
+
+    <div class="container">
         <h1>Detalhes do Pacote</h1>
+        
+
+        <p>Nome do Pacote: Nome do Pacote Aqui</p>
+        <p>Destino: Destino Aqui</p>
+        <p>Data de Partida: 01 de Janeiro de 2023</p>
+        <p>Duração: 7 dias</p>
+        <p>Suíte: 14 Garden Villa </p>
+        
+        <div class="classe">
+            Classe:A
+            * 3 refeições
+            *atividade x,y,z
+            *
+        </div>
+        <input type="submit" action="Quarto" value="Solicitar serviço de quarto">
+        
 
 
 
-
-
-        <h1>Contratos Gerados</h1>
-        <form action="../../../ObterPacotePorCpf" method="post">
-
-
-            <input type="text" id="cpf">
+       <%-- <form action="../../ObterPacotePorCpf" method="post">
+            <input type="text" id="cpf" name="cpf">
 
             <%
-                ArrayList<PacoteDTO> pacotes = new ArrayList<>();
-                try {
-                    PacoteDAO pacoteDAO = new PacoteDAO();
-                    pacotes = pacoteDAO.ObterPacotePorCpf(cpf); 
-                } catch (Exception e) {
-                    out.print(e);
-                }
+                // Verifica se a lista de pacotes está disponível na solicitação
+                ArrayList<PacoteDTO> pacotes = (ArrayList<PacoteDTO>) request.getAttribute("pacotes");
 
-                for (PacoteDTO pacote : pacotes) {
+                if (pacotes != null && !pacotes.isEmpty()) {
+                    for (PacoteDTO pacote : pacotes) {
+            %>
+                        <p>Nome do Contratante: ${pacote.nomeContratante}</p>
+                        <p>CPF do Contratante: ${pacote.cpfContratante}</p>
+                        <p>Telefone do Contratante: ${pacote.telefoneContratante}</p>
+                        <p>Destino do Cruzeiro: ${pacote.destino}</p>
+                        <p>Data de Partida: ${pacote.dataPartida}</p>
+                        <p>Duração do Cruzeiro: ${pacote.duracaoCruzeiro}</p>
+            <%
+                    }
+                } else {
+            %>
+                    <p>Nenhum pacote encontrado.</p>
+            <%
+                }
             %>
 
-
-
-
-
-            <p>Nome do Contratante: ${pacote.nomeContratante}</p>
-            <p>CPF do Contratante: ${pacote.cpfContratante}</p>
-            <p>Telefone do Contratante: ${pacote.telefoneContratante}</p>
-            <p>Destino do Cruzeiro: ${pacote.destino}</p>
-            <p>Data de Partida: ${pacote.dataPartida}</p>
-            <p>Duração do Cruzeiro: ${pacote.duracaoCruzeiro}</p>
-
             <input type="submit" name="acao" value="Listar" class="button" >
-        </form>
-
+        </form>--%>
     </body>
 </html>

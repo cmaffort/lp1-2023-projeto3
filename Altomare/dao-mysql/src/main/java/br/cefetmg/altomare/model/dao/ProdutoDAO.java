@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ProdutoDAO implements IProdutoDAO {
+public  class ProdutoDAO implements IProdutoDAO {
 
     Connection connection;
 
@@ -27,7 +27,7 @@ public class ProdutoDAO implements IProdutoDAO {
 
         try (PreparedStatement inserirStatement = connection.prepareStatement(inserirSQL); PreparedStatement atualizarQuantidadeTotalStatement = connection.prepareStatement(atualizarQuantidadeTotalSQL)) {
 
-            connection.setAutoCommit(false);
+           
 
             inserirStatement.setString(1, produto.getNome());
             inserirStatement.setString(1, produto.getNome());
@@ -37,48 +37,59 @@ public class ProdutoDAO implements IProdutoDAO {
             inserirStatement.setInt(5, produto.getQuantidade());
             
             
-            if (produto.getData() != null) {
-            inserirStatement.setDate(5, new java.sql.Date(produto.getData().getTime()));
-        } else {
-            inserirStatement.setDate(5, null);
-        }
+            
+            inserirStatement.setString(6,produto.getData() );
+        
+        
             inserirStatement.executeUpdate();
         
             atualizarQuantidadeTotalStatement.setInt(1, produto.getQuantidade());
             atualizarQuantidadeTotalStatement.setString(2, produto.getNome());
             atualizarQuantidadeTotalStatement.executeUpdate();
 
-            connection.commit();
+          
 
         } catch (SQLException e) {
-            connection.rollback();
+            
             throw e;
         } finally {
-            connection.setAutoCommit(true);
+            
         }
     }
 
     @Override
     public void atualizarProduto(ProdutoDTO produto) throws SQLException {
-        String sql = "UPDATE produto SET nome = ?, preco = ?, estado = ?, quantidade = ?, data = ? WHERE id = ?";
+        String sql = "UPDATE produto SET nome = ?, preco = ?, estado = ?,tipo = ? , quantidade = ?, data = ? WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, produto.getNome());
             statement.setDouble(2, produto.getPreco());
             statement.setString(3, produto.getEstado());
-            statement.setInt(4, produto.getQuantidade());
-            statement.setDate(5, new java.sql.Date(produto.getData().getTime()));
-            statement.setInt(6, produto.getId());
+            statement.setString(4, produto.getTipo());
+            statement.setInt(5, produto.getQuantidade());
+            statement.setString(6,produto.getData() );
+            statement.setInt(7, produto.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
         }
     }
-
     @Override
-    public void excluirProduto(String nome) {
+    public void excluirProdutoNome(String nome) {
+   
         String sql = "DELETE FROM produto WHERE nome = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, nome);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+   @Override     
+public void excluirProdutoID(Integer Id) {
+   
+        String sql = "DELETE FROM produto WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, Id);
             statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
@@ -100,7 +111,7 @@ public class ProdutoDAO implements IProdutoDAO {
                 produto.setPreco(resultSet.getDouble("preco"));
                 produto.setEstado(resultSet.getString("estado"));
                 produto.setQuantidade(resultSet.getInt("quantidade"));
-                produto.setData(resultSet.getDate("data"));
+                produto.setData(resultSet.getString("data"));
 
                 produtos.add(produto);
             }
@@ -112,5 +123,6 @@ public class ProdutoDAO implements IProdutoDAO {
 
         return produtos;
     }
-
 }
+
+   

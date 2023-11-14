@@ -15,10 +15,10 @@
 
 </head>
 <body>
-   
+   <h1>Produtos Cadastrados</h1>
     <form  action="ProdutoServlet"  method="POST">
-    <main id="listagemProdutos">
-        <section id="container-lista-produto">
+   
+        
             <%
                 ArrayList<ProdutoDTO> produtos = new ArrayList<>();
                 try{
@@ -31,20 +31,18 @@
                for(ProdutoDTO produto : produtos){
                
             %>
-                <article class="unidadeListaProd" onclick="window.location='/ProdutoServlet?act=Listar&id=${produto.id}'">
-                    <section class="cont-esq">
+            
+           <div class="contract-box">
+                    
                         <div class="lpnome"><%=produto.getNome()%></div>
                         <div class="lppreco">Preço: R$ <%=produto.getPreco()%></div>
-                    </section>
-                    <section class="cont-dir">
-                        <div class="lptipo"><%=produto.getTipo()%></div>
+                       
+                        <div class="lptipo">Tipo:<%=produto.getTipo()%></div>
                         <div class="lpestado"><%=produto.getEstado()%></div>
-                    </section>
-                </article>
+                   
+           </div>
              <%}%>
-                         <input type="submit" name="acao" value="Listar" class="button" name="ordem" value="Listar">
-                         </form>
-        </section>
-    </main>
+                        
+        
 </body>
 </html>

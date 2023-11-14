@@ -9,13 +9,13 @@ public class ProdutoDTO {
     private double preco;
     private String estado;
     private Integer quantidade;
-    private Date data;
+    private String data;
     
 
     public ProdutoDTO() {
     }
 
-    public ProdutoDTO(String nome, double preco, String tipo, String estado, Integer Id,Integer quantidade,Date data) {
+    public ProdutoDTO(String nome, double preco, String tipo, String estado, Integer Id,Integer quantidade,String data) {
         this.nome = nome;
         this.preco = preco;
         this.tipo = tipo;
@@ -26,11 +26,11 @@ public class ProdutoDTO {
         
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 

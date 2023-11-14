@@ -94,7 +94,7 @@ DROP TABLE IF EXISTS `produto`;
 CREATE TABLE IF NOT EXISTS `produto` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
-  `Data`  date,
+  `Data`  varchar(255),
   `Quantidade` int (255),
   `QuantidadeTotal` int (255), 
   `Tipo` varchar(50),

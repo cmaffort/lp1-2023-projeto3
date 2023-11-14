@@ -26,7 +26,8 @@ public class CadastrarProduto extends HttpServlet {
             String estado = request.getParameter("EstadPro");
             String tipo = request.getParameter("tipoProduto");
             String quantidadeStr = request.getParameter("quantidade");
-            String dataStr = request.getParameter("data");
+            String data = request.getParameter("data");
+            
 
             double preco = Double.parseDouble(precoStr);
 
@@ -39,14 +40,10 @@ public class CadastrarProduto extends HttpServlet {
                     System.out.println(ex);
                 }
             }
-            Date data = null;
-
-            if (dataStr != null && dataStr.matches("\\d{4}-\\d{2}-\\d{2}")) {
-                data = Date.valueOf(dataStr);
-            } else {
-                System.out.println("Formato de data inválido.");
-            }
-
+            
+           
+ 
+            
             ProdutoDTO produto = new ProdutoDTO();
 
             produto.setNome(nome);
@@ -63,7 +60,7 @@ public class CadastrarProduto extends HttpServlet {
 
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println(ex);
-            jsp = "";
+            jsp = "index.jsp";
         }
 
         return jsp;

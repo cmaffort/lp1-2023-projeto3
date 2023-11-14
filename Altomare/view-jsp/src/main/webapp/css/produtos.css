@@ -56,6 +56,8 @@ form {
     background-color:rgb(217,217,217)  ;
     border-radius: 10px;
     
+
+    
 }
   
   input[type="text"]{
@@ -78,10 +80,26 @@ form {
     
 }
 
+.contract-box {
     
-.produtoform{
-    
-    
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    text-align: left;
 }
-  
+
+
+.contract-info {
+    font-weight: bold;
+}
+
+
+.download-link {
+    display: block;
+    margin-top: 10px;
+    color: blue;
+}
+
   
