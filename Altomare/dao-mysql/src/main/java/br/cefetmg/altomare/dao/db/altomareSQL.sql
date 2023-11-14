@@ -77,20 +77,20 @@ CREATE TABLE IF NOT EXISTS `passageiro` (
 -- Estrutura da tabela `produto`
 --
 
--- DROP TABLE IF EXISTS `produto`;
--- CREATE TABLE IF NOT EXISTS `produto` (
---  `Tipo` varchar(50)(50) DEFAULT NULL,
---  `Preco` double DEFAULT NULL,
---  `Estado` varchar(50)(20) DEFAULT NULL,
---  `Nome` text NOT NULL,
---  `Id` int(11) NOT NULL,
---  PRIMARY KEY (`Id`)
--- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
--- COMMIT;
+DROP TABLE IF EXISTS `produto`;
+CREATE TABLE IF NOT EXISTS `produto` (
+  `Tipo` varchar(50)(50) DEFAULT NULL,
+  `Preco` double DEFAULT NULL,
+  `Estado` varchar(50)(20) DEFAULT NULL,
+  `Nome` text NOT NULL,
+  `Id` int(11) NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+COMMIT;
 
--- /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
--- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
--- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 -- --------------------------------------------------------
