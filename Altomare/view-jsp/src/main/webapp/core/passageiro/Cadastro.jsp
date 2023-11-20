@@ -15,7 +15,9 @@
     <body>
         
          <h1 id="titulo">Cadastrar Passageiro</h1>
-         <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" method="POST">
+
+         <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" encytype="multpart/form-data" method="POST">
+
             <main>
         
                 
@@ -51,7 +53,9 @@
                                
                           </p>
                           <p> 
-                             Dados Medicos:<input type="text"  id="dados" name="dados" >
+
+                             Dados Medicos:<input type="text"  id="dadosmedico" name="dados" >
+
                           </p>
                           
                           </div>

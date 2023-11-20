@@ -1,0 +1,7 @@
+br\cefetmg\altomare\model\service\ManterFuncionario.class
+br\cefetmg\altomare\model\exception\NegocioException.class
+br\cefetmg\altomare\model\service\IPacote.class
+br\cefetmg\altomare\model\service\IProduto.class
+br\cefetmg\altomare\model\service\IManterFuncionario.class
+br\cefetmg\altomare\model\service\GetCartoesToView.class
+br\cefetmg\altomare\model\service\GetDespesasToView.class

@@ -1,5 +1,4 @@
 
-
 <%@page import="br.cefetmg.altomare.model.dao.FuncionarioDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.cefetmg.altomare.model.dto.FuncionarioDTO"%>
@@ -23,8 +22,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <body>
           
         <h1 id="titulo">Escalar Funcionários</h1>
-        
+
            <div class="row">
+
             <%
                ArrayList<FuncionarioDTO> funcionarios = new ArrayList<>();
                try{
@@ -37,12 +37,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                for(FuncionarioDTO funcionario : funcionarios){
             %>
                <div class="card red">
+
                    <img id="image" src="imagens/user-icon.png" alt="article">
                    <div class="informacoes">
                        <h2 id="nomeFunc"><%=funcionario.getNome()%></h2>
                        <p id="nomeFunc"><%=funcionario.getCpf()%></p>
                    </div>
                    </div>
+
             <%}%>
         </div>
             <script src="../../js/scriptFuncionario.js"></script>

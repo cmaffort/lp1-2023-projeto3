@@ -11,7 +11,9 @@
      <header id="header-main">
         <div id="header-upper">
 
+
             <img src="../../imagens/leme.png" id="leme">
+
 
             <div>
                 <h1 id="altoMare">AltoMare </h1>
@@ -20,6 +22,7 @@
             <div>
 
                 <img src="../../imagens/user-icon.png" id="user-icon">
+
                 <p style="font-family: 'Alegreya SC'; padding-left: vw;">GERENTE</p>
 
             </div>

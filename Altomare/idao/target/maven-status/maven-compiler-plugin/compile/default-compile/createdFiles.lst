@@ -1,0 +1,10 @@
+br\cefetmg\altomare\model\dao\IFuncionarioDAO.class
+br\cefetmg\altomare\model\dao\IProdutoDAO.class
+br\cefetmg\altomare\model\dao\IContaUsuarioDAO.class
+br\cefetmg\altomare\model\dao\ICartaoDAO.class
+br\cefetmg\altomare\model\dao\ISegurancaDAO.class
+br\cefetmg\altomare\model\dao\exception\PersistenciaException.class
+br\cefetmg\altomare\model\dao\IDespesaDAO.class
+br\cefetmg\altomare\model\dao\IPacoteDAO.class
+br\cefetmg\altomare\model\dao\IAtividadeDAO.class
+br\cefetmg\altomare\model\dao\IPassageiroDAO.class

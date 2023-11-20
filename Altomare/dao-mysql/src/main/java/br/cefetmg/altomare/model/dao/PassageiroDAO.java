@@ -58,6 +58,7 @@ public class PassageiroDAO implements IPassageiroDAO{
     }
     
     @Override
+
     public boolean delete(String Cpf)throws PersistenciaException{
         String sql = "DELETE FROM passageiro WHERE CPF = ?";
         try(PreparedStatement in = conexao.prepareStatement(sql)){
@@ -67,6 +68,7 @@ public class PassageiroDAO implements IPassageiroDAO{
         }
        catch (SQLException ex) {
                 throw new PersistenciaException(ex.getMessage());
+
             }
         return true;
     }
@@ -125,6 +127,7 @@ public class PassageiroDAO implements IPassageiroDAO{
         }
         return passageiro;
     }
+
     
      @Override
     public PassageiroDTO consultarPorUsuarioSenha(String cpf, String senha) throws PersistenciaException {
@@ -146,6 +149,7 @@ public class PassageiroDAO implements IPassageiroDAO{
         }
         return pass;
     }
+
 }
  
    

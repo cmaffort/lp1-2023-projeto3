@@ -1,4 +1,6 @@
 
+'use strict'
+
 let photo = document.getElementById('imgPhoto');
 let file = document.getElementById('foto');
 let arq = document.getElementById('arq');
@@ -29,8 +31,7 @@ arq.addEventListener('change', function handleFile(files){
                     case 5: document.querySelector('#civil').value = lines[line];
                     case 6: document.querySelector('#email').value = lines[line];
                     case 7: document.querySelector('#telefone').value = lines[line];
-                    case 8: document.querySelector('#dados').value = lines[line];
-                    
+                    case 8: document.querySelector('#pacote').value = lines[line];
                        
 
                 }        
@@ -59,34 +60,24 @@ file.addEventListener('change', (event) => {
 
 
 function addCard(){
-var pai = document.body;
-var cardEl = document.createElement('div');
-//let coluna1 =  document.querySelector('#coluna1');
-//let imagemUser = document.createElement('img');
-//let pName = document.creatElement('p');
-//let pCpf = document.creatElement('p');
-//let botaoChamar = document.createElement('button');
-cardEl.textContent = "Olá, cumprimentos!";
-pai.appendChild(cardEl);
-var divAtual = document.getElementById("div1");
-document.body.insertBefore(cardEl, divAtual);
+let cardEl = document.createElement('div');
+let coluna1 =  document.querySelector('#coluna1');
+let imagemUser = document.createElement('img');
+let pName = document.creatElement('p');
+let pSetor = document.creatElement('p');
+let pTurno = document.creatElement('p');
+let pCodigo = document.creatElement('p');
+let coluna2 = document.querySelector('#coluna2');
+let coluna3 = document.querySelector('#coluna3');
+let botaoChamar = document.createElement('button');
+
 
 
 }
 
 
-function ProcurarPassageiro() {
-    let input = document.getElementById('in').value;
-    input=input.toLowerCase();
-    let x = document.getElementsByClassName('cards');
-      
-    for (i = 0; i < x.length; i++) { 
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-            x[i].style.display="none";
-        }
-        else {
-            x[i].style.display="list-item";                 
-        }
-    }
-}
+
+
+
+
 

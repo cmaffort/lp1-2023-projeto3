@@ -6,7 +6,6 @@ import br.cefetmg.altomare.model.dto.ContaUsuarioDTO;
 import java.util.ArrayList;
 
 
-
 public class GetCartoesToView {
     private ArrayList<CartaoDTO> cartoes;
 
