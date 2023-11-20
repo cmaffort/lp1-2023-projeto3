@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `despesa` (
 
 --
 -- Estrutura da tabela `seguranca`
---
+
 
 DROP TABLE IF EXISTS `seguranca`;
 CREATE TABLE IF NOT EXISTS `seguranca` (
@@ -159,9 +159,8 @@ CREATE TABLE IF NOT EXISTS `seguranca` (
 
 -- --------------------------------------------------------
 
---
 -- Estrutura da tabela `cartao`
---
+
 
 DROP TABLE IF EXISTS `cartao`;
 CREATE TABLE IF NOT EXISTS `cartao` (

@@ -1,8 +1,10 @@
 package br.cefetmg.altomare.model.service;
 
-import br.cefetmg.altomare.model.dao.*;
-import br.cefetmg.altomare.model.dto.*;
-import java.util.*;
+import br.cefetmg.altomare.model.dao.ContaUsuarioDAO;
+import br.cefetmg.altomare.model.dto.CartaoDTO;
+import br.cefetmg.altomare.model.dto.ContaUsuarioDTO;
+import java.util.ArrayList;
+
 
 public class GetCartoesToView {
     private ArrayList<CartaoDTO> cartoes;

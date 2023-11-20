@@ -6,7 +6,8 @@ import java.util.ArrayList;
 public interface IPassageiroDAO{
     public boolean InserirDadosPassageiro(PassageiroDTO passageiro)throws PersistenciaException;
     public String gerarSenha();
-    public void delete(String Cpf)throws PersistenciaException;
+    public boolean delete(String Cpf)throws PersistenciaException;
     public PassageiroDTO ProcurarPassageiro(String Cpf)throws PersistenciaException;
     public ArrayList<PassageiroDTO> listarTodos() throws PersistenciaException;
+    public PassageiroDTO consultarPorUsuarioSenha(String cpf, String senha) throws PersistenciaException;
 }

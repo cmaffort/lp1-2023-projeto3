@@ -1,8 +1,4 @@
-<%-- 
-    Document   : cadastrarFuncionario
-    Created on : 29 de out. de 2023, 17:03:53
-    Author     : Eliane
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="../../css/estilosFuncionario.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
-                <link rel="icon" href="../../imagens/leme.png" type="image/webp">
+        <link rel="icon" href="../../imagens/leme.png" type="image/png">
+
 
         <%@include file="../../headerprodutos.jsp" %>        
 
@@ -21,6 +18,7 @@
     <body>
         <h1 id="titulo">Inserir Funcionário</h1>
         <form action="../../Fachada" method="POST" id="cadastroFunc" encytype="multpart/form-data" >
+
             <main>
                 <div id='setor-admissao'>
 

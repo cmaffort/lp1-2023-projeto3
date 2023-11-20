@@ -1,4 +1,7 @@
 package br.cefetmg.inf.altomare.controller;
+
+import java.io.IOException;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,7 +22,8 @@ import java.util.logging.Logger;
 @WebServlet(urlPatterns = {"/CadastrarPassageiro"})
 public class CadastrarPassageiro extends HttpServlet{
 
-    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException {
+    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException {
+
                String  jsp = null;
                 try {
             
@@ -37,6 +41,7 @@ public class CadastrarPassageiro extends HttpServlet{
                     String caminho = TratamentoImagem.execute(request);
             
                     PassageiroDTO passageiro = new PassageiroDTO (new ContaUsuarioDTO(), cpf, nome, dataNascimento, email, senha, sexo, civil, medico, rg, telefone, caminho);
+
                    
                     PassageiroDAO pass = new PassageiroDAO();
                     pass.InserirDadosPassageiro(passageiro);
@@ -46,9 +51,7 @@ public class CadastrarPassageiro extends HttpServlet{
              } catch(PersistenciaException | ClassNotFoundException | SQLException e) {
               request.setAttribute("tperror", "cadastroPassageiro");
               request.setAttribute("error", "Não foi possível realizar o cadastro, tente novamente");
-        } catch (ServletException ex) { 
-            Logger.getLogger(CadastrarPassageiro.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
                return jsp;
     }
 }

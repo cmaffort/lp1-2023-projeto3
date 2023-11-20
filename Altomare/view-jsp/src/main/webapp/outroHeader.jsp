@@ -11,9 +11,7 @@
      <header id="header-main">
         <div id="header-upper">
 
-
-            <img src="../../imagens/leme.png" id="leme">
-
+            <img src="imagens/leme.png" id="leme">
 
             <div>
                 <h1 id="altoMare">AltoMare </h1>
@@ -21,8 +19,7 @@
             </div>
             <div>
 
-                <img src="../../imagens/user-icon.png" id="user-icon">
-
+                <img src="imagens/user-icon.png" id="user-icon">
                 <p style="font-family: 'Alegreya SC'; padding-left: vw;">GERENTE</p>
 
             </div>
@@ -31,38 +28,38 @@
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <a href="../../core/funcionarios/cadastroFuncionario.jsp" style="color: white;text-decoration: none">
-                <img src="../../imagens/funcionarios.png" style="height: 35px;padding-top: 1.5cm;">
+                <a href="core/funcionarios/cadastroFuncionario.jsp" style="color: white;text-decoration: none">
+                <img src="imagens/funcionarios.png" style="height: 35px;padding-top: 1.5cm;">
                 <p>Funcionários</p>
                 </a>
             </li>
             <li>
-                <a href="../../core/passageiro/Cadastro.jsp" style="color: white;text-decoration: none">
-                <img src="../../imagens/passageiros.png" style="height: 35px;padding-top: 1.5cm;">
+                <a href="core/passageiro/Cadastro.jsp" style="color: white;text-decoration: none">
+                <img src="imagens/passageiros.png" style="height: 35px;padding-top: 1.5cm;">
                 <p>Passageiros</p> 
                 </a>
             </li>
             <li>
-                <a href="../../core/pacotes/contratos/GerarContratos.jsp" style="color: white;text-decoration: none">
-                <img src="../../imagens/pacotes.png" style="height: 35px;padding-top: 1.5cm;">
+                <a href="core/pacotes/contratos/GerarContratos.jsp" style="color: white;text-decoration: none">
+                <img src="imagens/pacotes.png" style="height: 35px;padding-top: 1.5cm;">
                 <p>Pacotes</p>  
                 </a>
             </li>
             <li>
                 <a href="" style="color: white;text-decoration: none">
-                <img src="../../imagens/iconeSeguranca.png" style="height: 35px;padding-top: 1.5cm;">
+                <img src="imagens/iconeSeguranca.png" style="height: 35px;padding-top: 1.5cm;">
                 <p>Segurança</p>
                 </a>
             </li>
             <li>
                 <a href=".jsp" style="color: white;text-decoration: none">
-                <img src="../../imagens/cronograma.png" style="height: 35px;padding-top: 1.5cm;">
+                <img src="imagens/cronograma.png" style="height: 35px;padding-top: 1.5cm;">
                 <p>Conograma</p>
                 </a>
             </li>
             <li>
                 <a href="cadastrar.jsp" style="color: white;text-decoration: none">
-                <img src="../../imagens/" style="height: 35px;padding-top: 1.5cm;">
+                <img src="imagens/" style="height: 35px;padding-top: 1.5cm;">
                 <p>Produtos</p>
                 <a>
                 

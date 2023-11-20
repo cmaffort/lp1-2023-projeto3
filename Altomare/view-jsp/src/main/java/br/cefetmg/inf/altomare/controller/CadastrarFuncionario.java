@@ -1,8 +1,10 @@
 package br.cefetmg.inf.altomare.controller;
+
 import br.cefetmg.altomare.model.dao.FuncionarioDAO;
 import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
 import br.cefetmg.altomare.model.service.IManterFuncionario;
 import br.cefetmg.altomare.model.service.ManterFuncionario;
+import java.util.List;
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
 import jakarta.servlet.ServletException;
@@ -10,7 +12,9 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,14 +23,13 @@ public class CadastrarFuncionario extends HttpServlet {
 
 
     @SuppressWarnings("CallToPrintStackTrace")
+
     public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException {
        @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
         String jsp = "core/funcionarios/listarFuncionarios.jsp";
 
         try {
             IManterFuncionario manterFuncionario = new ManterFuncionario();
-           
-            
           
             
             String setor = request.getParameter("setor");
@@ -47,6 +50,7 @@ public class CadastrarFuncionario extends HttpServlet {
          
                     
             FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, caminho);
+
             
             
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
@@ -58,9 +62,7 @@ public class CadastrarFuncionario extends HttpServlet {
             e.printStackTrace();
             request.setAttribute("tperror", "cadastroFuncionario");
             request.setAttribute("error", "Não foi possível realizar o cadastro, tente novamente");
-        } catch (ServletException ex) {
-            Logger.getLogger(CadastrarFuncionario.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
 
         return jsp;
     }

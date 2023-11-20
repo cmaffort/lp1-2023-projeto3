@@ -9,14 +9,15 @@
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
-        <link rel="icon" href="imagens/leme.png" type="image/webp">
-         
+        <link rel="icon" href="../../imagens/leme.png" type="image/webp">
         <%@include file="../../headerprodutos.jsp" %>
     </head>
     <body>
         
          <h1 id="titulo">Cadastrar Passageiro</h1>
+
          <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" encytype="multpart/form-data" method="POST">
+
             <main>
         
                 
@@ -52,7 +53,9 @@
                                
                           </p>
                           <p> 
+
                              Dados Medicos:<input type="text"  id="dadosmedico" name="dados" >
+
                           </p>
                           
                           </div>

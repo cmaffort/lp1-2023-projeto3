@@ -32,18 +32,11 @@ public class Fachada extends HttpServlet {
          // out.println("<link rel=\"stylesheet\" href=\"../../css/estilos-header.css\">");
           //out.println("</head>");
         
-       if(acao.equals("CadastrarProduto"))
-          jsp = CadastrarProduto.execute(request);
-       else if(acao.equals("CadastrarFuncionario"))
-          jsp = CadastrarFuncionario.execute(request); 
+
+       if(acao.equals("Login"))
+          jsp = Login.execute(request);   
        else if(acao.equals("CadastrarPassageiro"))
            jsp = CadastrarPassageiro.execute(request);
-       else if(acao.equals("ListarProduto"))
-          jsp = ListarProduto.execute(request);
-       else if(acao.equals("AlterarProduto"))
-          jsp = AlterarProduto.execute(request);
-       else if(acao.equals("ExcluirProduto"))
-          jsp = ExcluirProduto.executeID(request);
        else if(acao.equals("CadastrarFuncionario"))
            jsp = CadastrarFuncionario.execute(request);
        else

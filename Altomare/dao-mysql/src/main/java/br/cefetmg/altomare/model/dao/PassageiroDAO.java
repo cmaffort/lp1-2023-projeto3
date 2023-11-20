@@ -58,7 +58,8 @@ public class PassageiroDAO implements IPassageiroDAO{
     }
     
     @Override
-    public void delete(String Cpf)throws PersistenciaException{
+
+    public boolean delete(String Cpf)throws PersistenciaException{
         String sql = "DELETE FROM passageiro WHERE CPF = ?";
         try(PreparedStatement in = conexao.prepareStatement(sql)){
             in.setString(1, Cpf);
@@ -67,7 +68,9 @@ public class PassageiroDAO implements IPassageiroDAO{
         }
        catch (SQLException ex) {
                 throw new PersistenciaException(ex.getMessage());
-            }  
+
+            }
+        return true;
     }
     
     @Override
@@ -124,6 +127,29 @@ public class PassageiroDAO implements IPassageiroDAO{
         }
         return passageiro;
     }
+
+    
+     @Override
+    public PassageiroDTO consultarPorUsuarioSenha(String cpf, String senha) throws PersistenciaException {
+        PassageiroDTO pass = new PassageiroDTO();
+        String sql = "SELECT * FROM passageiro WHERE CPF = ? AND Senha = ?";
+        try ( PreparedStatement statement = conexao.prepareStatement(sql);  ResultSet resultSet = statement.executeQuery()) {
+                pass.setCpf(resultSet.getString("CPF"));
+                pass.setRg(resultSet.getString("RG"));
+                pass.setNome(resultSet.getString("Nome"));
+                pass.setDataNascimento(resultSet.getString("DataNasc"));
+                pass.setEmail(resultSet.getString("Email"));
+                pass.setSenha(resultSet.getString("Senha"));
+                pass.setTelefone(resultSet.getString("Telefone"));
+                pass.setSexo(resultSet.getString("Sexo"));
+                pass.setEstadoCivil(resultSet.getString("Civil"));
+                pass.setDadosMedicos(resultSet.getString("DadosMedicos"));
+        } catch (SQLException ex) {
+            throw new PersistenciaException(ex.getMessage());
+        }
+        return pass;
+    }
+
 }
  
    
