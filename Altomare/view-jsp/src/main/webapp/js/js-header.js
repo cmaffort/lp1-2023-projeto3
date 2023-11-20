@@ -1,8 +1,5 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
 let burger = document.querySelector("#burger");
+let burgerTxt = document.querySelector("#burger p");
 let lista = document.querySelector("#header-main ul");
 
 lista.classList.add('menu-fechado');
@@ -12,12 +9,13 @@ burger.addEventListener('click', () => {
         lista.classList.remove('menu-fechado');
         lista.classList.add('menu-aberto');
         lista.style.display = "block";
-        lista.style.top = "17vw";
+        lista.style.top = "17.7vh";
+        burgerTxt.innerHTML = "▲";
     }
     else {
         lista.classList.remove('menu-aberto');
         lista.classList.add('menu-fechado');
-        lista.style.top = "-20vw";
+        lista.style.top = "-30vh";
+        burgerTxt.innerHTML = "▼";
     }
 });
-

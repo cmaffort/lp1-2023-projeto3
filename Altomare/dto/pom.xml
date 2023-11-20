@@ -11,6 +11,6 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>Dto</exec.mainClass>
+        <exec.mainClass>br.cefetmg.altomare.dto.Dto</exec.mainClass>
     </properties>
 </project>

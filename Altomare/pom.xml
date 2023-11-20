@@ -13,15 +13,13 @@
       
   <modules>
             
-    <module>dto</module>
-            
     <module>idao</module>
             
     <module>dao-mysql</module>
           
     <module>view-jsp</module>
     <module>service</module>
-    <module>model</module>
+    <module>dto</module>
   </modules>
     <properties>
             

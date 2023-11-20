@@ -1,0 +1,105 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 15 de out. de 2023, 16:25:26
+    Author     : User
+*/
+
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+  color: #333;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+
+html, body {
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+ input[type="button"] {
+        background-color:white ;
+        color: black;
+        border: none;
+        padding: 8px 10px 10px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        height:2em;
+        width: 6em; 
+}
+
+
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:rgb(217,217,217)  ;
+    border-radius: 10px;
+    
+
+    
+}
+  
+  input[type="text"]{
+
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.produtos-gestao{
+    margin-bottom:10px;
+   
+    
+}
+
+.contract-box {
+    
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    display: inline-block;
+    text-align: left;
+}
+
+
+.contract-info {
+    font-weight: bold;
+}
+
+
+.download-link {
+    display: block;
+    margin-top: 10px;
+    color: blue;
+}
+
+  
