@@ -5,7 +5,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edição de produtos</title>
         <link rel="stylesheet" type="text/css" href="css/produtos.css">
+
         <%@include file="../../headerprodutos.jsp" %>
+
 
     </head>
     <body>
@@ -18,7 +20,10 @@
             <label>Nova Data de Entrada: <input type="text" name="novaDataEntrada" placeholder="novaData"></label><br>
             <label>Nova Quantidade:<input type="number" name="Novaquantidade" placeholder="Novaquantidade"></label><br>
             <label>Novo Tipo de Produto: <select id="novoTipoProduto" name="novoTipoProduto">
-                                <option value="none"></option>
+
+
+                                 <option value="none"></option>
+
                                 <option value="Alimento">Alimento</option>
                                 <option value="Médicos">Médicos</option>
                                 <option value="Bebidas">Bebidas</option>

@@ -1,88 +1,107 @@
 package br.cefetmg.altomare.model.dao;
 
-import br.cefetmg.altomare.model.dto.ProdutoDTO;
-import br.cefetmg.altomare.model.dao.IProdutoDAO;
-import java.sql.Connection;
 import br.cefetmg.altomare.dao.connection.ConexaoDB;
 import br.cefetmg.altomare.model.dto.ProdutoDTO;
+
+import java.sql.Connection;
+import java.util.Date;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
-public class ProdutoDAO implements IProdutoDAO {
+public  class ProdutoDAO implements IProdutoDAO {
 
-        Connection connection;
-
+    Connection connection;
 
     public ProdutoDAO() throws SQLException, ClassNotFoundException {
         this.connection = ConexaoDB.inicializaDB();
-        
     }
 
-    public void inserirProduto(ProdutoDTO produto) throws SQLException {
-        String sql = "INSERT INTO produtos (nome, tipo, preco, estado,quantidade, data) VALUES (?,?,?,?,?,?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, produto.getNome());
-            statement.setString(2, produto.getTipo());
-            statement.setDouble(3, produto.getPreco());
-            statement.setString(4, produto.getEstado());
-            statement.setInt(5, produto.getQuantidade());
-            statement.setDate(6, new java.sql.Date(produto.getData().getTime()));
-            statement.executeUpdate();
-              
-           String updateQuantidadeTotalSQL = "UPDATE produtos SET quantidade_total = quantidade_total + ? WHERE nome = ?";
-    try (PreparedStatement updateStatement = connection.prepareStatement(updateQuantidadeTotalSQL)) {
-        updateStatement.setInt(1, produto.getQuantidade());
-        updateStatement.setString(2, produto.getNome());
-        updateStatement.executeUpdate();
-    }                            
-    
-     try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+    @Override
+    public void inserirProduto(ProdutoDTO produto) throws SQLException, ClassNotFoundException {
+        String inserirSQL = "INSERT INTO produto (nome, tipo, preco, estado, quantidade, data) VALUES (?,?,?,?,?,?)";
+        String atualizarQuantidadeTotalSQL = "UPDATE produto SET quantidade_total = quantidade_total + ? WHERE nome = ?";
 
+        try (PreparedStatement inserirStatement = connection.prepareStatement(inserirSQL); PreparedStatement atualizarQuantidadeTotalStatement = connection.prepareStatement(atualizarQuantidadeTotalSQL)) {
+
+           
+
+            inserirStatement.setString(1, produto.getNome());
+            inserirStatement.setString(2, produto.getTipo());
+            inserirStatement.setDouble(3, produto.getPreco());
+            inserirStatement.setString(4, produto.getEstado());
+            inserirStatement.setInt(5, produto.getQuantidade());
+            
+            
+            
+            inserirStatement.setString(6,produto.getData() );
+        
+        
+            inserirStatement.executeUpdate();
+        
+            atualizarQuantidadeTotalStatement.setInt(1, produto.getQuantidade());
+            atualizarQuantidadeTotalStatement.setString(2, produto.getNome());
+            atualizarQuantidadeTotalStatement.executeUpdate();
+
+          
+
+        } catch (SQLException e) {
+            
+            throw e;
+        } finally {
+            
         }
     }
 
+    @Override
     public void atualizarProduto(ProdutoDTO produto) throws SQLException {
-        String sql = "UPDATE produtos SET nome = ?, preco = ?, estado = ?,quantidade = ?,data = ? WHERE id = ?";
+        String sql = "UPDATE produto SET nome = ?, preco = ?, estado = ?,tipo = ? , quantidade = ?, data = ? WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, produto.getNome());
             statement.setDouble(2, produto.getPreco());
             statement.setString(3, produto.getEstado());
-            statement.setInt(4, produto.getId());
-             statement.setInt(5, produto.getQuantidade());
-            statement.setDate(6, new java.sql.Date(produto.getData().getTime()));
+            statement.setString(4, produto.getTipo());
+            statement.setInt(5, produto.getQuantidade());
+            statement.setString(6,produto.getData() );
+            statement.setInt(7, produto.getId());
             statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
         }
-         try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
     }
-
-    public void excluirProduto(int produtoId) throws SQLException {
-        String sql = "DELETE FROM produtos WHERE id = ?";
+    @Override
+    public void excluirProdutoNome(String nome) {
+   
+        String sql = "DELETE FROM produto WHERE nome = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, produtoId);
+            statement.setString(1, nome);
             statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
         }
-         try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+    }
+   @Override     
+public void excluirProdutoID(Integer Id) {
+   
+        String sql = "DELETE FROM produto WHERE id = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, Id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
 
-    public List<ProdutoDTO> listarProdutos() throws SQLException {
-        List<ProdutoDTO> produtos = new ArrayList<>();
-        String sql = "SELECT * FROM produtos";
+    @Override
+    public ArrayList<ProdutoDTO> listarProdutos() throws SQLException {
+        ArrayList<ProdutoDTO> produtos = new ArrayList<>();
+        String sql = "SELECT * FROM produto";
+
         try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet resultSet = statement.executeQuery()) {
+
             while (resultSet.next()) {
                 ProdutoDTO produto = new ProdutoDTO();
                 produto.setId(resultSet.getInt("id"));
@@ -91,20 +110,18 @@ public class ProdutoDAO implements IProdutoDAO {
                 produto.setPreco(resultSet.getDouble("preco"));
                 produto.setEstado(resultSet.getString("estado"));
                 produto.setQuantidade(resultSet.getInt("quantidade"));
-                produto.setData(resultSet.getDate("data"));
-
+                produto.setData(resultSet.getString("data"));
 
                 produtos.add(produto);
             }
-        }
-        
-         try {
-                    connection.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-         
-                return produtos;
 
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw e;
+        }
+
+        return produtos;
     }
 }
+
+   

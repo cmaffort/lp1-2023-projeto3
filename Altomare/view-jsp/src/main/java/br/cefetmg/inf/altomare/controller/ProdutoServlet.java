@@ -37,11 +37,16 @@ public class ProdutoServlet extends HttpServlet {
             rd.forward(request, response);
 
         }
-        else if (acao.equals("Excluir")) {
-            jsp = ExcluirProduto.execute(request);
+        else if (acao.equals("ExcluirNome")) {
+            jsp = ExcluirProduto.executeNome(request);
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);
 
+        }
+        else if (acao.equals("ExcluirId")) {
+            jsp = ExcluirProduto.executeID(request);
+            RequestDispatcher rd = request.getRequestDispatcher(jsp);
+            rd.forward(request, response);
         }
         
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");

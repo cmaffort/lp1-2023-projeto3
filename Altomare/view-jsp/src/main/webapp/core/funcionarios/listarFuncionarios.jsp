@@ -17,10 +17,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
-        <link rel="stylesheet"  href="css/estilos-header.css">
+        <link rel="stylesheet"  href="../../css/estilos-header.css">
         <link rel="stylesheet"  href="../../css/estilosFuncionario.css">
-        <link rel="icon" href="imagens/leme.png" type="image/webp">
-        <%@include file="../../headerGerente.jsp" %>
+        <link rel="icon" href="../../imagens/leme.png" type="image/webp">
+        <%@include file="../../headerprodutos.jsp" %>
         <title>Escalar Funcionários</title>
     </head>
     <body>

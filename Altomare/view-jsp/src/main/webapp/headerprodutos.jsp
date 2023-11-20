@@ -8,43 +8,72 @@
         <link rel="icon" href="imagens/leme.png" type="image/webp">
     </head>
 
-    <header id="header-main">
+     <header id="header-main">
         <div id="header-upper">
-            <img src="imagens\leme.png" alt="" id="leme">
+
+            <img src="../../imagens\leme.png" id="leme">
+
             <div>
-                <h1>AltoMare </h1>
-                <h2>EMBARCAÇÕES</h2>
+                <h1 id="altoMare">AltoMare </h1>
+                <h2 id="embarcacoes">EMBARCAÇÕES</h2>
             </div>
             <div>
-                <img src="imagens\user-icon.png" alt="" id="user-icon">
-                <p>USER</p>
+
+                <img src="../../imagens\user-icon.png" id="user-icon">
+                <p style="font-family: 'Alegreya SC'; padding-left: vw;">GERENTE</p>
+
             </div>
         </div>
         <div id="linha"></div>
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <img alt="" src="">
-                <input type="button"  class="button" name="ordem" value="Cadastro" onclick="window.location=('cadastrar.jsp')">
+                <a href="../../core/funcionarios/cadastroFuncionario.jsp" style="color: white;text-decoration: none">
+                <img src="../../imagens/funcionarios.png" style="height: 35px;padding-top: 1.5cm;">
+                <p>Funcionários</p>
+                </a>
             </li>
             <li>
-                <img alt="" src="">
-                <input type="button" class="button" name="ordem" value="Edição" onclick="window.location=('alterar.jsp')"> 
-            </li>
-            
-            <li>
-                <img alt="" src="">
-                <input type="button" class="button" name="ordem" value="Listagem" onclick="window.location=('listar.jsp')">
-
+                <a href="../../core/passageiro/Cadastro.jsp" style="color: white;text-decoration: none">
+                <img src="../../imagens/passageiros.png" style="height: 35px;padding-top: 1.5cm;">
+                <p>Passageiros</p> 
+                </a>
             </li>
             <li>
-                <img alt="" src="">
-                <input type="button" class="button" name="ordem" value="Exclusão" onclick="window.location=('excluir.jsp')">
-
+                <a href="../../core/pacotes/contratos/GerarContratos.jsp" style="color: white;text-decoration: none">
+                <img src="../../imagens/pacotes.png" style="height: 35px;padding-top: 1.5cm;">
+                <p>Pacotes</p>  
+                </a>
             </li>
+            <li>
+                <a href="" style="color: white;text-decoration: none">
+                <img src="../../imagens/iconeSeguranca.png" style="height: 35px;padding-top: 1.5cm;">
+                <p>Segurança</p>
+                </a>
+            </li>
+            <li>
+                <a href=".jsp" style="color: white;text-decoration: none">
+                <img src="../../imagens/cronograma.png" style="height: 35px;padding-top: 1.5cm;">
+                <p>Conograma</p>
+                </a>
+            </li>
+            <li>
+                <a href="cadastrar.jsp" style="color: white;text-decoration: none">
+                <img src="../../imagens/" style="height: 35px;padding-top: 1.5cm;">
+                <p>Produtos</p>
+                <a>
+                
+            </li>
+   
         </ul>
+    
+        <br>
+    
 
-    </header>
+        <br>
+    
+        
+        </header>
 
     <script src="js/jsheader.js"></script>
 </html>

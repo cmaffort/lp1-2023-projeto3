@@ -1,4 +1,5 @@
 package br.cefetmg.inf.altomare.controller;
+
 import br.cefetmg.altomare.model.dao.ProdutoDAO;
 import br.cefetmg.altomare.model.dto.ProdutoDTO;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.sql.SQLException;
 
 @WebServlet("/CadastrarProduto")
 public class CadastrarProduto extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
 
     public static String execute(HttpServletRequest request) {
@@ -24,22 +26,41 @@ public class CadastrarProduto extends HttpServlet {
             String estado = request.getParameter("EstadPro");
             String tipo = request.getParameter("tipoProduto");
             String quantidadeStr = request.getParameter("quantidade");
-            String dataStr = request.getParameter("data");
+            String data = request.getParameter("data");
+            
 
             double preco = Double.parseDouble(precoStr);
-            int quantidade = Integer.parseInt(quantidadeStr);
-            Date data = Date.valueOf(dataStr);
 
-            ProdutoDTO produto = new ProdutoDTO(nome, preco, tipo, estado, null, quantidade, data);
+            int quantidade = 0;
+
+            if (quantidadeStr != null && !quantidadeStr.isEmpty()) {
+                try {
+                    quantidade = Integer.parseInt(quantidadeStr);
+                } catch (NumberFormatException ex) {
+                    System.out.println(ex);
+                }
+            }
+            
+           
+ 
+            
+            ProdutoDTO produto = new ProdutoDTO();
+
+            produto.setNome(nome);
+            produto.setPreco(preco);
+            produto.setTipo(tipo);
+            produto.setEstado(estado);
+            produto.setQuantidade(quantidade);
+            produto.setData(data);
 
             ProdutoDAO produtoDAO = new ProdutoDAO();
             produtoDAO.inserirProduto(produto);
 
-            jsp = "index.jsp"; 
+            jsp = "index.jsp";
 
         } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-            jsp = "headerprodutos.jsp"; 
+            System.out.println(ex);
+            jsp = "index.jsp";
         }
 
         return jsp;

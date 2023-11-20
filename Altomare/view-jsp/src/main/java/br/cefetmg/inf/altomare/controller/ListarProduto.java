@@ -1,3 +1,5 @@
+
+
 package br.cefetmg.inf.altomare.controller;
 
 import java.io.IOException;
@@ -20,13 +22,21 @@ public class ListarProduto extends HttpServlet {
         try {
             ProdutoDAO produtoDAO = new ProdutoDAO();
             List<ProdutoDTO> produtos = produtoDAO.listarProdutos();
-            request.setAttribute("produtos", produtos);
-            jsp = "listar.jsp"; // Define a página para listar os produtos
-        } catch (SQLException | ClassNotFoundException ex) {
-            ex.printStackTrace();
-            jsp = "erro.jsp"; // Define a página de erro
+         
+         
+            if(produtos != null){
+                request.setAttribute("produtos", produtos);
+                jsp = "/listar.jsp";
+            }else{
+                String erro = "Não há registros.";
+                request.setAttribute("erro", erro);
+                jsp = "/erro.jsp";
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+            jsp = "";
         }
-
         return jsp;
     }
+    
 }

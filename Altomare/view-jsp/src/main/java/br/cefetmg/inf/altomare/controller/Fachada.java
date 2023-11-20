@@ -43,7 +43,7 @@ public class Fachada extends HttpServlet {
        else if(acao.equals("AlterarProduto"))
           jsp = AlterarProduto.execute(request);
        else if(acao.equals("ExcluirProduto"))
-          jsp = ExcluirProduto.execute(request);
+          jsp = ExcluirProduto.executeID(request);
        else if(acao.equals("CadastrarFuncionario"))
            jsp = CadastrarFuncionario.execute(request);
        else
