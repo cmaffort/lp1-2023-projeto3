@@ -148,6 +148,18 @@ CREATE TABLE IF NOT EXISTS `despesa` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `seguranca`
+--
+
+DROP TABLE IF EXISTS `seguranca`;
+CREATE TABLE IF NOT EXISTS `seguranca` (
+  `Nome` varchar(255) NOT NULL,
+  `Especificacao` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `cartao`
 --
 
