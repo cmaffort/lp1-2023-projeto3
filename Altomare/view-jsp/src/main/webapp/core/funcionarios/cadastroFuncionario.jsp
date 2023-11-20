@@ -20,7 +20,7 @@
     </head>
     <body>
         <h1 id="titulo">Inserir Funcionário</h1>
-        <form action="../../Fachada" method="POST" id="cadastroFunc" >
+        <form action="../../Fachada" method="POST" id="cadastroFunc" encytype="multpart/form-data" >
             <main>
                 <div id='setor-admissao'>
 

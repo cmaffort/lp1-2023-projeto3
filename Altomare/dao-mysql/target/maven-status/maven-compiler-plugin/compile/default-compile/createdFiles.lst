@@ -6,4 +6,5 @@ br\cefetmg\altomare\model\dao\ContaUsuarioDAO.class
 br\cefetmg\altomare\dao\connection\ConexaoDB.class
 br\cefetmg\altomare\model\dao\CartaoDAO.class
 br\cefetmg\altomare\model\dao\FuncionarioDAO.class
+.netbeans_automatic_build
 br\cefetmg\altomare\model\dao\ProdutoDAO.class

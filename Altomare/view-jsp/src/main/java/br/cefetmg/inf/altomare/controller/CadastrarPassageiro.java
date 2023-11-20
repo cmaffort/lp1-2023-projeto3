@@ -1,7 +1,4 @@
-
 package br.cefetmg.inf.altomare.controller;
-import java.io.IOException;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,9 +7,10 @@ import br.cefetmg.altomare.model.dao.PassageiroDAO;
 import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
 import br.cefetmg.altomare.model.dto.ContaUsuarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Part;
-import java.io.File;
-import java.nio.file.Paths;
+import java.io.IOException;
+import java.nio.file.Path;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +19,7 @@ import java.util.logging.Logger;
 @WebServlet(urlPatterns = {"/CadastrarPassageiro"})
 public class CadastrarPassageiro extends HttpServlet{
 
-    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException {
+    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException {
                String  jsp = null;
                 try {
             
@@ -34,19 +32,11 @@ public class CadastrarPassageiro extends HttpServlet{
                     String email = request.getParameter("email");
                     String telefone = request.getParameter("telefone");
                     String medico = request.getParameter("medico");
-                    String photo = request.getParameter("foto");
-                    //String fileName = Paths.get(photo.getSubmittedFileName()).getFileName().toString();
                     String senha = "";
-                   // String caminho = null;
-                    
-                   /* File diretorio = new File("imagensPassageiro");
-                    if(! diretorio.exists()){
-                        diretorio.mkdir();
-                        File foto = new File(diretorio, fileName);
-                        caminho = foto.getAbsolutePath();
-                    }*/
+                    Part photo = request.getPart("foto");
+                    String caminho = TratamentoImagem.execute(request);
             
-                    PassageiroDTO passageiro = new PassageiroDTO (new ContaUsuarioDTO(), cpf, nome, dataNascimento, email, senha, sexo, civil, medico, rg, telefone, photo);
+                    PassageiroDTO passageiro = new PassageiroDTO (new ContaUsuarioDTO(), cpf, nome, dataNascimento, email, senha, sexo, civil, medico, rg, telefone, caminho);
                    
                     PassageiroDAO pass = new PassageiroDAO();
                     pass.InserirDadosPassageiro(passageiro);
@@ -56,7 +46,9 @@ public class CadastrarPassageiro extends HttpServlet{
              } catch(PersistenciaException | ClassNotFoundException | SQLException e) {
               request.setAttribute("tperror", "cadastroPassageiro");
               request.setAttribute("error", "Não foi possível realizar o cadastro, tente novamente");
-        } 
+        } catch (ServletException ex) { 
+            Logger.getLogger(CadastrarPassageiro.class.getName()).log(Level.SEVERE, null, ex);
+        }
                return jsp;
     }
 }
