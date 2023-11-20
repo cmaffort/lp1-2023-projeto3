@@ -1,0 +1,38 @@
+/*início restaurante*/
+
+#cont-restaurante {
+    height: 100vh;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#menu {
+    height: 100%;
+    width: 70vw;
+    background-color: red;
+}
+
+#consulta-pedido {
+    height: 100%;
+    width: 15vw;
+    background-color: blue;
+}
+
+/* fim restaurante */
+
+/*início limpeza*/
+
+
+
+
+/* fim limpeza */
+
+/*início saúde*/
+
+
+
+
+/* fim saude */
