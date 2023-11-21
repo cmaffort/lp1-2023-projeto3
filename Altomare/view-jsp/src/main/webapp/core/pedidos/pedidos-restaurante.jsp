@@ -3,14 +3,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Altomare</title
+        <title>Altomare</title>
         <link rel="stylesheet" href="../../css/pedidos.css">
     </head>
     <body>
-        <%@ include file="../../headerPassageiro.jsp" %>
         
         <div id="cont-restaurante">
-            <div id="menu">
+            <div id="cardapio">
                 
             </div>
             <div id="consulta-pedido">

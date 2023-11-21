@@ -170,3 +170,36 @@ INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Ca
 INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Gente Boa", "2023-10-10", "credito", 333, 3333333333333333, 1);
 INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Dahora", "2023-10-10", "debito", 444, 4444444444444444, 1);
 INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Bom", "2023-10-10", "debito", 555, 5555555555555555, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidounidade`
+--
+
+DROP TABLE IF EXISTS `pedidounidade`;
+CREATE TABLE IF NOT EXISTS `pedidounidade` (
+  id_pedido_unidade BIGINT AUTO_INCREMENT,
+  valor DOUBLE NOT NULL,
+  data_ocorrencia VARCHAR(50),
+  conteudo VARCHAR(250),
+  id_conta BIGINT(10),
+  PRIMARY KEY (id_pedido_unidade)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidotodo`
+--
+
+DROP TABLE IF EXISTS `pedidotodo`;
+CREATE TABLE IF NOT EXISTS `pedidotodo` (
+  id_pedido_todo BIGINT AUTO_INCREMENT,
+  total DOUBLE NOT NULL,
+  finalizado BOOLEAN,
+  data_criacao VARCHAR(50),
+  estado VARCHAR(50),
+  PRIMARY KEY (id_pedido_todo)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

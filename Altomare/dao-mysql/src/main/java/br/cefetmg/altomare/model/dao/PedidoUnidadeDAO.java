@@ -1,6 +1,6 @@
 package br.cefetmg.altomare.model.dao;
 
-import br.cefetmg.altomare.model.dto.CartaoDTO;
+import br.cefetmg.altomare.model.dto.PedidoUnidadeDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,23 +8,21 @@ import java.sql.SQLException;
 import br.cefetmg.altomare.dao.connection.ConexaoDB;
 import java.util.*;
 
-public class CartaoDAO implements ICartaoDAO{
+public class PedidoUnidadeDAO implements IPedidoUnidadeDAO{
     @Override
-    public boolean inserir(CartaoDTO cartao) {
+    public boolean inserir(PedidoUnidadeDTO pedidoUnidade) {
 
-        String sql = "INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta"
-                + ") VALUES(?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO cartao (valor, data_ocorrencia, conteudo, id_conta"
+                + ") VALUES(?, ?, ?, ?)";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, cartao.getTitular());
-            pstmt.setString(2, cartao.getVencimento());
-            pstmt.setString(3, cartao.getTipo());
-            pstmt.setInt(4, cartao.getCvv());
-            pstmt.setLong(5, cartao.getNumero());
-            pstmt.setLong(6, cartao.getIdConta());
+            pstmt.setDouble(1, pedidoUnidade.getValor());
+            pstmt.setString(2, pedidoUnidade.getDataOcorrencia());
+            pstmt.setString(3, pedidoUnidade.getConteudo());
+            pstmt.setLong(4, pedidoUnidade.getIdRelaciona());
             
             pstmt.execute();
 
@@ -42,28 +40,25 @@ public class CartaoDAO implements ICartaoDAO{
     }
 
     @Override
-    public boolean atualizar(CartaoDTO cartao){
+    public boolean atualizar(PedidoUnidadeDTO pedidoUnidade){
 
-        String sql = "UPDATE cartao " +
-                       " SET titular = ?, " +
-                       "     vencimento = ? " +
-                       "     tipo = ? " +
-                       "     cvv = ? " +
-                       "     numero = ? " +
+        String sql = "UPDATE pedidounidade " +
+                       " SET valor = ?, " +
+                       "     data_ocorrencia = ? " +
+                       "     conteudo = ? " +
                        "     id_conta = ? " +
-                       " WHERE id_cartao = ?";
+                       " WHERE id_pedido_unidade = ?";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, cartao.getTitular());
-            pstmt.setString(2, cartao.getVencimento());
-            pstmt.setString(3, cartao.getTipo());
-            pstmt.setInt(4, cartao.getCvv());
-            pstmt.setLong(5, cartao.getNumero());
-            pstmt.setLong(6, cartao.getIdConta());
-            pstmt.setLong(1, cartao.getIdCartao());
+            pstmt.setDouble(1, pedidoUnidade.getValor());
+            pstmt.setString(2, pedidoUnidade.getDataOcorrencia());
+            pstmt.setString(3, pedidoUnidade.getConteudo());
+            pstmt.setLong(4, pedidoUnidade.getIdRelaciona());
+            pstmt.setLong(5, pedidoUnidade.getIdPedidoUnidade());
+            
             pstmt.executeUpdate();
 
             pstmt.close();
@@ -80,15 +75,15 @@ public class CartaoDAO implements ICartaoDAO{
     }
 
     @Override
-    public boolean deletar(CartaoDTO cartao) {
+    public boolean deletar(PedidoUnidadeDTO pedidoUnidade) {
 
-        String sql = "DELETE FROM cartao WHERE id_cartao = ?";
+        String sql = "DELETE FROM pedidounidade WHERE id_pedido_unidade = ?";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setLong(1, cartao.getIdCartao());
+            pstmt.setLong(1, pedidoUnidade.getIdPedidoUnidade());
             pstmt.executeUpdate();
 
             pstmt.close();
@@ -105,36 +100,34 @@ public class CartaoDAO implements ICartaoDAO{
     }
     
     @Override
-    public ArrayList<CartaoDTO> buscaPorIdConta(Long id) {
+    public ArrayList<PedidoUnidadeDTO> buscaPorIdRelaciona(Long id) {
          try {
             Connection connection = ConexaoDB.inicializaDB();
 
-            String sql = "SELECT * FROM cartao WHERE id_conta = ?";
+            String sql = "SELECT * FROM pedidounidade WHERE id_pedido_unidade = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, id);
             ResultSet rs = pstmt.executeQuery();
 
-            ArrayList<CartaoDTO> cartoesEncontrados = new ArrayList<>();
-            CartaoDTO cartao;
+            ArrayList<PedidoUnidadeDTO> pedidosUnidadeEncontrados = new ArrayList<>();
+            PedidoUnidadeDTO cartao;
             while (rs.next()) {
-                cartao = new CartaoDTO();
-                cartao.setIdCartao(rs.getLong("id_cartao"));
-                cartao.setTitular(rs.getString("titular"));
-                cartao.setVencimento(rs.getString("vencimento"));
-                cartao.setTipo(rs.getString("tipo"));
-                cartao.setCvv(rs.getInt("cvv"));
-                cartao.setNumero(rs.getLong("numero"));
-                cartao.setIdConta(rs.getLong("id_conta"));
+                cartao = new PedidoUnidadeDTO();
+                cartao.setIdPedidoUnidade(rs.getLong("id_pedido_unidade"));
+                cartao.setValor(rs.getDouble("valor"));
+                cartao.setDataOcorrencia(rs.getString("data_ocorrencia"));
+                cartao.setConteudo(rs.getString("conteudo"));
+                cartao.setIdRelaciona(rs.getLong("id_conta"));
                 
-                cartoesEncontrados.add(cartao);
+                pedidosUnidadeEncontrados.add(cartao);
             }
 
             rs.close();
             pstmt.close();
             connection.close();
             
-            return cartoesEncontrados;
+            return pedidosUnidadeEncontrados;
         }
         catch (SQLException u) {    
             throw new RuntimeException(u);    

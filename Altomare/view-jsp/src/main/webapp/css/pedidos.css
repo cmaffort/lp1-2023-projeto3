@@ -1,24 +1,26 @@
 /*início restaurante*/
 
 #cont-restaurante {
-    height: 100vh;
-    width: 800px;
+    height: 70.7vh;
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
-#menu {
+#cardapio {
     height: 100%;
     width: 70vw;
-    background-color: red;
+    margin: 1vh;
+    padding-top: 2vh;
 }
 
 #consulta-pedido {
     height: 100%;
     width: 15vw;
-    background-color: blue;
+    margin: 1vh;
+    padding-top: 2vh;
 }
 
 /* fim restaurante */
