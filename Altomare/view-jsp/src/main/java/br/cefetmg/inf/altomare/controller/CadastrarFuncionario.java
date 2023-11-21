@@ -24,7 +24,7 @@ public class CadastrarFuncionario extends HttpServlet {
 
     @SuppressWarnings("CallToPrintStackTrace")
 
-    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException {
+    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException, ServletException {
        @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
         String jsp = "core/funcionarios/listarFuncionarios.jsp";
 

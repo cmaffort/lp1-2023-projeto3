@@ -1,5 +1,4 @@
 package br.cefetmg.inf.altomare.controller;
-
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -15,14 +14,13 @@ import jakarta.servlet.http.Part;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 
 @WebServlet(urlPatterns = {"/CadastrarPassageiro"})
 public class CadastrarPassageiro extends HttpServlet{
 
-    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException {
+    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, ServletException, IOException {
 
                String  jsp = null;
                 try {

@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro de Atividade</title>
+        <title>Cadastro de Atividade | AltoMare</title>
                 <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
 
     </head>
