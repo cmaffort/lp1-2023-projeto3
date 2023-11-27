@@ -181,7 +181,6 @@ DROP TABLE IF EXISTS `pedidounidade`;
 CREATE TABLE IF NOT EXISTS `pedidounidade` (
   id_pedido_unidade BIGINT AUTO_INCREMENT,
   valor DOUBLE NOT NULL,
-  data_ocorrencia VARCHAR(50),
   conteudo VARCHAR(250),
   id_conta BIGINT(10),
   PRIMARY KEY (id_pedido_unidade)
@@ -201,5 +200,6 @@ CREATE TABLE IF NOT EXISTS `pedidotodo` (
   finalizado BOOLEAN,
   data_criacao VARCHAR(50),
   estado VARCHAR(50),
+  tipo VARCHAR(50),
   PRIMARY KEY (id_pedido_todo)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

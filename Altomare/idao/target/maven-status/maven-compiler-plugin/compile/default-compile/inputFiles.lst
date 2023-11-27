@@ -5,5 +5,7 @@ C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefe
 C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefetmg\altomare\model\dao\IFuncionarioDAO.java
 C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefetmg\altomare\model\dao\IProdutoDAO.java
 C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefetmg\altomare\model\dao\IDespesaDAO.java
+C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefetmg\altomare\model\dao\IPedidoTodoDAO.java
+C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefetmg\altomare\model\dao\IPedidoUnidadeDAO.java
 C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefetmg\altomare\model\dao\ICartaoDAO.java
 C:\Users\Aluno\Desktop\rep\lp1-2023-projeto3\Altomare\idao\src\main\java\br\cefetmg\altomare\model\dao\exception\PersistenciaException.java

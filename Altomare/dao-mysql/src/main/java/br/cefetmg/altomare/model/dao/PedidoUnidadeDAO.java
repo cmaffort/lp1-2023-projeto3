@@ -12,7 +12,7 @@ public class PedidoUnidadeDAO implements IPedidoUnidadeDAO{
     @Override
     public boolean inserir(PedidoUnidadeDTO pedidoUnidade) {
 
-        String sql = "INSERT INTO cartao (valor, data_ocorrencia, conteudo, id_conta"
+        String sql = "INSERT INTO cartao (valor, conteudo, id_conta"
                 + ") VALUES(?, ?, ?, ?)";
 
         try {
@@ -20,9 +20,8 @@ public class PedidoUnidadeDAO implements IPedidoUnidadeDAO{
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setDouble(1, pedidoUnidade.getValor());
-            pstmt.setString(2, pedidoUnidade.getDataOcorrencia());
-            pstmt.setString(3, pedidoUnidade.getConteudo());
-            pstmt.setLong(4, pedidoUnidade.getIdRelaciona());
+            pstmt.setString(2, pedidoUnidade.getConteudo());
+            pstmt.setLong(3, pedidoUnidade.getIdRelaciona());
             
             pstmt.execute();
 
@@ -44,8 +43,7 @@ public class PedidoUnidadeDAO implements IPedidoUnidadeDAO{
 
         String sql = "UPDATE pedidounidade " +
                        " SET valor = ?, " +
-                       "     data_ocorrencia = ? " +
-                       "     conteudo = ? " +
+                       "     conteudo = ?, " +
                        "     id_conta = ? " +
                        " WHERE id_pedido_unidade = ?";
 
@@ -54,10 +52,9 @@ public class PedidoUnidadeDAO implements IPedidoUnidadeDAO{
             
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setDouble(1, pedidoUnidade.getValor());
-            pstmt.setString(2, pedidoUnidade.getDataOcorrencia());
-            pstmt.setString(3, pedidoUnidade.getConteudo());
-            pstmt.setLong(4, pedidoUnidade.getIdRelaciona());
-            pstmt.setLong(5, pedidoUnidade.getIdPedidoUnidade());
+            pstmt.setString(2, pedidoUnidade.getConteudo());
+            pstmt.setLong(3, pedidoUnidade.getIdRelaciona());
+            pstmt.setLong(4, pedidoUnidade.getIdPedidoUnidade());
             
             pstmt.executeUpdate();
 
@@ -116,7 +113,6 @@ public class PedidoUnidadeDAO implements IPedidoUnidadeDAO{
                 cartao = new PedidoUnidadeDTO();
                 cartao.setIdPedidoUnidade(rs.getLong("id_pedido_unidade"));
                 cartao.setValor(rs.getDouble("valor"));
-                cartao.setDataOcorrencia(rs.getString("data_ocorrencia"));
                 cartao.setConteudo(rs.getString("conteudo"));
                 cartao.setIdRelaciona(rs.getLong("id_conta"));
                 

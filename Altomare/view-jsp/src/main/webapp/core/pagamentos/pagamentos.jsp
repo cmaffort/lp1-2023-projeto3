@@ -86,7 +86,6 @@
                 ArrayList<CartaoDTO> arr = cartoesUsuarioLogado.getCartoes();
                 
             %>   
-            <p><%= arr%></p>
             <%  for (CartaoDTO cartao: arr) { %>
 
             <p class="cartao-individual-db"><% out.println(cartao.getTitular() + "*" + cartao.getNumero() + "*" + 

@@ -13,8 +13,8 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
     @Override
     public boolean inserir(PedidoTodoDTO pedidoTodo) {
 
-        String sql = "INSERT INTO contausuario (total, finalizado, data_criacao, estado"
-                + ") VALUES(?, ?, ?, ?);";
+        String sql = "INSERT INTO contausuario (total, finalizado, data_criacao, estado, tipo"
+                + ") VALUES(?, ?, ?, ?, ?);";
 
         try {
             Connection connection = ConexaoDB.inicializaDB();
@@ -24,6 +24,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
             pstmt.setBoolean(2, pedidoTodo.getStatus());
             pstmt.setString(3, pedidoTodo.getDataCriacao());
             pstmt.setString(4, pedidoTodo.getEstado());
+            pstmt.setString(5, pedidoTodo.getTipo());
             pstmt.executeUpdate();
             
             String sqlToGetId = "SELECT * FROM pedidotodo ORDER BY id_pedido_todo DESC LIMIT 1;";
@@ -57,7 +58,8 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
                        " SET total = ?, " +
                        " finalizado = ?, " +
                        " data_cricao = ?, " +
-                       " estado = ? " +
+                       " estado = ?, " +
+                       " tipo = ? " +
                        " WHERE id_pedido_todo = ?";
 
         try {
@@ -68,7 +70,8 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
             pstmt.setBoolean(2, pedidoTodo.getStatus());
             pstmt.setString(3, pedidoTodo.getDataCriacao());
             pstmt.setString(4, pedidoTodo.getEstado());
-            pstmt.setLong(5, pedidoTodo.getIdPedidoTodo());
+            pstmt.setString(5, pedidoTodo.getTipo());
+            pstmt.setLong(6, pedidoTodo.getIdPedidoTodo());
             pstmt.executeUpdate();
 
             pstmt.close();
@@ -110,7 +113,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
     }
     
     @Override
-    public ArrayList<PedidoUnidadeDTO> getDespesas(PedidoTodoDTO pedidoTodo) {
+    public ArrayList<PedidoUnidadeDTO> getPartesPedido(PedidoTodoDTO pedidoTodo) {
 
         PedidoUnidadeDAO pegaUnidadesDoPedido = new PedidoUnidadeDAO();
             
@@ -136,6 +139,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
                 pedidoTodoRecuperado.setStatus(rs.getBoolean("finalizado"));
                 pedidoTodoRecuperado.setDataCriacao(rs.getString("data_criacao"));
                 pedidoTodoRecuperado.setEstado(rs.getString("estado"));
+                pedidoTodoRecuperado.setEstado(rs.getString("tipo"));
                 pedidoTodoRecuperado.setIdPedidoTodo(rs.getLong("id_pedido_todo"));
             }
 
@@ -144,6 +148,44 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
             connection.close();
             
             return pedidoTodoRecuperado;
+        }
+        catch (SQLException u) {    
+            throw new RuntimeException(u);    
+        }
+        catch (ClassNotFoundException o) {
+            throw new RuntimeException(o);
+        }
+    }
+    
+    public ArrayList<PedidoTodoDTO> getPedidoTodoPorTipoEstado(String tipo, String estado) {
+        try {
+            Connection connection = ConexaoDB.inicializaDB();
+
+            String sql = "SELECT * FROM pedidotodo WHERE estado = ? AND tipo = ?";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, tipo);
+            pstmt.setString(2, estado);
+            ResultSet rs = pstmt.executeQuery();
+
+            ArrayList<PedidoTodoDTO> pedidosRecuperados = new ArrayList<PedidoTodoDTO>();
+            if (rs.next()) {
+                PedidoTodoDTO pedidoIndividual = new PedidoTodoDTO();
+                pedidoIndividual.setTotal(rs.getDouble("total"));
+                pedidoIndividual.setStatus(rs.getBoolean("finalizado"));
+                pedidoIndividual.setDataCriacao(rs.getString("data_criacao"));
+                pedidoIndividual.setEstado(rs.getString("estado"));
+                pedidoIndividual.setTipo(rs.getString("tipo"));
+                pedidoIndividual.setIdPedidoTodo(rs.getLong("id_pedido_todo"));
+                
+                pedidosRecuperados.add(pedidoIndividual);
+            }
+
+            rs.close();
+            pstmt.close();
+            connection.close();
+            
+            return pedidosRecuperados;
         }
         catch (SQLException u) {    
             throw new RuntimeException(u);    

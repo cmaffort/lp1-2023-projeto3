@@ -6,6 +6,7 @@ public class PedidoTodoDTO {
     private boolean finalizado;
     private double total;
     private String estado;
+    private String tipo;
     private long idPedidoTodo;
     
     public PedidoTodoDTO() {
@@ -13,13 +14,15 @@ public class PedidoTodoDTO {
         this.finalizado = false;
         this.total = 0;
         this.estado = "";
+        this.estado = "";
     }
     
-    public PedidoTodoDTO(String dataCriacao, boolean finalizado, double total, String estado) {
+    public PedidoTodoDTO(String dataCriacao, boolean finalizado, double total, String estado, String tipo) {
         this.dataCriacao = dataCriacao;
         this.finalizado = finalizado;
         this.total = total;
         this.estado = estado;
+        this.tipo = tipo;
     }
     
     public String getDataCriacao() {
@@ -52,6 +55,14 @@ public class PedidoTodoDTO {
     
     public void setEstado(String newEstado) {
         this.estado = newEstado;
+    }
+    
+    public String getTipo() {
+        return this.tipo;
+    }
+    
+    public void setTipo(String newTipo) {
+        this.tipo = newTipo;
     }
     
     public long getIdPedidoTodo() {

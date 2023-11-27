@@ -12,7 +12,9 @@ public interface IPedidoTodoDAO {
 
     boolean delete(PedidoTodoDTO pedidoTodo);
 
-    ArrayList<PedidoUnidadeDTO> getDespesas(PedidoTodoDTO pedidoTodo);
+    ArrayList<PedidoUnidadeDTO> getPartesPedido(PedidoTodoDTO pedidoTodo);
     
     PedidoTodoDTO getPedidoTodoPorId(Long id);
+    
+    ArrayList<PedidoTodoDTO> getPedidoTodoPorTipoEstado(String tipo, String estado);
 }

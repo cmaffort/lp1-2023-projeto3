@@ -1,5 +1,7 @@
 /*início restaurante*/
 
+/* início parte passageiro*/
+
 #cont-restaurante {
     height: 70.7vh;
     width: 100vw;
@@ -23,18 +25,65 @@
     padding-top: 2vh;
 }
 
+/* fim parte passageiro*/
+
+/* início parte funcionário*/
+
+#container-ver-pedidos {
+    width: 100%;
+    height: 72.7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.visualizacao-pedidos {
+    height: 70%;
+    width: 80%;
+    background-color: rgb(217, 217, 217);
+    padding: 2vh;
+    border-radius: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+}
+
+.pedido-restaurante {
+    background-color: white;
+    height: 80%;
+    min-width: 15vw;
+    border-radius: 2vh;
+    padding: 1vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+/* fim parte funcionário*/
+
 /* fim restaurante */
 
 /*início limpeza*/
 
+/* início parte passageiro*/
 
+/* fim parte passageiro */
 
+/* início parte funcionário*/
+
+/* fim parte funcionário */
 
 /* fim limpeza */
 
 /*início saúde*/
 
+/* início parte passageiro*/
 
+/* fim parte passageiro */
 
+/* início parte funcionário*/
+
+/* fim parte funcionário */
 
 /* fim saude */
