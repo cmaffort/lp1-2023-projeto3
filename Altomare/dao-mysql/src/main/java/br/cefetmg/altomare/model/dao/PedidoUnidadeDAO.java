@@ -101,7 +101,7 @@ public class PedidoUnidadeDAO implements IPedidoUnidadeDAO{
          try {
             Connection connection = ConexaoDB.inicializaDB();
 
-            String sql = "SELECT * FROM pedidounidade WHERE id_pedido_unidade = ?";
+            String sql = "SELECT * FROM pedidounidade WHERE id_conta = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setLong(1, id);

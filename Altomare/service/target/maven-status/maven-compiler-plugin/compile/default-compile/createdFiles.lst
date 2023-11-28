@@ -1,4 +1,5 @@
 br\cefetmg\altomare\model\service\ManterFuncionario.class
+br\cefetmg\altomare\model\service\GetPedidosToView.class
 br\cefetmg\altomare\model\exception\NegocioException.class
 br\cefetmg\altomare\model\service\IPacote.class
 br\cefetmg\altomare\model\service\IProduto.class

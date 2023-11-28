@@ -34,6 +34,7 @@
                 for (PedidoTodoDTO pedido: pedidosUnidos) { %>
 
                 <div class="pedido-todo-db">
+                    <div><% out.println(pedido.getIdPedidoTodo() + "*" + pedido.getEstado()); %></div>
                     <% 
                         ArrayList<PedidoUnidadeDTO> unidadesDoPedido = pedidosRestauranteManager.getUnidadesPorPedido(pedido);
                     %>

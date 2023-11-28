@@ -157,6 +157,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
         }
     }
     
+    @Override
     public ArrayList<PedidoTodoDTO> getPedidoTodoPorTipoEstado(String tipo, String estado) {
         try {
             Connection connection = ConexaoDB.inicializaDB();
@@ -164,11 +165,11 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
             String sql = "SELECT * FROM pedidotodo WHERE estado = ? AND tipo = ?";
 
             PreparedStatement pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, tipo);
-            pstmt.setString(2, estado);
+            pstmt.setString(1, estado);
+            pstmt.setString(2, tipo);
             ResultSet rs = pstmt.executeQuery();
 
-            ArrayList<PedidoTodoDTO> pedidosRecuperados = new ArrayList<PedidoTodoDTO>();
+            ArrayList<PedidoTodoDTO> pedidosRecuperados = new ArrayList<>();
             if (rs.next()) {
                 PedidoTodoDTO pedidoIndividual = new PedidoTodoDTO();
                 pedidoIndividual.setTotal(rs.getDouble("total"));
