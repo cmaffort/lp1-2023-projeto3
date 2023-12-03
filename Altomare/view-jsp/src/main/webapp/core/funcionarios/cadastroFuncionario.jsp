@@ -10,8 +10,6 @@
         <link rel="stylesheet"  href="../../css/estilosFuncionario.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
         <link rel="icon" href="../../imagens/leme.png" type="image/png">
-
-
         <%@include file="../../headerprodutos.jsp" %>        
 
     </head>
@@ -96,3 +94,4 @@
         <script src="../../js/scriptFuncionario.js"></script>
         <script src="../../js/jsheader.js"></script>
     </body>
+</html>

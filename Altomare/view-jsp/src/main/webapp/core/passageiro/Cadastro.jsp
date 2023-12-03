@@ -16,11 +16,8 @@
         
          <h1 id="titulo">Cadastrar Passageiro</h1>
 
-         <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" encytype="multpart/form-data" method="POST">
-
+         <form name="CadastrarPassageiro"  action="../../Fachada" id="cadastroFunc" method="POST" enctype="multipart/form-data">
             <main>
-        
-                
                     <div id='nome-telefone'>
                         <p>
                         <label class="mover" for="nome" style="font-family: 'Alegreya SC';">Nome:</label>
@@ -71,7 +68,7 @@
                                <input type="file"  id="arq" name="arquivo" accept="text/*">
                            </p>
                                
-                              <input type="file" id="foto" name="foto" accept="image/*" >
+                               <input type="file" id="foto" name="foto" >
                                <p><button type='submit' name="acao" value="CadastrarPassageiro" id='enviar'>CADASTRAR</button></p>
                          </div>
                          

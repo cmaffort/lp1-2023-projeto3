@@ -2,14 +2,9 @@ package br.cefetmg.inf.altomare.controller;
 
 import br.cefetmg.altomare.model.dao.ProdutoDAO;
 import br.cefetmg.altomare.model.dto.ProdutoDTO;
-import java.io.IOException;
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import java.sql.Date;
 import java.sql.SQLException;
 
 @WebServlet("/CadastrarProduto")

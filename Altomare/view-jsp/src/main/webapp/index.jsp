@@ -1,8 +1,3 @@
-<%-- 
-    Document   : cadatrar
-    Created on : 09 de out. de 2023, 23:37:26
-    Author     : User
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,9 +9,6 @@
           <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
           
         <%@include file="../../headerprodutos.jsp" %>
-
- 
-         
 
     </head>
     <body>
@@ -55,7 +47,7 @@
                         
                          <br> 
 
-            <input type="submit" name="acao" value="Cadastrar" class="button" name="ordem" value="Cadastrar">
+            <input type="submit" name="acao" value="Cadastrar" class="button">
 
                         
                         

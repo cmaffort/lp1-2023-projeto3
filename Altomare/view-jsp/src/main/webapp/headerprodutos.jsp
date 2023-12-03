@@ -9,7 +9,7 @@
     </head>
 
      <header id="header-main">
-        <div id="header-upper">
+        
 
 
             <img src="../../imagens/leme.png" id="leme">
@@ -19,19 +19,19 @@
                 <h1 id="altoMare">AltoMare </h1>
                 <h2 id="embarcacoes">EMBARCAÇÕES</h2>
             </div>
-            <div>
+            
 
                 <img src="../../imagens/user-icon.png" id="user-icon">
 
-                <p style="font-family: 'Alegreya SC'; padding-left: vw;">GERENTE</p>
+                <p style="font-family: 'Alegreya SC'; padding-left: 5vw;">GERENTE</p>
 
-            </div>
-        </div>
+            
+        
         <div id="linha"></div>
         <div id="burger"><p>☰</p></div>
         <ul>
             <li>
-                <a href="../../core/funcionarios/cadastroFuncionario.jsp" style="color: white;text-decoration: none">
+                <a href="core/funcionarios/cadastroFuncionario.jsp" style="color: white;text-decoration: none">
                 <img src="../../imagens/funcionarios.png" style="height: 35px;padding-top: 1.5cm;">
                 <p>Funcionários</p>
                 </a>

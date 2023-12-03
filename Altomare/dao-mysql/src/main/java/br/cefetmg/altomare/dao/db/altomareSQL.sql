@@ -43,34 +43,25 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   `Turno` varchar(50),
   `Setor` varchar(50),
   `DataAdmissao` varchar(50),
-
   `Telefone` varchar(50),
-  `Foto` varchar(50)
+  `Foto` varchar(50),
+  `Senha` varchar(50)
 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 -- --------------------------------------------------------
 
+
 --
--- Estrutura da tabela `passageiro`
+-- Estrutura da tabela `cardapio`
 --
 
-DROP TABLE IF EXISTS `passageiro`;
-CREATE TABLE IF NOT EXISTS `passageiro` (
-  `CPF` varchar(50),
-  `RG` varchar(50),
-  `Nome` varchar(50) DEFAULT NULL,
-  `DataNasc` varchar(50),
-  `Email` varchar(50),
-  `Senha` varchar(50),
-  `Telefone` varchar(50),
-  `Sexo` varchar(50),
-  `Civil` varchar(50),
-  `DadosMedicos` varchar(50),
-  `Foto` varchar(50),
-  `Pacote` varchar(50),
-  `Despesa` varchar(50)
-
+DROP TABLE IF EXISTS `cardapio`;
+CREATE TABLE IF NOT EXISTS `cardapio`(
+  `Id` int(11),
+  `Nome` varchar(255) PRIMARY KEY,
+  `Preco` double,
+  `Descricao`varchar(250),
+  `Foto` varchar(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
