@@ -11,6 +11,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 //@include file="../../headerGerente.jsp";
@@ -20,13 +21,13 @@ public class Fachada extends HttpServlet {
 
     @SuppressWarnings("ConvertToStringSwitch")
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException, PersistenciaException, NegocioException {
+           throws ServletException, IOException, PersistenciaException, NegocioException, SQLException, ClassNotFoundException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
         
         try ( PrintWriter out = response.getWriter()) {
             request.setCharacterEncoding("UTF-8");
            String acao = request.getParameter("acao");
-           String jsp;
+           String jsp ;
            
        // out.println("<head>");
          // out.println("<link rel=\"stylesheet\" href=\"../../css/estilos-header.css\">");
@@ -37,6 +38,8 @@ public class Fachada extends HttpServlet {
           jsp = Login.execute(request);   
        else if(acao.equals("CadastrarPassageiro"))
            jsp = CadastrarPassageiro.execute(request);
+       else if(acao.equals("CadastrarItem"))
+           jsp = Cardapio.execute(request);
        else if(acao.equals("CadastrarFuncionario"))
            jsp = CadastrarFuncionario.execute(request);
        else
@@ -62,8 +65,11 @@ public class Fachada extends HttpServlet {
          try {
              processRequest(request, response);
          } catch (PersistenciaException | NegocioException ex) {
-             Logger.getLogger(FuncionarioServlet.class.getName()).log(Level.SEVERE, null, ex);
-         }
+         } catch (SQLException ex) {
+            Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -80,8 +86,11 @@ public class Fachada extends HttpServlet {
          try {
              processRequest(request, response);
          } catch (PersistenciaException | NegocioException ex) {
-             Logger.getLogger(FuncionarioServlet.class.getName()).log(Level.SEVERE, null, ex);
-         }
+         } catch (SQLException ex) {
+            Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

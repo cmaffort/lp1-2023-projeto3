@@ -1,11 +1,8 @@
 
 package br.cefetmg.altomare.model.service;
 
-import br.cefetmg.altomare.model.dao.IFuncionarioDAO;
-import br.cefetmg.altomare.model.dao.FuncionarioDAO;
 import br.cefetmg.altomare.model.dao.IPassageiroDAO;
 import br.cefetmg.altomare.model.dao.PassageiroDAO;
-import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
 import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
 import br.cefetmg.altomare.model.dto.PassageiroDTO;

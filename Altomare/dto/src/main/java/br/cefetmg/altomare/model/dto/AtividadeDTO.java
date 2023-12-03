@@ -1,5 +1,4 @@
 package br.cefetmg.altomare.model.dto;
-import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 
 public class AtividadeDTO {
     

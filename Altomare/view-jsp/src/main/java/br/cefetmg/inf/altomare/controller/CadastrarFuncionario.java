@@ -2,35 +2,25 @@ package br.cefetmg.inf.altomare.controller;
 
 import br.cefetmg.altomare.model.dao.FuncionarioDAO;
 import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
-import br.cefetmg.altomare.model.service.IManterFuncionario;
-import br.cefetmg.altomare.model.service.ManterFuncionario;
-import java.util.List;
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Paths;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class CadastrarFuncionario extends HttpServlet {
 
 
     @SuppressWarnings("CallToPrintStackTrace")
 
-    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException {
+    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException, ServletException, SQLException {
        @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
         String jsp = "core/funcionarios/listarFuncionarios.jsp";
 
         try {
-            IManterFuncionario manterFuncionario = new ManterFuncionario();
-          
             
             String setor = request.getParameter("setor");
             String turno = request.getParameter("turno");
@@ -43,16 +33,12 @@ public class CadastrarFuncionario extends HttpServlet {
             String email = request.getParameter("emailFuncionario");
             String telefone = request.getParameter("telefoneFuncionario");
             String dataAdmissao = request.getParameter("dataAdmissao");
-            String senha = cpf; //a senha inicial de um funcionario cadastrado é seu próprio cpf
-            Part photo = request.getPart("foto");
-            String caminho = TratamentoImagem.execute(request);
+            String senha = "";
+           // Part photo = request.getPart("foto");
+            //String caminho = TratamentoImagem.execute(request);
             
-         
-                    
-            FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, caminho);
+            FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, null);
 
-            
-            
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
             funcionarioDAO.inserir(funcionario);
             

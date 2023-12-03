@@ -11,6 +11,5 @@ public interface IManterFuncionario {
     public boolean alterar(FuncionarioDTO funcionario) throws PersistenciaException, NegocioException;
     public boolean excluir(FuncionarioDTO funcionario) throws PersistenciaException, NegocioException;
     public List<FuncionarioDTO> pesquisarTodos() throws PersistenciaException;
-    public FuncionarioDTO pesquisarPorId(long cpf) throws PersistenciaException;
     public FuncionarioDTO getUserLogin(String cpf, String senha) throws PersistenciaException, NegocioException;
 }
