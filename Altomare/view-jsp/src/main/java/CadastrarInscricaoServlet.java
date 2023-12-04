@@ -3,33 +3,30 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import br.cefetmg.altomare.dto.AtividadeDTO;
+import jakarta.servlet.http.HttpSession;
+import br.cefetmg.altomare.dto.InscricaoDTO;
 import br.cefetmg.altomare.dao.mysql.Conexao;
-import br.cefetmg.altomare.dao.mysql.AtividadeDAO;
+import br.cefetmg.altomare.dao.mysql.InscricaoDAO;
 import jakarta.servlet.annotation.WebServlet;
 
-@WebServlet(name = "CadastrarAtividadeServlet", urlPatterns = {"/CadastrarAtividadeServlet"})
-public class CadastrarAtividadeServlet extends HttpServlet {
+@WebServlet(name = "CadastrarInscricaoServlet", urlPatterns = {"/CadastrarInscricaoServlet"})
+public class CadastrarInscricaoServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // recuperar os dados do formulario
-        String nome = request.getParameter("nome");
-        String data = request.getParameter("data");
-        String horaInicio = request.getParameter("horaTermino");
-        String horaTermino = request.getParameter("horaTermino");
-        String local = request.getParameter("local");
-        int limiteOcupacao = Integer.parseInt(request.getParameter("limiteOcupacao"));
-        String responsavel = request.getParameter("responsavel");
-        String descricao = request.getParameter("descricao");
-        boolean visivel = request.getParameter("visivel").equals("S");
+        String atividade = request.getParameter("atividade");
+
+        //recuperar usuario
+        HttpSession session = request.getSession(false);
+        String usuario = (String) session.getAttribute("usuario");
         
         // criar instancia da classe Atividade
-        AtividadeDTO atividade = new AtividadeDTO (nome, data, horaInicio, horaTermino, local, limiteOcupacao, responsavel, descricao, visivel);
+        InscricaoDTO inscricao = new InscricaoDTO(atividade, usuario);
         
         // salvar a instancia criada no banco de dados
         Conexao conexao = new Conexao();
-        AtividadeDAO atividadeDAO = new AtividadeDAO(conexao.conectaBD());
-        atividadeDAO.inserirAtividade(atividade);
+        InscricaoDAO inscricaoDAO = new InscricaoDAO(conexao.conectaBD());
+        inscricaoDAO.inserirInscricao(inscricao);
         
     }
 

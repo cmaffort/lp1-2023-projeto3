@@ -23,3 +23,8 @@
 hs_err_pid*
 replay_pid*
 /Altomare/view-jsp/target/
+/Altomare/dto/target/
+/Altomare/idao/target/
+/Altomare/dao-mysql/target/
+/Altomare/service/target/
+/Altomare/model/target/

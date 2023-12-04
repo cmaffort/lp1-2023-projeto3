@@ -29,6 +29,9 @@
             
             <label>Descrição</label>
             <input type="text" name="descricao" required><br>
+            
+            <label>Visivel? (S/N)</label>
+            <input type="text" name="visivel" pattern="(S|N)" required><br>
 
             <input type="submit" name="cadastrar" value="Cadastrar">
         </form>
