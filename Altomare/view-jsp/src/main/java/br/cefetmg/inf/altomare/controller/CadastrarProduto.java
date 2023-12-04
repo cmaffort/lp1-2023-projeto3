@@ -1,4 +1,4 @@
-package br.cefetmg.inf.altomare.controller;
+ package br.cefetmg.inf.altomare.controller;
 
 import br.cefetmg.altomare.model.dao.ProdutoDAO;
 import br.cefetmg.altomare.model.dto.ProdutoDTO;

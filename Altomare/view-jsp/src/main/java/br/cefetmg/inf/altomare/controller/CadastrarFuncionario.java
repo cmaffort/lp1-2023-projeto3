@@ -9,6 +9,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 
 public class CadastrarFuncionario extends HttpServlet {
@@ -17,6 +19,7 @@ public class CadastrarFuncionario extends HttpServlet {
     @SuppressWarnings("CallToPrintStackTrace")
 
     public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException, ServletException, SQLException {
+
        @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
         String jsp = "core/funcionarios/listarFuncionarios.jsp";
 
@@ -36,6 +39,7 @@ public class CadastrarFuncionario extends HttpServlet {
             String senha = "";
            // Part photo = request.getPart("foto");
             //String caminho = TratamentoImagem.execute(request);
+
             
             FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, null);
 

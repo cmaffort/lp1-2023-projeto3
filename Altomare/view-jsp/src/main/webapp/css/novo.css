@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.card {
+.cartao {
   border-radius: 5px;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
   padding: 30px;
@@ -13,12 +13,12 @@
   transition: all 0.3s ease-out;
 }
 
-.card:hover {
+.cartao:hover {
   transform: translateY(-5px);
   cursor: pointer;
 }
  
-.card p {
+.cartao p {
   color: white;
   font-size: 16px;
 }
@@ -29,12 +29,8 @@
   max-height: 64px;
 }
 
-.red {
-  border: 5px solid #b3404a;
+.cartao {
   background-color: green;
-  color: white;
+   color: white;
+
 }
-
-
-
-
