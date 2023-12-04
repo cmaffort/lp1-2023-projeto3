@@ -14,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -44,8 +45,9 @@ public class CadastrarFuncionario extends HttpServlet {
             String telefone = request.getParameter("telefoneFuncionario");
             String dataAdmissao = request.getParameter("dataAdmissao");
             String senha = cpf; //a senha inicial de um funcionario cadastrado é seu próprio cpf
-            Part photo = request.getPart("foto");
-            String caminho = TratamentoImagem.execute(request);
+        //    InputStream foto = (InputStream) request.getAttribute("foto");
+         //   String caminho = TratamentoImagem.execute(foto, cpf);
+         String caminho = "";
             
          
                     

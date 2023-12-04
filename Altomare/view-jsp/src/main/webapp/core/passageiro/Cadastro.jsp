@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>AltoMare</title>
+        <title>Cadastro Passageiro | AltoMare</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
@@ -16,7 +16,7 @@
         
          <h1 id="titulo">Cadastrar Passageiro</h1>
 
-         <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" encytype="multpart/form-data" method="POST">
+         <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" enctype="multipart/form-data" method="POST">
 
             <main>
         
@@ -49,12 +49,12 @@
                           </p>
                           <p>
                               <label class="mover" style="font-family: 'Alegreya SC';" for="pacote">Pacote:</label>
-                               <input type="file" name="pacote" id="dadosmedico" accept="text/*" required>
+                               <input type="file" name="pacote" id="dadosmedico" required>
                                
                           </p>
                           <p> 
 
-                             Dados Medicos:<input type="text"  id="dadosmedico" name="dados" >
+                             Dados Medicos:<input type="text"  id="dados" name="dados" >
 
                           </p>
                           
@@ -63,7 +63,10 @@
                            <div id="foto-botao">
                                <div class="max-width">
                                    <div class="imageContainer">
-                                       <img id="imgPhoto" src="../../imagens/camera.png" alt="selecione uma imagem"/>
+                                       <label>
+                                           <img id="imgPhoto" src="../../imagens/camera.png" alt="selecione uma imagem"/>
+                                           <input type="file" id="foto" name="foto" accept="image/*" >
+                                       </label>
                                    </div>
                                </div>
                               <p>
@@ -71,7 +74,6 @@
                                <input type="file"  id="arq" name="arquivo" accept="text/*">
                            </p>
                                
-                              <input type="file" id="foto" name="foto" accept="image/*" >
                                <p><button type='submit' name="acao" value="CadastrarPassageiro" id='enviar'>CADASTRAR</button></p>
                          </div>
                          
@@ -79,6 +81,7 @@
             
             <script src="../../js/script-Passageiro.js"></script>
             <script src="../../js/js-header.js"></script>
+             <script src="../../js/uploadImagem.js"></script>
         </form>
          <footer>
                <button id="voltar">VOLTAR</button>
