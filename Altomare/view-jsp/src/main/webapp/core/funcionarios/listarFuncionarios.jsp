@@ -4,10 +4,6 @@
 <%@page import="br.cefetmg.altomare.model.dto.FuncionarioDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -37,7 +33,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                for(FuncionarioDTO funcionario : funcionarios){
             %>
                <div class="card red">
-
                    <img id="image" src="imagens/user-icon.png" alt="article">
                    <div class="informacoes">
                        <h2 id="nomeFunc"><%=funcionario.getNome()%></h2>

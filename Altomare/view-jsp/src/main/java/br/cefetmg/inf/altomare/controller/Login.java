@@ -1,8 +1,10 @@
 
 package br.cefetmg.inf.altomare.controller;
 
+import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.dto.PassageiroDTO;
+import br.cefetmg.altomare.model.exception.NegocioException;
 import br.cefetmg.altomare.model.service.IManterFuncionario;
 import br.cefetmg.altomare.model.service.IManterPassageiro;
 import br.cefetmg.altomare.model.service.ManterFuncionario;
@@ -14,6 +16,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.sql.SQLException;
 
 /**
  *
@@ -65,12 +68,11 @@ public class Login extends HttpServlet {
                     jsp = "/erro.jsp";
                 }
                 else{
-                    jsp = "/index.jsp";
+                    jsp = "/erro.jsp";
                 }
              }
            
-        }catch(Exception e){
-            e.printStackTrace();
+        }catch(PersistenciaException | NegocioException | ClassNotFoundException | SQLException e){
             jsp = "";
         }
         return jsp;

@@ -12,4 +12,5 @@ public interface IFuncionarioDAO{
     ArrayList<FuncionarioDTO> listarTodos() throws PersistenciaException;
     FuncionarioDTO consultarPorId(String cpf) throws PersistenciaException;
     FuncionarioDTO consultarPorUsuarioSenha(String cpf, String senha) throws PersistenciaException;
+    public String gerarSenha();
 }

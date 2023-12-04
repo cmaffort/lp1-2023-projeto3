@@ -1,8 +1,4 @@
-<%-- 
-    Document   : alterar
-    Created on : 29 de out. de 2023, 17:03:40
-    Author     : Eliane
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
