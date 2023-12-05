@@ -57,7 +57,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
         String sql = "UPDATE pedidotodo " +
                        " SET total = ?, " +
                        " finalizado = ?, " +
-                       " data_cricao = ?, " +
+                       " data_criacao = ?, " +
                        " estado = ?, " +
                        " tipo = ? " +
                        " WHERE id_pedido_todo = ?";
@@ -70,7 +70,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
             pstmt.setBoolean(2, pedidoTodo.getStatus());
             pstmt.setString(3, pedidoTodo.getDataCriacao());
             pstmt.setString(4, pedidoTodo.getEstado());
-            pstmt.setString(5, pedidoTodo.getTipo());
+            pstmt.setString(5, pedidoTodo.getTipo()); 
             pstmt.setLong(6, pedidoTodo.getIdPedidoTodo());
             pstmt.executeUpdate();
 
@@ -139,7 +139,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
                 pedidoTodoRecuperado.setStatus(rs.getBoolean("finalizado"));
                 pedidoTodoRecuperado.setDataCriacao(rs.getString("data_criacao"));
                 pedidoTodoRecuperado.setEstado(rs.getString("estado"));
-                pedidoTodoRecuperado.setEstado(rs.getString("tipo"));
+                pedidoTodoRecuperado.setTipo(rs.getString("tipo"));
                 pedidoTodoRecuperado.setIdPedidoTodo(rs.getLong("id_pedido_todo"));
             }
 
@@ -170,7 +170,7 @@ public class PedidoTodoDAO implements IPedidoTodoDAO{
             ResultSet rs = pstmt.executeQuery();
 
             ArrayList<PedidoTodoDTO> pedidosRecuperados = new ArrayList<>();
-            if (rs.next()) {
+            while (rs.next()) {
                 PedidoTodoDTO pedidoIndividual = new PedidoTodoDTO();
                 pedidoIndividual.setTotal(rs.getDouble("total"));
                 pedidoIndividual.setStatus(rs.getBoolean("finalizado"));

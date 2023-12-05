@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Altomare</title>
-        <link rel="stylesheet" href="../../css/pedidos.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/pedidos.css">
     </head>
     <body>
         <%@ include file="../../headerRestaurante.jsp" %>
@@ -48,5 +48,5 @@
         
     </body>
     
-    <script src="../../js/js-pedidos.js"></script>
+    <script src="${pageContext.request.contextPath}/js/js-pedidos.js"></script>
 </html>

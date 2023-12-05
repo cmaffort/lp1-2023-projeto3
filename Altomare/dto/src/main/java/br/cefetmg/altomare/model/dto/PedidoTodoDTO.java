@@ -14,7 +14,7 @@ public class PedidoTodoDTO {
         this.finalizado = false;
         this.total = 0;
         this.estado = "";
-        this.estado = "";
+        this.tipo = "";
     }
     
     public PedidoTodoDTO(String dataCriacao, boolean finalizado, double total, String estado, String tipo) {

@@ -58,6 +58,7 @@
     padding: 1vh;
     margin-left: 1vw;
     margin-right: 1vw;
+    position: relative;
 }
 
 #recebe-pedidos-restaurante {
@@ -83,6 +84,35 @@
 
 .pedido-restaurante-recebido {
     border: .5vh solid #C7D1FA;
+}
+
+.muda-estado-pronto {
+    background-color: #ECA5A5;
+}
+
+.muda-estado-preparo {
+    background-color: #FBFFDA;
+}
+
+.muda-estado-recebido {
+    background-color: #C7D1FA;
+}
+
+.form-criado {
+    position: absolute;
+    bottom: 5%;
+    left: 15%;
+    height: 3vh;
+    width: 70%;
+    font-size: 2vh;
+    display: flex;
+    justify-content: center;
+}
+
+.form-criado select, option {
+    height: 3vh;
+    width: 100%;
+    font-size: 1.8vh;
 }
 
 /* fim parte funcionário*/
