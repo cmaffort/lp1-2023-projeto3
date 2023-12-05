@@ -1,4 +1,5 @@
 
+
 package br.cefetmg.altomare.model.service;
 
 import br.cefetmg.altomare.model.dao.IPassageiroDAO;
@@ -105,5 +106,4 @@ public class ManterPassageiro implements IManterPassageiro{
          return result;
     }
 }
-       
 

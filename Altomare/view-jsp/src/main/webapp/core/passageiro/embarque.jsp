@@ -7,20 +7,21 @@
 
 <html>
     <head>
-        <title>AltoMare</title>
+        <title>Passageiros | Pacote | AltoMare</title>
         <meta charset="UTF-8">
         <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
-        <link rel="stylesheet"  href="../../css/listarFunc.css">
+        <link rel="stylesheet"  href="../../css/novo.css">
          <link rel="stylesheet" href="../../css/estilos-header.css">
         <%@include file="../headers/headerprodutos.jsp" %>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
 
+
               
 
     </head>
     <body>
-    
+    <%@include file="../../headerprodutos.jsp" %>
         <div id="barra">
         <p id="TextoPas">Passageiros</p>
         <input id="in"  type="text"
@@ -38,13 +39,15 @@
                 
                for(PassageiroDTO passageiro : passageiros){
             %>
-               <div class="card red">
-                   <img id="image" src="imagens/user-icon.png" alt="article">
+            <div class="cartao" style="background-color: gray;">
+
+                   <img id="image" src="<%=passageiro.getFoto()%>" alt="article">
                    <div class="informacoes">
-                       <h2 id="nomeFunc"><%=passageiro.getNome()%></h2>
-                       <p id="nomeFunc"><%=passageiro.getCpf()%></p>
+                       <h2><%=passageiro.getNome()%></h2>
+                       <p><%=passageiro.getCpf()%></p>
                    </div>
-                   </div>
+                   <button>PACOTE</button>
+                 </div>
             <%}%>
         </div>
         <script src="../../js/script.js"></script>

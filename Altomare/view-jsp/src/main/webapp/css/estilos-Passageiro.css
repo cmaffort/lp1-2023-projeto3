@@ -196,6 +196,16 @@ label{
       flex-direction: row;
     align-items: center;
   }
+  #baras{
+      background: #0066A2;
+color: white;
+border-style: outset;
+border-color: #0066A2;
+height: 50px;
+width: 100px;
+font: bold15px arial,sans-serif;
+text-shadow: none;
+  }
   #TextoPas{
       font-size: 70px;
       margin-top: 1%;
@@ -209,8 +219,6 @@ label{
       transition: width 0.15s ease-in-out;
    }
  
-   /* When the input field gets focus,
-        change its width to 100% */
    in.input[type=text]:focus {
      width: 70%;
    }
@@ -222,6 +230,9 @@ label{
        border-radius:10px;
        width: 300px;
        padding: 2%;
-       margin: 2%;
-       
+       margin: 2%;   
+   }
+   
+   #tema{
+     width:260px;
    }

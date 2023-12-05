@@ -7,13 +7,15 @@
 
 <html>
     <head>
-        <title>AltoMare</title>
+        <title>Embarque | AltoMare</title>
         <meta charset="UTF-8">
+
 
         <link rel="stylesheet"  href="css/estilos-Passageiro.css">
         <link rel="stylesheet"  href="css/listarFunc.css">
          <link rel="stylesheet" href="css/estilos-header.css">
         <%@include file="../headers/outroHeader.jsp" %>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
 
@@ -21,7 +23,7 @@
 
     </head>
     <body>
-    
+        <%@include file="../../headerLogin.jsp" %>
         <div id="barra">
         <p id="TextoPas">Passageiros</p>
 
@@ -38,21 +40,23 @@
                 }
                 
                for(PassageiroDTO passageiro : passageiros){
+                if(passageiro.getCpf().equals(passageiro.getCpf()) ){
+                   
             %>
-               <div class="card red">
+               <div class="cartao">
 
-                   <img id="image" src="imagens/user-icon.png" alt="article">
+                   <img id="image" src="../../imagens/user-icon.png" alt="article">
                    <div class="informacoes">
                        <h2><%=passageiro.getNome()%></h2>
                        <p><%=passageiro.getCpf()%></p>
                    </div>
-                   <button onclick="changeColor()">EMBARCADO</button>
+                   <button onclick="changeColor(event)">EMBARCADO</button>
                  </div>
-            <%}%>
+            <%}}%>
         </div>
-        <script src="js/script.js"></script>
-        <script src="js/js-header.js"></script>
-        <script src="js/novo.js"></script>    
+ 
+        <script src="../../js/js-header.js"></script>
+        <script src="../../js/listacao.js"></script>    
 
     </body>
 </html>

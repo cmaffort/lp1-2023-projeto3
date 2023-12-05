@@ -21,7 +21,7 @@ public class SegurancaDAO implements ISegurancaDAO{
     
     @Override
     public boolean Inserir(SegurancaDTO seguranca)throws PersistenciaException{
-        String sql = "INSERT INTO Passageiro(Nome, Especificacao) VALUES(?,?)";
+        String sql = "INSERT INTO seguranca(Nome, Especificacao) VALUES(?,?)";
          
             try (PreparedStatement in = conexao.prepareStatement(sql)) {
                
@@ -39,7 +39,7 @@ public class SegurancaDAO implements ISegurancaDAO{
     
     @Override
     public boolean Deletar(String Nome)throws PersistenciaException{
-         String sql = "DELETE FROM produto WHERE nome = ?";
+         String sql = "DELETE FROM seguranca WHERE nome = ?";
         try (PreparedStatement in = conexao.prepareStatement(sql)) {
             in.setString(1, Nome);
             in.executeUpdate();

@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+z<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList" %>
 <%@ page import="br.cefetmg.altomare.model.dto.PacoteDTO" %>
 <%@ page import="br.cefetmg.altomare.model.dao.PacoteDAO" %>
@@ -10,6 +10,7 @@
     <title>Detalhes do Pacote</title>
     <link rel="icon" href="../../imagens/leme.png" type="image/png">
      <%@include file="../headers/headerPassageiro.jsp" %>
+
 
     
 </head>

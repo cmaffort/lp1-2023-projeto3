@@ -3,10 +3,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro de Atividade</title>
-        <link rel="icon" href="../../imagens/leme.png" type="image/png">
+        <title>Cadastro de Atividade | AltoMare</title>
         <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
-
     </head>
     <body>
         <%@ include file="../headers/headerGerente.jsp" %>
@@ -32,6 +30,9 @@
             
             <label>Descrição</label>
             <input type="text" name="descricao" required><br>
+            
+            <label>Visivel? (S/N)</label>
+            <input type="text" name="visivel" pattern="(S|N)" required><br>
 
             <input type="submit" name="cadastrar" value="Cadastrar">
         </form>
