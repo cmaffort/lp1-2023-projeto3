@@ -1,0 +1,255 @@
+html, body{
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+}
+
+#imgPhotoFuncionario{
+    margin-top: 3%;
+    max-width: 12vw;
+    height: 12vw;
+    background-color: #eee;
+    border: 5px solid #111;
+    cursor: pointer;
+    transition: background .3s;
+    margin-left: 5%;
+}
+
+#imgPhotoFuncionario:hover{
+  background-color: rgb(180, 180, 180);
+  border: 5px solid #eee;
+}
+
+input[type='file']{
+     display: none;
+}
+
+#imagemItem{
+    flex: 1;
+    padding-top:  5%;
+}
+
+#fotoFuncionario{
+    border: 1px solid black;
+    margin-top: 5%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    align-self: center;
+    background-color: white;
+}
+
+.max-width{
+    max-width: 500px;
+    width: 100%;
+}
+
+select{
+    padding:10px; 
+    margin:10px ; 
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    font-family: 'Alegreya SC';
+}
+
+input { 
+    padding:10px; 
+    margin:10px ; 
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    font-family: 'Alegreya SC';
+    
+}
+
+.max-width{
+    max-width: 500px;
+    width: 100%;
+}
+
+label{
+    display: inline;
+    width: 2px;
+    font-size: -2%;
+    
+}
+
+#header1{
+    background-color: rgb(5, 50, 112);
+    margin-bottom: -2%;
+    padding-top: 0.2%;
+    padding-bottom:-1%;
+    text-align: center; 
+}
+
+p{
+    font-family: 'Alegreya SC';
+}
+
+#campos{
+    flex: 1;
+}
+
+#main{
+    display: flex;
+    flex-direction: row;
+}
+
+#cadastroFunc{
+    background-color: rgb(217, 217, 217);
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 35%;
+    margin-right: 35%;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(5, 50, 112);
+    position: absolute;
+    margin-bottom: 0%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+#cardItem{
+    background-color:  rgb(5, 50, 112);
+    border-radius: 5px;
+    box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+    margin: 3%;
+    width: 16.2%;
+    height: 10%;
+    transition: all 0.3s ease-out;
+    color: white;
+    font-size: 100%;
+    text-align: center;
+    padding-bottom: 0.05%;
+    padding-top: 0.05%;
+}  
+
+#cadastrarItem{
+    border: 2px solid #eee;
+    box-shadow:0 0 15px 4px ;
+    border-radius:10px;
+    padding: 5%;
+    font-size: 120%;
+    background-color: rgb(5, 50, 112);
+    color: white;
+    margin-top: 10%;
+}
+
+#titulo{
+    text-align: center; 
+    font-family: 'Alegreya SC';
+    color: rgb(5, 50, 112);
+    font-size: 2.7vw;
+    margin-bottom: 0%;
+}
+
+#imgFoto{
+  float: inside;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+#cardItem:hover{
+   transform: translateY(-5px);
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+#imgItem{
+  float: inside;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  border: 20px solid black;
+  border-style: double;
+  margin-left: 10%;
+  margin-top: -20%;
+}
+
+#nomeProduto{
+    margin-top: -22%;
+    font-family: 'Dancing Script';
+    font-size: 550%;
+    text-align: right; 
+    margin-right: 20%;
+}
+
+#descricao{
+   width: 100%;
+   font-family: 'Bebas Neue';
+   font-size: 150%;
+   text-align: center;
+   margin-right: 10%;
+   margin-top: -12%;
+}
+
+#tudo{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#nome-descricao{
+    flex: 1;
+    padding: 10%;
+    background-color: red;
+}
+
+#imagem{
+    flex: 1;
+    padding: 10%;
+    background-color: yellow;
+}
+
+#preco{
+    flex: 1;
+    padding: 2%;
+    background-color: gray;
+}
+
+#inf{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    background-color: purple;
+}
+
+#voltar{
+     border: 2px ;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    font-size: 120%;
+   background-color: #004AAD;
+   color: white;
+   padding: 1%;
+   margin-bottom: 0%;
+   margin-top: 1%;
+   margin-left: 2%;
+}
+
+#voltar:hover{
+    background-color: blue;
+}
+
+#total{
+    text-align: right;
+    padding-right: 2%;
+    margin-top: -3%;
+}

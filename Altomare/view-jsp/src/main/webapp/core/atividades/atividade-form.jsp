@@ -3,12 +3,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro de Atividade</title>
-                <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
-
+        <title>Cadastro de Atividade | AltoMare</title>
+        <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
+        <link rel="stylesheet" href="../../css/estilos-header.css">
     </head>
     <body>
-        <%@ include file="../../headerGerente.jsp" %>
+        <%@ include file="../headers/headerGerente.jsp" %>
         <h1>Cadastro de Nova Atividade</h1>
         <form action="../../CadastrarAtividadeServlet" method="post">
             <label>Data:</label>
@@ -31,6 +31,9 @@
             
             <label>Descrição</label>
             <input type="text" name="descricao" required><br>
+            
+            <label>Visivel? (S/N)</label>
+            <input type="text" name="visivel" pattern="(S|N)" required><br>
 
             <input type="submit" name="cadastrar" value="Cadastrar">
         </form>
