@@ -7,6 +7,7 @@ import br.cefetmg.altomare.model.service.ManterFuncionario;
         
 public class ExcluirFuncionario {
     
+    @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
     public static String execute(HttpServletRequest request){
            String jsp;
            try{

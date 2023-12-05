@@ -4,6 +4,9 @@
     Author     : Eliane
 --%>
 
+<%@page import="br.cefetmg.altomare.model.dao.FuncionarioDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="br.cefetmg.altomare.model.dto.FuncionarioDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
@@ -17,24 +20,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <link rel="stylesheet"  href="../../css/estilos-header.css">
         <link rel="stylesheet"  href="../../css/estilosFuncionario.css">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
-        <%@include file="../../headerGerente.jsp" %>
+        <%@include file="../../headerprodutos.jsp" %>
         <title>Escalar Funcionários</title>
     </head>
     <body>
           
         <h1 id="titulo">Escalar Funcionários</h1>
-        <div id="cardFuncionario">
-            <div id="botaoChamarFuncionario">
+        <div class="row">
+            <%
+               ArrayList<FuncionarioDTO> funcionarios = new ArrayList<>();
+               try{
+                  FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+                  funcionarios = funcionarioDAO.listarTodos();
+                }catch(Exception e){
+                   out.print(e);
+                }
                 
-            </div> 
-            <div id="informacoesFuncionario">
-                <div id="foto-codigo">
-                    
-                </div>
-                <div id="turno-setor"> 
-                    
-                </div> 
-            </div>
+               for(FuncionarioDTO funcionario : funcionarios){
+            %>
+               <div class="card red">
+                   <img class="image" src="imagens/user-icon.png" alt="article">
+                   <div class="informacoes">
+                       <h2 id="nomeFunc"><%=funcionario.getNome()%></h2>
+                   </div>
+                   <div>
+            <%}%>
         </div>
             <script src="../../js/scriptFuncionario.js"></script>
          <script src="../../js/jsheader.js"></script>

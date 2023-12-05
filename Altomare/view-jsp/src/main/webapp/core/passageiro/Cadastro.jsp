@@ -10,48 +10,13 @@
         <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
         <link rel="icon" href="imagens/leme.png" type="image/webp">
+         
+        <%@include file="../../headerprodutos.jsp" %>
     </head>
     <body>
-         <header id="header-main">
-        <div id="header-upper">
-            <img src="../../imagens\leme.png" id="leme">
-            <div>
-                <h1 id="altoMare">AltoMare</h1>
-                <h2 id="embarcacoes">EMBARCAÇÕES</h2>
-            </div>
-            <div>
-                <img src="../../imagens\user-icon.png" id="user-icon">
-                <p style="font-family: 'Alegreya SC';">GERENTE</p>
-            </div>
-        </div>
-        <div id="linha"></div>
-        <div id="burger"><p>☰</p></div>
-        <ul>
-            <li>
-                <img src="../../imagens/funcionarios.png" style="height: 70px;">
-                <p>Funcionários</p>
-            </li>
-            <li>
-                <img src="../../imagens/passageiros.png" style="height: 70px;">
-                <p>Passageiros</p> 
-            </li>
-            <li>
-                <img src="../../imagens/pacotes.png" style="height: 70px;">
-                <p>Pacotes</p>             
-            </li>
-            <li>
-                <img src="../../imagens/iconeSeguranca.png" style="height: 70px;">
-                <p>Segurança</p>
-            </li>
-            <li>
-                <img src="../../imagens/cronograma.png" style="height: 70px;">
-                <p>Conograma</p>
-            </li>
-   
-        </ul>
-    </header>
+        
          <h1 id="titulo">Cadastrar Passageiro</h1>
-         <form name="CadastroPassageiro"  action="CadastroPassageiro" id="cadastroFunc" method="GET">
+         <form name="CadastroPassageiro"   action="../../Fachada" id="cadastroFunc" method="POST">
             <main>
         
                 
@@ -83,11 +48,11 @@
                           </p>
                           <p>
                               <label class="mover" style="font-family: 'Alegreya SC';" for="pacote">Pacote:</label>
-                               <input type="file" name='pacote' id="dadosmedico" placeholder="Pacote" required accept="text/*">
+                               <input type="file" name="pacote" id="dadosmedico" accept="text/*" required>
                                
                           </p>
                           <p> 
-                             Dados Medicos:<input type="file"  id="dadosmedico" name="daods" accept="text/*">
+                             Dados Medicos:<input type="text"  id="dadosmedico" name="dados" >
                           </p>
                           
                           </div>
@@ -103,8 +68,8 @@
                                <input type="file"  id="arq" name="arquivo" accept="text/*">
                            </p>
                                
-                              <input type="file" id="foto" name="foto" accept="image/*" required>
-                               <p><input type='submit' value="CADASTRAR" id='enviar'></p>
+                              <input type="file" id="foto" name="foto" accept="image/*" >
+                               <p><button type='submit' name="acao" value="CadastrarPassageiro" id='enviar'>CADASTRAR</button></p>
                          </div>
                          
             </main>

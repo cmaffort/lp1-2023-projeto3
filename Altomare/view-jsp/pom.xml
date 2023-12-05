@@ -44,6 +44,13 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
+
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+           <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
             <version>5.5.13.3</version>
@@ -69,6 +76,7 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>dto</artifactId>
             <version>${project.version}</version>
+
         </dependency>
     </dependencies>
     

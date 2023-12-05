@@ -23,25 +23,21 @@ public class ProdutoServlet extends HttpServlet {
         if(acao.equals("Cadastrar")) {
             jsp = CadastrarProduto.execute(request);
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
-            rd.forward(request, response);
-        }
+            rd.forward(request, response);        }
         else if (acao.equals("Listar")) {
-            jsp = ListarProduto.execute(request);
+            jsp = ListarProduto.execute(request); 
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);
-
         }
         else if (acao.equals("Alterar")) {
             jsp = AlterarProduto.execute(request);
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);
-
         }
         else if (acao.equals("ExcluirNome")) {
             jsp = ExcluirProduto.executeNome(request);
             RequestDispatcher rd = request.getRequestDispatcher(jsp);
             rd.forward(request, response);
-
         }
         else if (acao.equals("ExcluirId")) {
             jsp = ExcluirProduto.executeID(request);

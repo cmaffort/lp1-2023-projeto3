@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public  class ProdutoDAO implements IProdutoDAO {
+public class ProdutoDAO implements IProdutoDAO {
 
     Connection connection;
 
@@ -27,55 +27,41 @@ public  class ProdutoDAO implements IProdutoDAO {
 
         try (PreparedStatement inserirStatement = connection.prepareStatement(inserirSQL); PreparedStatement atualizarQuantidadeTotalStatement = connection.prepareStatement(atualizarQuantidadeTotalSQL)) {
 
-           
-
-            inserirStatement.setString(1, produto.getNome());
             inserirStatement.setString(1, produto.getNome());
             inserirStatement.setString(2, produto.getTipo());
             inserirStatement.setDouble(3, produto.getPreco());
             inserirStatement.setString(4, produto.getEstado());
             inserirStatement.setInt(5, produto.getQuantidade());
-            
-            
-            
-            inserirStatement.setString(6,produto.getData() );
-        
-        
+
+            inserirStatement.setString(6, produto.getData());
+
             inserirStatement.executeUpdate();
-        
+
             atualizarQuantidadeTotalStatement.setInt(1, produto.getQuantidade());
             atualizarQuantidadeTotalStatement.setString(2, produto.getNome());
             atualizarQuantidadeTotalStatement.executeUpdate();
 
-          
-
         } catch (SQLException e) {
-            
+
             throw e;
         } finally {
-            
+
         }
     }
 
     @Override
-    public void atualizarProduto(ProdutoDTO produto) throws SQLException {
-        String sql = "UPDATE produto SET nome = ?, preco = ?, estado = ?,tipo = ? , quantidade = ?, data = ? WHERE id = ?";
+    public void atualizarProduto(int produtoId) throws SQLException {
+        String sql = "UPDATE Produto SET quantidade = quantidade - 1 WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, produto.getNome());
-            statement.setDouble(2, produto.getPreco());
-            statement.setString(3, produto.getEstado());
-            statement.setString(4, produto.getTipo());
-            statement.setInt(5, produto.getQuantidade());
-            statement.setString(6,produto.getData() );
-            statement.setInt(7, produto.getId());
+
+            statement.setInt(1, produtoId);
             statement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println(e);
         }
     }
+
     @Override
     public void excluirProdutoNome(String nome) {
-   
+
         String sql = "DELETE FROM produto WHERE nome = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, nome);
@@ -84,9 +70,10 @@ public  class ProdutoDAO implements IProdutoDAO {
             System.out.println(e);
         }
     }
-   @Override     
-public void excluirProdutoID(Integer Id) {
-   
+
+    @Override
+    public void excluirProdutoID(Integer Id) {
+
         String sql = "DELETE FROM produto WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, Id);
@@ -123,6 +110,5 @@ public void excluirProdutoID(Integer Id) {
 
         return produtos;
     }
-}
 
-   
+}

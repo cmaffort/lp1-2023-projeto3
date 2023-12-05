@@ -43,7 +43,7 @@ public class AlterarProduto extends HttpServlet {
             ProdutoDAO produtoDAO = new ProdutoDAO();
 
             try {
-                produtoDAO.atualizarProduto(produto);
+                produtoDAO.atualizarProduto(produtoId);
                 jsp = "index.jsp"; // Define a página para redirecionar
             } catch (SQLException ex) {
                 ex.printStackTrace();

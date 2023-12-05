@@ -5,16 +5,23 @@ public class PassageiroDTO extends UsuarioDTO{
     //public Pacote pacote;
     public ContaUsuarioDTO contaUsuario;
     public String dadosMedicos;
-    public String senha;
+    
             
-    public PassageiroDTO(/*Pacote pacote,*/ ContaUsuarioDTO contaUsuario, long cpf, String nome, String dataNascimento, String email, String senha, String sexo, String estadoCivil, String dadosMedicos, long rg, long telefone, String passaporte, long cep){
-        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, passaporte, cep); //falta passaporte e cep
+    public PassageiroDTO(/*Pacote pacote,*/ ContaUsuarioDTO contaUsuario, String cpf, String nome, String dataNascimento, String email, String senha, String sexo, String estadoCivil, String dadosMedicos, String rg, String telefone, String foto){
+        super(cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, foto); 
         // this.pacote = pacote;
          this.contaUsuario = contaUsuario;
         this.dadosMedicos = dadosMedicos;
     }
 
     public PassageiroDTO() {
+        super("", "", "", "", "", "" , "", "", "", "");
+        this.contaUsuario = null;
+        this.dadosMedicos = "";
+        
+    }
+
+    public PassageiroDTO(ContaUsuarioDTO contaUsuarioDTO, long cpfLong, String nome, String dataNascimento, String email, String senha, String sexo, String civil, String medico, long rgLong, long telefoneLong, String passaporte, long cepLong) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
   public String getDadosMedicos() {
@@ -24,15 +31,5 @@ public class PassageiroDTO extends UsuarioDTO{
         this.dadosMedicos = dadoNovo;
 }
 
-    public int getDespesa() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
-    public String getPacote() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public String getCivil() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }

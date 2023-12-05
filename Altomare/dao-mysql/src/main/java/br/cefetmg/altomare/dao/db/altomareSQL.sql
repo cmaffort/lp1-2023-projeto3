@@ -1,28 +1,14 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Tempo de geração: 23-Out-2023 às 15:00
--- Versão do servidor: 5.7.36
--- versão do PHP: 7.4.26
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Banco de dados: `altomare`
 --
 
 -- --------------------------------------------------------
-CREATE DATABASE altomare
+CREATE DATABASE IF NOT EXISTS altomare;
+USE altomare;
 --
 -- Estrutura da tabela `atividade`
 --
@@ -57,7 +43,10 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   `Turno` varchar(50),
   `Setor` varchar(50),
   `DataAdmissao` varchar(50),
-  `Telefone` varchar(50)
+
+  `Telefone` varchar(50),
+  `Foto` varchar(50)
+
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `passageiro` (
   `Sexo` varchar(50),
   `Civil` varchar(50),
   `DadosMedicos` varchar(50),
+  `Foto` varchar(50),
   `Pacote` varchar(50),
   `Despesa` varchar(50)
 
@@ -92,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `passageiro` (
 DROP TABLE IF EXISTS `produto`;
 
 CREATE TABLE IF NOT EXISTS `produto` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id` int(255) NOT NULL AUTO_INCREMENT,
   `Nome` varchar(255) NOT NULL,
   `Data`  varchar(255),
   `Quantidade` int (255),
@@ -103,6 +93,24 @@ CREATE TABLE IF NOT EXISTS `produto` (
   PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+
+DROP TABLE IF EXISTS `saude`;
+
+CREATE TABLE IF NOT EXISTS `saude` (
+  `Id` int(255) NOT NULL AUTO_INCREMENT,
+  `Name` varchar(255) NOT NULL,
+  `cabine` varchar(255),
+  `genero` varchar(255),
+  `telefone` varchar(255),
+  `datanas` varchar(50),
+  `Observacao` varchar(255) ,
+  `medicamento` varchar(255) ,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 DROP TABLE IF EXISTS `pacote`;
 
 CREATE TABLE IF NOT EXISTS `pacote` (
@@ -111,7 +119,9 @@ CREATE TABLE IF NOT EXISTS `pacote` (
   `telefone` varchar(255),
   `destino` varchar(255),
   `datapart` varchar(50),
-  `duracao` varchar(255)
+  `duracao` varchar(255),
+  `cabine` varchar(255),
+  `classe` varchar(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 COMMIT;
@@ -120,3 +130,63 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `conta_usuario`
+--
+
+DROP TABLE IF EXISTS `contausuario`;
+CREATE TABLE IF NOT EXISTS `contausuario` (
+  id_conta BIGINT, -- autoincrement
+  esta_aberta BOOLEAN,
+  total DOUBLE,
+  PRIMARY KEY (id_conta)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `despesa`
+--
+
+DROP TABLE IF EXISTS `despesa`;
+CREATE TABLE IF NOT EXISTS `despesa` (
+  id_despesa BIGINT AUTO_INCREMENT,
+  valor DOUBLE NOT NULL,
+  foi_registrada BOOLEAN,
+  tipo VARCHAR(20),
+  descricao VARCHAR(200),
+  data_ocorrencia VARCHAR(50),
+  id_conta BIGINT(10),
+  PRIMARY KEY (id_despesa)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `cartao`
+--
+
+DROP TABLE IF EXISTS `cartao`;
+CREATE TABLE IF NOT EXISTS `cartao` (
+  id_cartao BIGINT AUTO_INCREMENT,
+  titular VARCHAR(50),
+  vencimento VARCHAR(20),
+  tipo VARCHAR(10),
+  cvv INT(3),
+  numero BIGINT(12),
+  id_conta BIGINT(10),
+  PRIMARY KEY (id_cartao)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO contausuario (esta_aberta, total, id_conta) VALUES (true, 1500.00, 1);
+
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Legal", "2023-10-10", "debito", 111, 1111111111111111, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Bacana", "2023-10-10", "credito", 222, 2222222222222222, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Gente Boa", "2023-10-10", "credito", 333, 3333333333333333, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Dahora", "2023-10-10", "debito", 444, 4444444444444444, 1);
+INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Bom", "2023-10-10", "debito", 555, 5555555555555555, 1);

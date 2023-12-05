@@ -56,11 +56,11 @@ public class CadastrarProduto extends HttpServlet {
             ProdutoDAO produtoDAO = new ProdutoDAO();
             produtoDAO.inserirProduto(produto);
 
-            jsp = "index.jsp";
+            jsp = "core/gestor_produtos/cadastrar.jsp";
 
         } catch (SQLException | ClassNotFoundException ex) {
             System.out.println(ex);
-            jsp = "index.jsp";
+            jsp = "core/gestor_produtos/cadastrar.jsp";
         }
 
         return jsp;

@@ -17,6 +17,8 @@ public class PacoteDTO {
     private String dataPartida;
     private String duracaoCruzeiro;
     private String cpfContratante;
+    private String classe;
+    private String cabine;
 
    
 
@@ -25,7 +27,7 @@ public class PacoteDTO {
     }
 
     public PacoteDTO(String nomeContratante, String cpfContratante,String telefoneContratante, String destino, String dataPartida,
-                       String duracaoCruzeiro) {
+                       String duracaoCruzeiro,String classe, String cabine) {
         this.nomeContratante = nomeContratante;
         this.cpfContratante= cpfContratante;
         this.telefoneContratante = telefoneContratante;
@@ -33,6 +35,14 @@ public class PacoteDTO {
         this.dataPartida = dataPartida;
         this.duracaoCruzeiro = duracaoCruzeiro;
         
+    }
+
+    public String getClasse() {
+        return classe;
+    }
+
+    public String getCabine() {
+        return cabine;
     }
 
     public String getNomeContratante() {
@@ -57,6 +67,14 @@ public class PacoteDTO {
 
     public String getCpfContratante() {
         return cpfContratante;
+    }
+
+    public void setClasse(String classe) {
+        this.classe = classe;
+    }
+
+    public void setCabine(String cabine) {
+        this.cabine = cabine;
     }
 
     public void setNomeContratante(String nomeContratante) {

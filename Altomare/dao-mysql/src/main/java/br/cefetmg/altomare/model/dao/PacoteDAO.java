@@ -31,29 +31,31 @@ public class PacoteDAO implements IPacoteDAO {
      */
     @Override
     public void inserirPacote(PacoteDTO pacote) throws SQLException {
-    String sql = "INSERT INTO pacote (nome,cpf,telefone,destino,datapart,duracao) VALUES (?,?,?,?,?,?)";
-    try (PreparedStatement statement = connection.prepareStatement(sql)) {
-        statement.setString(1, pacote.getNomeContratante());
-        statement.setString(2, pacote.getCpfContratante());
-        statement.setString(3, pacote.getTelefoneContratante());
-        statement.setString(4, pacote.getDestino());
-        statement.setString(5, pacote.getDataPartida());
-        statement.setString(6, pacote.getDuracaoCruzeiro());
+        String sql = "INSERT INTO pacote (nome,cpf,telefone,destino,datapart,duracao,cabine,classe) VALUES (?,?,?,?,?,?,?,?)";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, pacote.getNomeContratante());
+            statement.setString(2, pacote.getCpfContratante());
+            statement.setString(3, pacote.getTelefoneContratante());
+            statement.setString(4, pacote.getDestino());
+            statement.setString(5, pacote.getDataPartida());
+            statement.setString(6, pacote.getDuracaoCruzeiro());
+            statement.setString(7, pacote.getCabine());
+            statement.setString(8, pacote.getClasse());
 
-        statement.executeUpdate();
-    } catch (SQLException e) {
-        System.out.println(e);
-    } finally {
-        try {
-            if (connection != null) {
-                connection.close();
-            }
+            statement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
         }
     }
-    }
-    
+
     /**
      *
      * @param cpf
@@ -62,47 +64,52 @@ public class PacoteDAO implements IPacoteDAO {
      */
     @Override
     public PacoteDTO obterPacotePorCPF(String cpf) throws SQLException {
-    String sql = "SELECT * FROM pacote WHERE cpf = ?";
-    try (PreparedStatement statement = connection.prepareStatement(sql)) {
-        statement.setString(1, cpf);
+        String sql = "SELECT * FROM pacote WHERE cpf = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, cpf);
 
-        try (ResultSet resultSet = statement.executeQuery()) {
-            if (resultSet.next()) {
-                return extrairPacoteDoResultSet(resultSet);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    return extrairPacoteDoResultSet(resultSet);
+                }
             }
         }
+        return null;
     }
-    return null; 
-}
-public ArrayList<PacoteDTO> listarPacotes() throws SQLException {
-    ArrayList<PacoteDTO> pacotes = new ArrayList<>();
-    String sql = "SELECT * FROM pacote";
 
-    try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet resultSet = statement.executeQuery()) {
+    public ArrayList<PacoteDTO> listarPacotes() throws SQLException {
+        ArrayList<PacoteDTO> pacotes = new ArrayList<>();
+        String sql = "SELECT * FROM pacote";
 
-        while (resultSet.next()) {
-            PacoteDTO pacote = extrairPacoteDoResultSet(resultSet);
-            pacotes.add(pacote);
+        try (PreparedStatement statement = connection.prepareStatement(sql); ResultSet resultSet = statement.executeQuery()) {
+
+            while (resultSet.next()) {
+                PacoteDTO pacote = extrairPacoteDoResultSet(resultSet);
+                pacotes.add(pacote);
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw e;
         }
 
-    } catch (SQLException e) {
-        System.out.println(e);
-        throw e;
+        return pacotes;
     }
 
-    return pacotes;
-}
-private PacoteDTO extrairPacoteDoResultSet(ResultSet resultSet) throws SQLException {
-    PacoteDTO pacote = new PacoteDTO();
-    pacote.setNomeContratante(resultSet.getString("nome"));
-    pacote.setCpfContratante(resultSet.getString("cpf"));
-    pacote.setTelefoneContratante(resultSet.getString("telefone"));
-    pacote.setDestino(resultSet.getString("destino"));
-    pacote.setDataPartida(resultSet.getString("datapart"));
-    pacote.setDuracaoCruzeiro(resultSet.getString("duracao"));
+    private PacoteDTO extrairPacoteDoResultSet(ResultSet resultSet) throws SQLException {
+        PacoteDTO pacote = new PacoteDTO();
+        pacote.setNomeContratante(resultSet.getString("nome"));
+        pacote.setCpfContratante(resultSet.getString("cpf"));
+        pacote.setTelefoneContratante(resultSet.getString("telefone"));
+        pacote.setDestino(resultSet.getString("destino"));
+        pacote.setDataPartida(resultSet.getString("datapart"));
+        pacote.setDuracaoCruzeiro(resultSet.getString("duracao"));
+        pacote.setCabine(resultSet.getString("cabine"));
+        pacote.setClasse(resultSet.getString("classe"));
 
-    return pacote;
-}
 
+
+        return pacote;
+    }
 
 }
