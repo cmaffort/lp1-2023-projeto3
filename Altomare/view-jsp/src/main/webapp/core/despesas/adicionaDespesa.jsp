@@ -4,10 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Despesas</title>
+        <link rel="icon" href="../../imagens/leme.png" type="image/png">
         <link rel="stylesheet" href="../../css/estilos-adiciona-despesas.css">
     </head>
     <body>
-        <%@ include file="../../headerPassageiro.jsp" %>
+        <%@ include file="../headers/headerPassageiro.jsp" %>
 
         <form id="form-passageiro">
             <div>

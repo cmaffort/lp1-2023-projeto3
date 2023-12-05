@@ -1,5 +1,9 @@
 
 
+<%@page import="br.cefetmg.altomare.model.dto.FuncionarioDTO"%>
+<%@page import="br.cefetmg.altomare.model.dao.IFuncionarioDAO"%>
+<%@page import="br.cefetmg.altomare.model.dao.FuncionarioDAO"%>
+<%@page import="br.cefetmg.altomare.model.dao.FuncionarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,15 +19,14 @@
     </head>
     <body>
         <h1 id="titulo">Inserir Funcionário</h1>
-        <form action="../../Fachada" method="POST" id="cadastroFunc" encytype="multpart/form-data" >
-
+        <%
+            String cpf = request.getParameter("cpf");
+        %>
             <main>
                 <div id='setor-admissao'>
 
-                    <p><label  for="setor" style="font-family: 'Alegreya SC';">Setor:</label></p>
-                    <p>   
-                        <input type='text' onChange="handleFile(this.files)" name='setor' id="setor" data-ls-module="charCounter" maxlength="13" required> 
-                    </p>
+                    <p><label for="setor" style="font-family: 'Alegreya SC';">Setor:</label></p>
+                    <p></p>
                     <p>
                         <label for="turno" style="font-family: 'Alegreya SC';">Turno:</label>
                     </p>
@@ -49,9 +52,8 @@
 
                     </p>
                     <p>
-                        <label class="mover" for="cpfFuncionario" style="font-family: 'Alegreya SC';">CPF:</label>
-                        <input onChange="handleFile(this.files)" type='text' name='cpf' id="cpfFuncionario"  data-ls-module="charCounter" maxlength="14" placeholder="ex: xxx.xxx.xxx-xx" required>          
-                        <label class="mov" for="civilFuncionario" style="font-family: 'Alegreya SC';">Estado Civil:</label>
+                        <label for="cpfFuncionario" style="font-family: 'Alegreya SC';">CPF: <%=cpf%></label>
+                        <label  for="civilFuncionario" style="font-family: 'Alegreya SC';">Estado Civil:</label>
                         <input type='text' onChange="handleFile(this.files)" name='estadoCivilFuncionario' id="civilFuncionario" data-ls-module="charCounter" maxlength="13" required> 
                     </p>
                     <p>
@@ -85,7 +87,6 @@
                 </div>
 
             </main>
-        </form>
         <footer>
             <button id="voltar">VOLTAR</button>
         </footer>

@@ -4,10 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Despesas</title>
+        <link rel="icon" href="../../imagens/leme.png" type="image/png">
         <link rel="stylesheet" href="../../css/estilos-despesas.css">
     </head>
     <body>
-        <%@ include file="../../headerPassageiro.jsp" %>
+        <%@ include file="../headers/headerPassageiro.jsp" %>
         <%@ page import="br.cefetmg.altomare.model.dto.*" %>
         <%@ page import="br.cefetmg.altomare.model.service.*" %>
         <%@ page import="java.util.*" %>
@@ -65,7 +66,7 @@
         </div>
             
         <footer>
-            <p>Despesas Totais: <%= despesasUsuarioLogado.getContaUsuario().getTotal() %></p>
+            <p>Despesas Totais: <%= despesasUsuarioLogado.getContaUsuario().getTotal()%></p>
             <a href="../pagamentos/pagamentos.jsp"><div>PAGAR</div></a>
         </footer>
         

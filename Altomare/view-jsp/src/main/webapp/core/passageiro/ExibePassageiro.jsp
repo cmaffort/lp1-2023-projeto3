@@ -10,11 +10,12 @@
         <title>Embarque | AltoMare</title>
         <meta charset="UTF-8">
 
-        <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
-        <link rel="stylesheet"  href="../../css/novo.css">
-         <link rel="stylesheet" href="../../css/estilos-header.css">
-         <link rel="stylesheet" href="../../css/estilosFuncionario.css">
-        
+
+        <link rel="stylesheet"  href="css/estilos-Passageiro.css">
+        <link rel="stylesheet"  href="css/listarFunc.css">
+         <link rel="stylesheet" href="css/estilos-header.css">
+        <%@include file="../headers/outroHeader.jsp" %>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
 

@@ -5,8 +5,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Edição de produtos</title>
         <link rel="stylesheet" type="text/css" href="css/produtos.css">
-
-        <%@include file="../../headerprodutos.jsp" %>
+         <link rel="icon" href="../../imagens/leme.png" type="image/png">
+        <%@include file="../headers/headerprodutos.jsp" %>
 
 
     </head>

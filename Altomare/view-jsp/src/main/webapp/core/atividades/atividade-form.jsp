@@ -4,11 +4,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Cadastro de Atividade | AltoMare</title>
-                <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
-
+        <link rel="stylesheet" type="text/css" href="../../css/produtos.css">
     </head>
     <body>
-        <%@ include file="../../headerGerente.jsp" %>
+        <%@ include file="../headers/headerGerente.jsp" %>
         <h1>Cadastro de Nova Atividade</h1>
         <form action="../../CadastrarAtividadeServlet" method="post">
             <label>Data:</label>

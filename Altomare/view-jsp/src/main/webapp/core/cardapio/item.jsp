@@ -25,9 +25,10 @@
         <title>Cardápio</title>
     </head>
     <body>
-        <%@include file="../../outroHeader.jsp" %>
+        <%@include file="../headers/headerGerente.jsp" %>
         <%
             String item = request.getParameter("item");
+            
         %>
             <div id="tudo">
                 <div id="inf">
@@ -37,9 +38,9 @@
                    <p id="descricao"><%%></p>
                    </div>
                 </div>
-                <div id="preco"><p>Preço:</p></div>
+                <div id="preco"><p>Preço:<%despesasUsuarioLogado.getContaUsuario().getTotal()%></p></div>
             </div>
-        <footer><button id="voltar"> VOLTAR</button><h1 id="total">TOTAL:<%%></h1></footer>
+                   <footer><a href="cardapio.jsp"  style="color: white;text-decoration: none"><button id="voltar"> VOLTAR</button></a><h1 id="total">TOTAL:<%%></h1></footer>
         <script src="../../js/scriptFuncionario.js"></script>
     </body>
 </html>

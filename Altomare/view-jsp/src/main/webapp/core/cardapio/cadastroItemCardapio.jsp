@@ -11,7 +11,7 @@
         <title>Cadastro Item Cardápio</title>
     </head>
     <body>
-        <%@include file="../../outroHeader.jsp" %>
+        <%@include file="../headers/headerGerente.jsp" %>
         <h1 id="titulo">Cadastrar item do cardápio</h1>
         <form id="cadastroFunc" method="post" action="../../Fachada" >
             <div id="main">
