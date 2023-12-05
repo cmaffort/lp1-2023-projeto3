@@ -45,15 +45,15 @@
                 </a>
             </li>
             <li>
-                <a href="" style="color: white;text-decoration: none">
+                <a href="../../core/seguranca/CadastraSeguranca.jsp" style="color: white;text-decoration: none">
                 <img src="../../imagens/iconeSeguranca.png" alt="" style="height: 35px;padding-top: 1.5cm;">
                 <p>Segurança</p>
                 </a>
             </li>
             <li>
-                <a href="../../core/contratos/GerarContratos.jsp" style="color: white;text-decoration: none">
+                <a href="../../core/atividades/atividade-form.jsp" style="color: white;text-decoration: none">
                 <img src="../../imagens/cronograma.png" alt="" style="height: 35px;padding-top: 1.5cm;">
-                <p>Conograma</p>
+                <p>Cronograma</p>
                 </a>
             </li>
             <li>

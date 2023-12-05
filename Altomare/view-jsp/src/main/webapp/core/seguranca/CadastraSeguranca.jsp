@@ -10,13 +10,13 @@
         <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
-        <%@include file="../../headerprodutos.jsp" %>
+        <%@include file="../headers/headerGerente.jsp" %>
     </head>
     <body>
         
          <h1 id="titulo">Segurança</h1>
 
-         <form name="CadastrarSeguranca"   action="../../Fachada" id="cadastroFunc" encytype="multipart/form-data" method="POST">
+         <form name="CadastrarSeguranca"   action="../../Fachada" id="cadastroFunc" enctype="multipart/form-data" method="POST">
 
             <main>
                     <div id='nome-telefone'>
