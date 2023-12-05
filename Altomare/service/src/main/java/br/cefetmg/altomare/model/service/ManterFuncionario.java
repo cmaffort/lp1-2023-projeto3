@@ -107,20 +107,12 @@ public class ManterFuncionario implements IManterFuncionario{
          return result;
      }
      
-     public FuncionarioDTO pesquisarPorId(String cpf) throws PersistenciaException{
-         FuncionarioDTO result = funcionarioDAO.consultarPorId(cpf);
-         return result;
-     }
-     
      @Override
      public FuncionarioDTO getUserLogin(String cpf, String senha) throws PersistenciaException, NegocioException{
          FuncionarioDTO result = funcionarioDAO.consultarPorUsuarioSenha(cpf, senha);
          return result;
      }
 
-    @Override
-    public FuncionarioDTO pesquisarPorId(long cpf) throws PersistenciaException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   
 }
        

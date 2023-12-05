@@ -4,11 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Despesas</title>
-        <link rel="stylesheet" href="../../css/estilos-despesas-novo.css">
-        <link rel="icon" href="../../imagens/leme.png" type="image/webp">
+        <link rel="icon" href="../../imagens/leme.png" type="image/png">
+        <link rel="stylesheet" href="../../css/estilos-despesas.css">
     </head>
     <body>
-        <%@ include file="../../headerPassageiro.jsp" %>
+        <%@ include file="../headers/headerPassageiro.jsp" %>
         <%@ page import="br.cefetmg.altomare.model.dto.*" %>
         <%@ page import="br.cefetmg.altomare.model.service.*" %>
         <%@ page import="java.util.*" %>
@@ -18,7 +18,7 @@
             ArrayList<DespesaDTO> arr = despesasUsuarioLogado.getDespesas();
         %>
        
-        <div id="container" style="font-family: Times New Roman, Times, serif;">
+        <div id="container">
             <div id="get-dados-conta">
                 <% 
                     for (DespesaDTO despesa: arr) { %>
@@ -66,7 +66,7 @@
         </div>
             
         <footer>
-            <p>Despesas Totais: <%= despesasUsuarioLogado.getContaUsuario().getTotal() %></p>
+            <p>Despesas Totais: <%= despesasUsuarioLogado.getContaUsuario().getTotal()%></p>
             <a href="../pagamentos/pagamentos.jsp"><div>PAGAR</div></a>
         </footer>
         

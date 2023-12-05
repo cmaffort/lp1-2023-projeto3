@@ -2,8 +2,10 @@ br\cefetmg\altomare\model\dto\FuncionarioDTO.class
 br\cefetmg\altomare\model\dto\ProdutoDTO.class
 br\cefetmg\altomare\model\dto\PacoteDTO.class
 br\cefetmg\altomare\model\dto\PassageiroDTO.class
+br\cefetmg\altomare\model\dto\SaudeDTO.class
 br\cefetmg\altomare\model\dto\UsuarioDTO.class
 br\cefetmg\altomare\model\dto\EstoqueDTO.class
 br\cefetmg\altomare\model\dto\AtividadeDTO.class
 br\cefetmg\altomare\model\dto\DespesaDTO.class
+br\cefetmg\altomare\model\dto\CartaoDTO.class
 br\cefetmg\altomare\model\dto\ContaUsuarioDTO.class

@@ -1,18 +1,9 @@
-<%-- 
-    Document   : listarFuncionarios
-    Created on : 29 de out. de 2023, 17:04:14
-    Author     : Eliane
---%>
 
 <%@page import="br.cefetmg.altomare.model.dao.FuncionarioDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="br.cefetmg.altomare.model.dto.FuncionarioDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,13 +11,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <link rel="stylesheet"  href="../../css/estilos-header.css">
         <link rel="stylesheet"  href="../../css/estilosFuncionario.css">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
-        <%@include file="../../headerprodutos.jsp" %>
+        <%@include file="../headers/headerGerente.jsp" %>
         <title>Escalar Funcionários</title>
     </head>
     <body>
           
         <h1 id="titulo">Escalar Funcionários</h1>
-        <div class="row">
+
+           <div class="row">
+                <div id="cardastrar">
+                <h2>Cadastrar</h2>
+                <img id="mais" src="../../imagens/botao-adicionar.png" alt="article">
+            </div>
+
             <%
                ArrayList<FuncionarioDTO> funcionarios = new ArrayList<>();
                try{
@@ -37,13 +34,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 }
                 
                for(FuncionarioDTO funcionario : funcionarios){
-            %>
+              %>
                <div class="card red">
-                   <img class="image" src="imagens/user-icon.png" alt="article">
+                   <img id="image" src="imagens/user-icon.png" alt="article">
                    <div class="informacoes">
+                        <a  href="../funcionarios/visualizarFuncionario.jsp?cpf=<%=funcionario.getCpf()%>"  style="color: black;text-decoration: none">
                        <h2 id="nomeFunc"><%=funcionario.getNome()%></h2>
+                       <p id="nomeFunc"><%=funcionario.getCpf()%></p>
+                       </a>
                    </div>
-                   <div>
+                   </div>
             <%}%>
         </div>
             <script src="../../js/scriptFuncionario.js"></script>

@@ -20,10 +20,6 @@ public class PassageiroDTO extends UsuarioDTO{
         this.dadosMedicos = "";
         
     }
-
-    public PassageiroDTO(ContaUsuarioDTO contaUsuarioDTO, long cpfLong, String nome, String dataNascimento, String email, String senha, String sexo, String civil, String medico, long rgLong, long telefoneLong, String passaporte, long cepLong) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
   public String getDadosMedicos() {
         return this.dadosMedicos;                                          
 }

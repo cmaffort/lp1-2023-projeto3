@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import br.cefetmg.altomare.dao.connection.ConexaoDB;
 import java.util.*;
-import java.sql.Date;
 
 public class CartaoDAO implements ICartaoDAO{
     @Override
