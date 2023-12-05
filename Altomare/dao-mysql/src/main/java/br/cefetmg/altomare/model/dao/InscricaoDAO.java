@@ -1,19 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package br.cefetmg.altomare.dao.mysql;
+
+package br.cefetmg.altomare.model.dao;
 
 import br.cefetmg.altomare.dto.InscricaoDTO;
-import br.cefetmg.altomare.idao.IInscricaoDAO;
+import br.cefetmg.altomare.model.dao.IInscricaoDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author letic
- */
+
 public class InscricaoDAO implements IInscricaoDAO {
     private Connection connection; 
 

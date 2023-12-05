@@ -1,7 +1,4 @@
-
 package br.cefetmg.inf.altomare.controller;
-import java.io.IOException;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,10 +9,10 @@ import br.cefetmg.altomare.model.dto.ContaUsuarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Path;
 import java.sql.SQLException;
 
 
@@ -56,7 +53,6 @@ public class CadastrarPassageiro extends HttpServlet{
                return jsp;
     }
     
-}
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

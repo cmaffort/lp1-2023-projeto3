@@ -1,3 +1,5 @@
+package br.cefetmg.inf.altomare.controller;
+
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -5,8 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import br.cefetmg.altomare.dto.InscricaoDTO;
-import br.cefetmg.altomare.dao.mysql.Conexao;
-import br.cefetmg.altomare.dao.mysql.InscricaoDAO;
+import br.cefetmg.altomare.model.dao.InscricaoDAO;
 import jakarta.servlet.annotation.WebServlet;
 
 @WebServlet(name = "CadastrarInscricaoServlet", urlPatterns = {"/CadastrarInscricaoServlet"})
@@ -24,9 +25,9 @@ public class CadastrarInscricaoServlet extends HttpServlet {
         InscricaoDTO inscricao = new InscricaoDTO(atividade, usuario);
         
         // salvar a instancia criada no banco de dados
-        Conexao conexao = new Conexao();
-        InscricaoDAO inscricaoDAO = new InscricaoDAO(conexao.conectaBD());
-        inscricaoDAO.inserirInscricao(inscricao);
+       // Conexao conexao = new Conexao();
+     //   InscricaoDAO inscricaoDAO = new InscricaoDAO(conexao.conectaBD());
+      //  inscricaoDAO.inserirInscricao(inscricao);
         
     }
 

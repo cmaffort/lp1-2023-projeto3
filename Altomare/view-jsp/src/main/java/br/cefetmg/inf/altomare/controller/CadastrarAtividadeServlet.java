@@ -1,11 +1,13 @@
+package br.cefetmg.inf.altomare.controller;
+
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import br.cefetmg.altomare.dto.AtividadeDTO;
-import br.cefetmg.altomare.dao.mysql.Conexao;
-import br.cefetmg.altomare.dao.mysql.AtividadeDAO;
+import br.cefetmg.altomare.model.dto.AtividadeDTO;
+import br.cefetmg.altomare.dao.connection.ConexaoDB;
+import br.cefetmg.altomare.model.dao.AtividadeDAO;
 import jakarta.servlet.annotation.WebServlet;
 
 @WebServlet(name = "CadastrarAtividadeServlet", urlPatterns = {"/CadastrarAtividadeServlet"})
@@ -27,9 +29,9 @@ public class CadastrarAtividadeServlet extends HttpServlet {
         AtividadeDTO atividade = new AtividadeDTO (nome, data, horaInicio, horaTermino, local, limiteOcupacao, responsavel, descricao, visivel);
         
         // salvar a instancia criada no banco de dados
-        Conexao conexao = new Conexao();
-        AtividadeDAO atividadeDAO = new AtividadeDAO(conexao.conectaBD());
-        atividadeDAO.inserirAtividade(atividade);
+       // Conexao conexao = new Conexao();
+       // AtividadeDAO atividadeDAO = new AtividadeDAO(conexao.conectaBD());
+      //  atividadeDAO.inserirAtividade(atividade);
         
     }
 
