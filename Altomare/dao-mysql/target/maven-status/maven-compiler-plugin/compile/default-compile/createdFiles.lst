@@ -1,11 +1,14 @@
 br\cefetmg\altomare\model\dao\DespesaDAO.class
 br\cefetmg\altomare\model\dao\PedidoUnidadeDAO.class
 br\cefetmg\altomare\model\dao\PassageiroDAO.class
+br\cefetmg\altomare\model\dao\CardapioDAO.class
 br\cefetmg\altomare\model\dao\PacoteDAO.class
 br\cefetmg\altomare\model\dao\AtividadeDAO.class
 br\cefetmg\altomare\model\dao\ContaUsuarioDAO.class
 br\cefetmg\altomare\dao\connection\ConexaoDB.class
 br\cefetmg\altomare\model\dao\PedidoTodoDAO.class
+br\cefetmg\altomare\model\dao\SegurancaDAO.class
 br\cefetmg\altomare\model\dao\CartaoDAO.class
 br\cefetmg\altomare\model\dao\FuncionarioDAO.class
 br\cefetmg\altomare\model\dao\ProdutoDAO.class
+br\cefetmg\altomare\model\dao\UsuarioDAO.class

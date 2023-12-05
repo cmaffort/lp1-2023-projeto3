@@ -1,8 +1,3 @@
-<%-- 
-    Document   : pagamentos
-    Created on : 6 de nov. de 2023, 07:54:13
-    Author     : Aluno
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,10 +5,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Altomare</title>
+        <link rel="icon" href="../../imagens/leme.png" type="image/png">
         <link rel="stylesheet" href="../../css/pagamentos.css">
     </head>
     <body>
-        <%@ include file="../../headerPassageiro.jsp" %>
+        <%@ include file="../headers/headerPassageiro.jsp" %>
         <%@ page import="br.cefetmg.altomare.model.dto.*" %>
         <%@ page import="br.cefetmg.altomare.model.service.*" %>
         <%@ page import="java.util.*" %>

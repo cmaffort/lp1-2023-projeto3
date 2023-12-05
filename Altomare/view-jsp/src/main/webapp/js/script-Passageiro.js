@@ -1,15 +1,11 @@
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
-
-'use strict'
 
 let photo = document.getElementById('imgPhoto');
 let file = document.getElementById('foto');
 let arq = document.getElementById('arq');
 let nome = document.getElementById('nome');
 let bot = document.getElementById('bot');
+let cpf = document.getElementById('cpf');
+
 
 
 bot.addEventListener('click', ()=> {
@@ -96,7 +92,18 @@ function ProcurarPassageiro() {
     }
 }
 
-
-
+document.querySelector('input[name="pacote"]').addEventListener('change', function(){
+    var file = this.files[0];
+    var formData = new FormData();
+    formData.append("pacote", file);
+    fetch('/upload', {
+        method: 'POST',
+        body: formData
+    }).then(response => {
+        console.log('Arquivo enviado com sucesso!');
+    }).catch(error => {
+        console.error('Erro:', error);
+    });
+});
 
 

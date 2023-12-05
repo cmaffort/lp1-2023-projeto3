@@ -2,36 +2,28 @@ package br.cefetmg.inf.altomare.controller;
 
 import br.cefetmg.altomare.model.dao.FuncionarioDAO;
 import br.cefetmg.altomare.model.dao.exception.PersistenciaException;
-import br.cefetmg.altomare.model.service.IManterFuncionario;
-import br.cefetmg.altomare.model.service.ManterFuncionario;
-import java.util.List;
 import br.cefetmg.altomare.model.dto.FuncionarioDTO;
 import br.cefetmg.altomare.model.exception.NegocioException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Paths;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class CadastrarFuncionario extends HttpServlet {
 
 
     @SuppressWarnings("CallToPrintStackTrace")
-    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException {
+
+    public static String execute(HttpServletRequest request) throws PersistenciaException, NegocioException, IOException, ServletException, SQLException {
+
        @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
         String jsp = "core/funcionarios/listarFuncionarios.jsp";
 
         try {
-            IManterFuncionario manterFuncionario = new ManterFuncionario();
-            List<FuncionarioDTO> listFuncionario = manterFuncionario.pesquisarTodos();
-            
-          
             
             String setor = request.getParameter("setor");
             String turno = request.getParameter("turno");
@@ -44,22 +36,13 @@ public class CadastrarFuncionario extends HttpServlet {
             String email = request.getParameter("emailFuncionario");
             String telefone = request.getParameter("telefoneFuncionario");
             String dataAdmissao = request.getParameter("dataAdmissao");
-            String photo = request.getParameter("foto");
-            //String fileName = Paths.get(photo.getSubmittedFileName()).getFileName().toString(); 
-            String senha = cpf; //a senha inicial de um funcionario cadastrado é seu próprio cpf
-            String caminho = null;
+            String senha = "";
+           // Part photo = request.getPart("foto");
+            //String caminho = TratamentoImagem.execute(request);
+
             
-            
-          /*  File diretorio = new File("imagensFuncionario");
-                    if(! diretorio.exists()){
-                        diretorio.mkdir();
-                        File foto = new File(diretorio, fileName);
-                        caminho = foto.getAbsolutePath();
-                    }*/
-                    
-            FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, photo);
-            
-            
+            FuncionarioDTO funcionario = new FuncionarioDTO(turno, 0.0, setor, dataAdmissao, 0.0, cpf, rg, nome, dataNascimento, email, senha, telefone, sexo, estadoCivil, null);
+
             FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
             funcionarioDAO.inserir(funcionario);
             

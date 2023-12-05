@@ -1,8 +1,4 @@
-<%-- 
-    Document   : cadastrarFuncionario
-    Created on : 29 de out. de 2023, 17:03:53
-    Author     : Eliane
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,14 +9,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=0, max-scale=1.0">
         <link rel="stylesheet"  href="../../css/estilosFuncionario.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
-                <link rel="icon" href="../../imagens/leme.png" type="image/webp">
-
-        <%@include file="../../headerprodutos.jsp" %>        
+        <link rel="icon" href="../../imagens/leme.png" type="image/png">
+        <%@include file="../headers/headerGerente.jsp" %>        
 
     </head>
     <body>
         <h1 id="titulo">Inserir Funcionário</h1>
-        <form action="../../Fachada" method="POST" id="cadastroFunc" >
+        <form action="../../Fachada" method="POST" id="cadastroFunc" encytype="multpart/form-data" >
+
             <main>
                 <div id='setor-admissao'>
 
@@ -80,21 +76,20 @@
                         </div>
                     </div>
                     <input type="file" id="fotoFuncionario" name="foto" accept="image/*" >
-
-                    <p><button type='submit' name="acao" value="CadastrarFuncionario" id='botaoCadastrarFuncionario'>CADASTRAR</button></p>
-
                     <p>
-                        <button id="botaoArquivosFuncionario" >ENVIAR ARQUIVO</button>
+                        <button id="botaoArquivosFuncionario" >PREENCHER CAMPOS</button>
                         <input type="file"  id="arquivoFuncionario"  accept="text/*">
                     </p>
+                    <p><button type='submit' name="acao" value="CadastrarFuncionario" id='botaoCadastrarFuncionario'>CADASTRAR</button></p>
 
                 </div>
 
             </main>
         </form>
         <footer>
-            <button id="botaoVoltar">VOLTAR</button>
+            <button id="voltar">VOLTAR</button>
         </footer>
         <script src="../../js/scriptFuncionario.js"></script>
         <script src="../../js/jsheader.js"></script>
     </body>
+</html>
