@@ -13,7 +13,7 @@
         <link rel="stylesheet"  href="../../css/novo.css">
          <link rel="stylesheet" href="../../css/estilos-header.css">
          <link rel="icon" href="../../imagens/leme.png" type="image/webp">
-        <%@include file="../../headerprodutos.jsp" %>
+         <%@include file="../headers/headerGerente.jsp" %>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
     </head>

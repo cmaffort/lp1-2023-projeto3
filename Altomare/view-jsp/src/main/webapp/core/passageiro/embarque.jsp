@@ -12,7 +12,7 @@
         <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
         <link rel="stylesheet"  href="../../css/novo.css">
          <link rel="stylesheet" href="../../css/estilos-header.css">
-        <%@include file="../headers/headerprodutos.jsp" %>
+        <%@include file="../headers/headerGerente.jsp" %>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
 
@@ -21,7 +21,7 @@
 
     </head>
     <body>
-    <%@include file="../../headerprodutos.jsp" %>
+   
         <div id="barra">
         <p id="TextoPas">Passageiros</p>
         <input id="in"  type="text"
