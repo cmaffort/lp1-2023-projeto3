@@ -1,5 +1,6 @@
 br\cefetmg\altomare\model\service\ManterCardapio.class
 br\cefetmg\altomare\model\service\ManterFuncionario.class
+br\cefetmg\altomare\model\service\GetPedidosToView.class
 br\cefetmg\altomare\model\service\ManterPassageiro.class
 br\cefetmg\altomare\model\exception\NegocioException.class
 br\cefetmg\altomare\model\service\IPacote.class

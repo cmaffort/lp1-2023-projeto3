@@ -98,9 +98,9 @@ CREATE TABLE IF NOT EXISTS `pacote` (
 COMMIT;
 
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+-- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+-- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 
 -- --------------------------------------------------------
@@ -172,3 +172,54 @@ INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Ca
 INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Gente Boa", "2023-10-10", "credito", 333, 3333333333333333, 1);
 INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Dahora", "2023-10-10", "debito", 444, 4444444444444444, 1);
 INSERT INTO cartao (titular, vencimento, tipo, cvv, numero, id_conta) VALUES("Cara Bom", "2023-10-10", "debito", 555, 5555555555555555, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidounidade`
+--
+
+DROP TABLE IF EXISTS `pedidounidade`;
+CREATE TABLE IF NOT EXISTS `pedidounidade` (
+  id_pedido_unidade BIGINT AUTO_INCREMENT,
+  valor DOUBLE NOT NULL,
+  conteudo VARCHAR(250),
+  id_conta BIGINT(10),
+  PRIMARY KEY (id_pedido_unidade)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidotodo`
+--
+
+DROP TABLE IF EXISTS `pedidotodo`;
+CREATE TABLE IF NOT EXISTS `pedidotodo` (
+  id_pedido_todo BIGINT,
+  total DOUBLE NOT NULL,
+  finalizado BOOLEAN,
+  data_criacao VARCHAR(50),
+  estado VARCHAR(50),
+  tipo VARCHAR(50),
+  PRIMARY KEY (id_pedido_todo)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO pedidotodo (id_pedido_todo, total, finalizado, data_criacao, estado, tipo) VALUES(1, 10, false, "opa","em preparo", "restaurante");
+INSERT INTO pedidotodo (id_pedido_todo, total, finalizado, data_criacao, estado, tipo) VALUES(2, 10, false, "opa","finalizado", "restaurante");
+INSERT INTO pedidotodo (id_pedido_todo, total, finalizado, data_criacao, estado, tipo) VALUES(3, 2, false, "opa","requisitado", "restaurante");
+INSERT INTO pedidotodo (id_pedido_todo, total, finalizado, data_criacao, estado, tipo) VALUES(4, 100, false, "opa","requisitado", "restaurante");
+INSERT INTO pedidotodo (id_pedido_todo, total, finalizado, data_criacao, estado, tipo) VALUES(5, 95, false, "opa","requisitado", "restaurante");
+INSERT INTO pedidotodo (id_pedido_todo, total, finalizado, data_criacao, estado, tipo) VALUES(6, 30, false, "opa","em preparo", "restaurante");
+
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(6, "1x macarrão", 1);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(4, "1x suco de laranja", 1);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(10, "1x risoto", 2);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(2, "1x coxinha", 3);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(100, "1x lagosta", 4);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(50, "1x salmao", 5);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(15, "1x batata frita", 5);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(30, "1x vinho", 5);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(20, "1x hamburguer", 6);
+INSERT INTO pedidounidade (valor, conteudo, id_conta) VALUES(10, "1x refrigerante", 6);
