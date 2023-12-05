@@ -10,7 +10,7 @@
         <link rel="stylesheet"  href="../../css/estilos-Passageiro.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
         <link rel="icon" href="../../imagens/leme.png" type="image/webp">
-        <%@include file="../../headerprodutos.jsp" %>
+        <%@include file="../headers/headerGerente.jsp" %>
     </head>
     <body>
         

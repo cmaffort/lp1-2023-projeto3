@@ -34,20 +34,27 @@ public class Fachada extends HttpServlet {
           //out.println("</head>");
         
 
-       if(acao.equals("Login"))
-          jsp = Login.execute(request);   
-       else if(acao.equals("CadastrarPassageiro"))
+       if(acao.equals("Login")){
+          jsp = Login.execute(request);  
+          response.sendRedirect(jsp);
+       }
+       else if(acao.equals("CadastrarPassageiro")){
            jsp = CadastrarPassageiro.execute(request);
-       else if(acao.equals("CadastrarItem"))
+           response.sendRedirect(jsp);
+       }
+       else if(acao.equals("CadastrarItem")){
            jsp = Cardapio.execute(request);
-       else if(acao.equals("CadastrarFuncionario"))
+           response.sendRedirect(jsp);
+       }
+       else if(acao.equals("CadastrarFuncionario")){
            jsp = CadastrarFuncionario.execute(request);
-       else
+           response.sendRedirect(jsp);
+       }
+       else{
            jsp = "/erro.jsp";
+           response.sendRedirect(jsp);
+       }
        
-       //Redirecionando pagina
-        RequestDispatcher rd = request.getRequestDispatcher(jsp);
-        rd.forward(request, response);
         }
     }
         // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,9 +72,7 @@ public class Fachada extends HttpServlet {
          try {
              processRequest(request, response);
          } catch (PersistenciaException | NegocioException ex) {
-         } catch (SQLException ex) {
-            Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -86,9 +91,7 @@ public class Fachada extends HttpServlet {
          try {
              processRequest(request, response);
          } catch (PersistenciaException | NegocioException ex) {
-         } catch (SQLException ex) {
-            Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(Fachada.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

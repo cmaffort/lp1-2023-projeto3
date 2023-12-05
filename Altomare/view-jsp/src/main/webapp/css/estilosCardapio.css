@@ -244,6 +244,10 @@ footer {
    margin-left: 2%;
 }
 
+#voltar:hover{
+    background-color: blue;
+}
+
 #total{
     text-align: right;
     padding-right: 2%;

@@ -123,26 +123,29 @@ public class FuncionarioDAO implements IFuncionarioDAO {
 
     @Override
     public FuncionarioDTO consultarPorId(String cpf) throws PersistenciaException {
-        FuncionarioDTO funcionario = new FuncionarioDTO();
+        FuncionarioDTO funcionario =  new FuncionarioDTO();
         String sql = "SELECT * FROM funcionarios WHERE CPF = ?";
-
-        try ( PreparedStatement statement = connection.prepareStatement(sql);  ResultSet resultSet = statement.executeQuery()) {
-            funcionario.setNome(resultSet.getString("Nome"));
-            funcionario.setDataNascimento(resultSet.getString("DatNasc"));
-            funcionario.setCpf(resultSet.getString("CPF"));
-            funcionario.setRg(resultSet.getString("RG"));
-            funcionario.setSexo(resultSet.getString("Sexo"));
-            funcionario.setEmail(resultSet.getString("Email"));
-            funcionario.setEstadoCivil(resultSet.getString("EstadoCivil"));
-            funcionario.setTurno(resultSet.getString("Turno"));
-            funcionario.setSetor(resultSet.getString("Setor"));
-            funcionario.setDataAdmissao(resultSet.getString("DataAdmissao"));
-            funcionario.setTelefone(resultSet.getString("Telefone"));
-            funcionario.setSenha(resultSet.getString("Senha"));
-        } catch (SQLException ex) {
-            throw new PersistenciaException(ex.getMessage());
+        try ( PreparedStatement statement = connection.prepareStatement(sql)) {
+                statement.setString(3, cpf);
+                statement.execute();
+                ResultSet resultSet = statement.executeQuery();
+               if(resultSet.next()){
+                funcionario.setNome(resultSet.getString("Nome"));
+                funcionario.setDataNascimento(resultSet.getString("DatNasc"));
+                funcionario.setCpf(resultSet.getString("CPF"));
+                funcionario.setRg(resultSet.getString("RG"));
+                funcionario.setSexo(resultSet.getString("Sexo"));
+                funcionario.setEmail(resultSet.getString("Email"));
+                funcionario.setEstadoCivil(resultSet.getString("EstadoCivil"));
+                funcionario.setTurno(resultSet.getString("Turno"));
+                funcionario.setSetor(resultSet.getString("Setor"));
+                funcionario.setDataAdmissao(resultSet.getString("DataAdmissao"));
+                funcionario.setTelefone(resultSet.getString("Telefone"));
+                funcionario.setSenha(resultSet.getString("Senha"));
+               }
+        } catch (SQLException u) {    
+            throw new RuntimeException(u);    
         }
-
         return funcionario;
     }
 

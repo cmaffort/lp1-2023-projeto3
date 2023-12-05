@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Pacote</title>
-     <%@include file="../../../headerPassageiro.jsp" %>
+    <link rel="icon" href="../../imagens/leme.png" type="image/png">
+     <%@include file="../headers/headerPassageiro.jsp" %>
 
     
 </head>
@@ -30,8 +31,8 @@
             *atividade x,y,z
             *
         </div>
-        <input type="submit" action="Quarto" value="Solicitar serviço de quarto">
-        
+        <input type="submit" name="Quarto" value="Solicitar serviço de quarto">
+    </div>
 
 
 

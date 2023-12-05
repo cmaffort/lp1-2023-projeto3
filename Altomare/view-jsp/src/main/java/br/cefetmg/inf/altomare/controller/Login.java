@@ -45,19 +45,19 @@ public class Login extends HttpServlet {
              if(funcionario != null){
                 request.getSession().setAttribute("cpfFuncionario", funcionario.getCpf());
                 if(funcionario.getSetor().equals("gerencia"))
-                    jsp = "/setores.jsp";
+                    jsp = "core/funcionarios/cadastroFuncionario.jsp";
                 if(funcionario.getSetor().equals("limpeza"))     
-                    jsp = "/agenteLimpezaManutencao.jsp";
+                    jsp = "core/funcionarios/agenteLimpezaManutencao.jsp";
                 if(funcionario.getSetor().equals("saude"))     
-                    jsp = "/Medico.jsp";
+                    jsp = "core/funcionarios/Medico.jsp";
                 if(funcionario.getSetor().equals("inpecao"))     
-                    jsp = "/inspetor.jsp";
+                    jsp = "core/funcionarios/inspetor.jsp";
                 if(funcionario.getSetor().equals("entregaQuartos"))     
-                    jsp = "/garconQuartos.jsp";
+                    jsp = "core/funcionarios/garconQuartos.jsp";
                 if(funcionario.getSetor().equals("entregaRestaurante"))     
-                    jsp = "/garconRestaurante.jsp";
+                    jsp = "core/funcionarios/garconRestaurante.jsp";
                 if(funcionario.getSetor().equals("restaurante"))     
-                    jsp = "/cozinheiro.jsp";
+                    jsp = "core/funcionarios/cozinheiro.jsp";
             }else{
                 IManterPassageiro manterPassageiro = new ManterPassageiro();
                 PassageiroDTO passageiro = manterPassageiro.getUserLogin(user, senha);

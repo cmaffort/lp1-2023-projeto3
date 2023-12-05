@@ -6,7 +6,8 @@
         <title>Exclusão de produtos</title>
           <link rel="stylesheet" href="../../css/produtos.css">
         <link rel="stylesheet" href="../../css/estilos-header.css">
-        <%@include file="../../headerprodutos.jsp" %>
+        <link rel="icon" href="../../imagens/leme.png" type="image/png">
+        <%@include file="../headers/headerprodutos.jsp" %>
     <head>
         <ul>
             <li style="list-style: none">

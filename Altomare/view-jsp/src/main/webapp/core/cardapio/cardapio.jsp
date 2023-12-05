@@ -21,7 +21,7 @@
         <title>Cardápio</title>
     </head>
     <body>
-        <%@include file="../../outroHeader.jsp" %>
+        <%@include file="../headers/headerGerente.jsp" %>
          <div class="row">
         <%
           ArrayList<CardapioDTO> cardapio = null;
@@ -34,8 +34,8 @@
           
         %>
           <div id="cardItem">
-              <a  href="core/cardapio/item.jsp?item=<%=item.getNome()%>"  style="color: white;text-decoration: none">
-              <img id="imgFoto" src="imagens/salmao.png" alt="alt"/>
+              <a  href="item.jsp?item=<%=item.getNome()%>"  style="color: white;text-decoration: none">
+              <img id="imgFoto" src="../../imagens/salmao.png" alt="alt"/>
             <div id="nameItem">
                 <h1><%=item.getNome()%></h1>   
             </div>
